@@ -1,0 +1,294 @@
+<resources>
+    <string name="app_name">人设岛遇</string>
+    <string name="cd_hero_illustration">人设岛遇浮空岛屿插画</string>
+    <string name="cd_back_to_login_start">返回登录起始页</string>
+    <string name="cd_back_to_password_login">返回密码登录</string>
+    <string name="cd_clear_phone">清空手机号</string>
+    <string name="cd_toggle_password">显示或隐藏密码</string>
+    <string name="cd_close">关闭</string>
+    <string name="cd_success_icon">成功</string>
+    <string name="cd_checked_icon">已勾选</string>
+    <string name="cd_unread_messages">有未读消息</string>
+
+    <string name="action_one_click_login">一键登录</string>
+    <string name="action_logging_in">正在登录...</string>
+    <string name="action_submitting">正在提交...</string>
+    <string name="action_phone_login">手机号登录</string>
+    <string name="action_verify_and_login">验证并登录</string>
+    <string name="action_login_now">立即登录</string>
+    <string name="action_reset_password">确认重置密码</string>
+    <string name="action_get_code">获取验证码</string>
+    <string name="action_resend_code_format">%1$ds 后重发</string>
+    <string name="action_forgot_password">忘记密码？</string>
+    <string name="action_remember_password_back">想起密码了？返回登录</string>
+
+    <string name="tab_code_login">验证码登录</string>
+    <string name="tab_password_login">密码登录</string>
+
+    <string name="nav_home">首页</string>
+    <string name="nav_plaza">广场</string>
+    <string name="nav_community">社区</string>
+    <string name="nav_messages">消息</string>
+    <string name="nav_me">我</string>
+
+    <string name="title_phone_login">手机号登录</string>
+    <string name="subtitle_code_login">验证码安全登录，未注册手机号将自动注册</string>
+    <string name="subtitle_password_login">使用你的手机号和密码登录</string>
+    <string name="title_forgot_password">找回密码</string>
+    <string name="subtitle_forgot_password">验证注册手机号并设置新的登录密码</string>
+
+    <string name="label_phone">手机号</string>
+    <string name="label_code">验证码</string>
+    <string name="label_password">密码</string>
+    <string name="label_new_password">新密码</string>
+    <string name="prefix_china_code">+86</string>
+    <string name="hint_phone">请输入 11 位手机号</string>
+    <string name="hint_registered_phone">请输入注册手机号</string>
+    <string name="hint_code">请输入验证码</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="hint_new_password">请设置 6-20 位新密码</string>
+
+    <string name="error_phone">请输入正确的 11 位手机号码</string>
+    <string name="error_code">请输入 4-6 位短信验证码</string>
+    <string name="error_password_login">请输入不少于 6 位的登录密码</string>
+    <string name="error_password_reset">密码长度需为 6 至 20 位字符</string>
+
+    <string name="agree_tip">请先勾选同意协议</string>
+    <string name="agree_prefix">我已阅读并同意</string>
+    <string name="agree_and">和</string>
+    <string name="policy_user">《用户协议》</string>
+    <string name="policy_privacy">《隐私协议》</string>
+    <string name="policy_user_title">用户协议</string>
+    <string name="policy_privacy_title">隐私协议</string>
+
+    <string name="policy_user_p1">欢迎使用「人设岛遇」服务。在注册或登录前，请仔细阅读本协议条款，了解您的权利与义务。</string>
+    <string name="policy_user_p2">1. 本机号码一键登录由运营商提供安全加密校验，仅用于当前设备身份核验。</string>
+    <string name="policy_user_p3">2. 您在平台创作或互动的内容应遵守社区规范，保护原创作者权益。</string>
+    <string name="policy_privacy_p1">「人设岛遇」高度重视您的个人信息与隐私保护，我们将严格遵循最小必要原则收集信息。</string>
+    <string name="policy_privacy_p2">1. 手机号仅用于账号注册、登录认证及安全找回，不会向无关第三方泄露。</string>
+    <string name="policy_privacy_p3">2. 您的个人设定与私密创作默认受权限保护，可随时在设置中管理。</string>
+
+    <string name="modal_agreement_title">请先阅读并同意协议</string>
+    <string name="modal_agreement_body">为了保障您的账号与信息安全，请先同意《用户协议》和《隐私协议》后再登录。</string>
+    <string name="modal_agreement_cancel">暂不同意</string>
+    <string name="modal_agreement_confirm">同意并登录</string>
+
+    <string name="modal_sms_title">验证码已发送</string>
+    <string name="modal_sms_body">请留意手机短信。当前为原型演示，不会发送真实短信。</string>
+    <string name="modal_known">知道了</string>
+
+    <string name="modal_success_title">登录成功</string>
+    <string name="modal_success_desc">欢迎来到人设岛遇！</string>
+    <string name="modal_success_body">当前为原型演示，不会发起真实登录。</string>
+    <string name="modal_enter_home">进入首页预览</string>
+
+    <string name="modal_reset_title">密码重置成功</string>
+    <string name="modal_reset_desc">请使用新密码登录人设岛遇</string>
+    <string name="modal_reset_body">当前为原型演示，不会修改真实账号密码。</string>
+    <string name="modal_back_password_login">返回密码登录</string>
+
+    <string name="action_policy_agreed">已阅读并同意</string>
+
+    <string name="home_preview_badge">登录已接入底部导航栏</string>
+    <string name="home_preview_title">人设岛遇 · %1$s</string>
+    <string name="home_preview_subtitle">当前账号：%1$s（%2$s）</string>
+    <string name="home_preview_desc">底部五栏导航已接入（首页、广场、社区、消息、我），支持胶囊滑动指示器、图标实心弹跳动效与消息红点点击自动清除。</string>
+    <string name="home_preview_tab_hint">当前「%1$s」页内容待接入您的下一批 Stitch HTML 页面。</string>
+    <string name="home_preview_replay_start">返回「01 登录起始页」</string>
+    <string name="home_preview_reset_agreement">重置未勾选协议并测试「05 弹窗」</string>
+    <string name="home_preview_restore_unread">恢复「消息」未读红点</string>
+    <string name="home_preview_jump_code">查看「02 验证码登录」</string>
+    <string name="home_preview_jump_password">查看「03 密码登录」</string>
+    <string name="home_preview_jump_forgot">查看「04 找回密码」</string>
+
+    <!-- 06 首页频道与交互 -->
+    <string name="channel_recommend">推荐</string>
+    <string name="channel_latest">最新</string>
+    <string name="channel_following">关注</string>
+    <string name="channel_hot">热门</string>
+    <string name="cd_toggle_grid_mode">切换双列瀑布流</string>
+    <string name="cd_toggle_single_mode">切换沉浸长文流</string>
+    <string name="cd_search_stories">搜索故事</string>
+    <string name="cd_author_avatar">查看作者主页</string>
+    <string name="cd_blue_v_badge">蓝V优质创作者认证</string>
+    <string name="cd_follow_author">关注作者</string>
+    <string name="cd_unfollow_author">取消关注作者</string>
+    <string name="cd_like_work">点赞作品</string>
+    <string name="cd_open_comments">打开评论区</string>
+    <string name="cd_collect_work">收藏作品</string>
+    <string name="cd_share_work">分享作品</string>
+    <string name="cd_pause_indicator">已暂停自动阅读，点击继续</string>
+    <string name="action_read_article">阅读文章</string>
+    <string name="action_expand">展开</string>
+    <string name="action_collapse">收起</string>
+    <string name="action_share">分享</string>
+    <string name="label_followed">已关注</string>
+    <string name="label_follow_plus">+ 关注</string>
+    <string name="toast_followed_format">已关注 %1$s</string>
+    <string name="toast_unfollowed">已取消关注</string>
+    <string name="toast_mode_grid">已切换为双列瀑布流</string>
+    <string name="toast_mode_immersive">已切换为沉浸长文流</string>
+
+    <!-- 20 评论弹窗与分享抽屉 -->
+    <string name="comment_total_format">%1$d 条评论</string>
+    <string name="comment_detail_total_format">共 %1$d 条评论</string>
+    <string name="comment_sort_hot">按热度</string>
+    <string name="comment_hint_drawer">分享你此刻的想法...</string>
+    <string name="comment_hint_inline">平等表达，友善交流</string>
+    <string name="comment_hint_reply_format">回复 @%1$s...</string>
+    <string name="comment_action_send">发送</string>
+    <string name="comment_action_reply">回复</string>
+    <string name="comment_badge_author">作者</string>
+    <string name="comment_me_name">我</string>
+    <string name="comment_just_now">刚刚</string>
+    <string name="comment_expand_replies_format">展开 %1$d 条回复</string>
+    <string name="share_title">分享作品</string>
+    <string name="share_channel_friend">平台好友</string>
+    <string name="share_channel_wechat">微信好友</string>
+    <string name="share_channel_qq">QQ 好友</string>
+    <string name="share_channel_copy">复制链接</string>
+    <string name="share_cancel">取消</string>
+    <string name="toast_share_friend">已发送给平台好友</string>
+    <string name="toast_share_wechat">已预留微信好友分享接口</string>
+    <string name="toast_share_qq">已预留 QQ 好友分享接口</string>
+    <string name="toast_share_copied">已复制作品链接</string>
+
+    <!-- 07 阅读文章详情页 -->
+    <string name="cd_back_home">返回首页</string>
+    <string name="cd_search_article">搜索正文</string>
+    <string name="hint_article_search">在正文中查找关键词…</string>
+    <string name="action_global_search">全站</string>
+    <string name="chip_free_read">免费阅读</string>
+    <string name="chip_has_pdf">含附件 · PDF</string>
+    <string name="chip_open_derivative">开放二创</string>
+    <string name="chip_word_count_format">共 %1$d 字</string>
+    <string name="section_personality">性格底色</string>
+    <string name="section_bonds">关系羁绊</string>
+    <string name="section_attachments">作品附件</string>
+    <string name="attachment_count_one">共 1 个文件</string>
+    <string name="action_view_attachment">查看</string>
+    <string name="action_quick_say">说点什么...</string>
+    <string name="action_copy_text">复制</string>
+    <string name="action_offline_download">下载</string>
+    <string name="action_offline_cached">已缓存</string>
+    <string name="toast_text_copied">已复制正文设定至剪贴板</string>
+    <string name="toast_cached_added">已离线缓存至「我的岛屿库」</string>
+    <string name="toast_cached_removed">已取消离线缓存</string>
+    <string name="toast_attachment_preview">已打开附件预览：角色设定集.pdf (1.8 MB)</string>
+    <string name="toast_comment_sent">评论已发布并同步至首页</string>
+    <string name="toast_search_none">正文中未找到匹配内容</string>
+    <string name="toast_global_search_reserved">已预留全站检索入口，支持跳转全站搜索</string>
+
+    <!-- 25 & 26 版本更新弹窗 -->
+    <string name="update_version_tag">v2.5.0</string>
+    <string name="update_new_badge">新版上线</string>
+    <string name="update_title">发现新版本，邀你体验</string>
+    <string name="update_size_idle">大小 48.6 MB</string>
+    <string name="update_size_progress_format">%1$s / 48.6 MB</string>
+    <string name="update_wifi_tip">建议 Wi-Fi 更新</string>
+    <string name="update_notes_label">本次更新内容</string>
+    <string name="update_notes_body">社区发动态支持投票设置与文档附件；中转站支持详情参数查看与星级打分测评；剧本局支持多阵营选择与人数实时同步。</string>
+    <string name="update_btn_download_install">下载并安装</string>
+    <string name="update_btn_later">稍后再说</string>
+    <string name="update_btn_background">后台下载</string>
+    <string name="update_btn_install_now">立即安装</string>
+    <string name="update_status_downloading">正在下载更新包...</string>
+    <string name="update_status_ready">下载完成，已就绪</string>
+    <string name="update_pill_downloading_format">更新包下载中 %1$d%%</string>
+    <string name="update_pill_ready">更新包已就绪 · 点击安装</string>
+    <string name="toast_update_later">已暂缓更新，可在「我」页随时检查新版本</string>
+    <string name="toast_update_background">已切换至后台继续下载</string>
+    <string name="toast_update_ready">下载完成，可点击立即安装</string>
+    <string name="toast_update_installing">正在拉起系统安装界面...</string>
+    <string name="action_check_update_v250">检查版本更新 (v2.5.0)</string>
+
+    <!-- 08 发现·广场 -->
+    <string name="plaza_search_placeholder">搜榜单、定制、悬赏、剧本局</string>
+    <string name="plaza_notice_pill">创作公示台</string>
+    <string name="plaza_grid_rankings_title">榜单</string>
+    <string name="plaza_grid_rankings_sub">热门排行</string>
+    <string name="plaza_grid_bounty_title">定制悬赏</string>
+    <string name="plaza_grid_bounty_sub">约稿征集</string>
+    <string name="plaza_grid_scripts_title">剧本局</string>
+    <string name="plaza_grid_scripts_sub">群像开黑</string>
+    <string name="plaza_grid_relay_title">中转测评</string>
+    <string name="plaza_grid_relay_sub">稳定省心</string>
+    <string name="plaza_tool_phone_title">小手机与模拟器</string>
+    <string name="plaza_tool_phone_sub">计划中 · 敬请期待</string>
+    <string name="plaza_tool_armor_title">破破甲集市</string>
+    <string name="plaza_tool_armor_sub">计划中 · 敬请期待</string>
+    <string name="plaza_tag_reset">重置</string>
+    <string name="plaza_tag_finder_link">标签找设定</string>
+    <string name="plaza_section_latest">最新发布</string>
+    <string name="plaza_section_more_works">更多作品</string>
+    <string name="plaza_section_featured">精选活动</string>
+    <string name="plaza_notice_title">创作公示台</string>
+    <string name="plaza_notice_subtitle">近期认证及平台征稿公示</string>
+    <string name="plaza_filter_category">分类筛选</string>
+    <string name="plaza_filter_all">全部活动</string>
+
+    <!-- 15 榜单 -->
+    <string name="rankings_title">人设岛遇榜单</string>
+    <string name="rankings_quota_label">今日可投票</string>
+    <string name="rankings_quota_format">剩余 %1$d / 3 票</string>
+    <string name="rankings_vote_btn">投它 1 票</string>
+    <string name="rankings_voted_btn">已投票 ✓</string>
+    <string name="rankings_footer_note">说明：每日每位岛民最多投出 3 票，榜单每小时更新一次。</string>
+
+    <!-- 16 定制与悬赏 -->
+    <string name="bounty_title">定制与悬赏</string>
+    <string name="bounty_action_accept">我要接单</string>
+    <string name="bounty_tab_custom">定制约稿</string>
+    <string name="bounty_tab_bounty">悬赏征稿</string>
+    <string name="bounty_escrow_label">平台担保交易流程</string>
+    <string name="bounty_escrow_hint">透明可追溯</string>
+    <string name="bounty_view_showcase">看橱窗</string>
+    <string name="bounty_go_order">去约稿</string>
+    <string name="bounty_submit_bid">投稿接赏</string>
+
+    <!-- 17 剧本局 -->
+    <string name="scripts_title">剧本局大厅</string>
+    <string name="scripts_action_create">发起组局</string>
+    <string name="scripts_banner_title">组局大厅 · 多人沉浸式群像玩法</string>
+    <string name="scripts_banner_sub">支持「自由文字接龙」与「多阵营分支」，剧本支持平台存证</string>
+    <string name="scripts_btn_join">立即上车</string>
+    <string name="scripts_btn_joined">已上车 ✓</string>
+    <string name="scripts_btn_observe">旁观实时局</string>
+    <string name="scripts_btn_ended">已满员</string>
+    <string name="scripts_lock_title">发起组局权限</string>
+    <string name="scripts_lock_desc">为保障组局质量，发起多人剧本局需先满足以下门槛条件：</string>
+    <string name="scripts_lock_apply">申请提前开局</string>
+
+    <!-- 19 中转站测评 -->
+    <string name="relay_title">中转站测评</string>
+    <string name="relay_tag_verified">岛遇优选</string>
+    <string name="relay_notice_title">测评说明 · 客观数据仅供参考</string>
+    <string name="relay_notice_body">评分综合了 7 日可用率、首字延迟及岛民实测评价，中转仅作为辅助连接方式。</string>
+    <string name="relay_btn_detail">查看详情与评价</string>
+    <string name="relay_metric_price">参考费率</string>
+    <string name="relay_metric_uptime">7日可用率</string>
+    <string name="relay_metric_models">主力模型</string>
+
+    <!-- 10 标签找设定 -->
+    <string name="tag_finder_title">标签找设定</string>
+    <string name="tag_finder_search_hint">搜标签关键词，如：双强、权谋</string>
+    <string name="tag_finder_works_count_format">共 %1$d 篇作品设定</string>
+    <string name="tag_finder_play_btn">去演绎</string>
+    <string name="tag_finder_read_btn">阅读</string>
+
+    <!-- 51 全局搜索 -->
+    <string name="search_global_hint">搜索设定、动态、创作者或群聊群号</string>
+    <string name="search_cancel">取消</string>
+    <string name="search_recent_title">最近搜索</string>
+    <string name="search_clear">清空</string>
+    <string name="search_hot_title">大家都在搜</string>
+    <string name="search_hot_tag">实时热榜</string>
+    <string name="search_category_title">按分类快速探索</string>
+    <string name="search_group_join">加群</string>
+    <string name="search_group_apply">申请</string>
+    <string name="search_group_pending">待审核</string>
+    <string name="search_group_joined">已加群</string>
+    <string name="search_empty_title">暂无完全匹配的结果</string>
+    <string name="search_empty_sub">可尝试缩短关键词、切换顶部分类 Tab 或检查群号输入</string>
+</resources>
+

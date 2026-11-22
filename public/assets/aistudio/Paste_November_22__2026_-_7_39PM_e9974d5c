@@ -1,0 +1,1896 @@
+<!-- 02 手机号登录 · 验证码 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>02 手机号登录 · 验证码 — 人设岛遇</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <main class="w-full max-w-[390px] min-h-[884px] relative flex flex-col justify-between overflow-hidden bg-light-surface shadow-sm" data-stitch-vh="min-h-[884px]===min-h-screen">
+    <!-- ==================== 1. 顶部视觉背景区（预留 56px 灵动岛安全区） ==================== -->
+    <div class="relative flex-1 min-h-[320px] w-full overflow-hidden pt-safe-top">
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrDs970BXg-qcxQutJYUw-Ozr0sh2bn1yvqgQ1mW3vdfFt6FEW2uytatWfCg0pbjo_HICC_dh_kiW43eSYvkUBkb91I-PvZUBtC0bG4ewZpw4vdbkDrjMx0XW0idyqPvzPfrkD36d3f2K796URJAgeUpLYryhRoMxMUc7DaLiXIY8vvnd8WqmiAaLG2RYeK3uAtN9VK0BAZdoGcjn6l551Ay9MFySu2tdhQW6K7vFIj5m__vuoabLQp3Q_0" alt="人设岛遇浮空岛屿插画" class="absolute inset-0 w-full h-full object-cover object-top">
+    </div>
+
+    <!-- ==================== 2. 底部白色登录卡片区 ==================== -->
+    <section class="relative z-20 -mt-gutter-xl rounded-t-xl bg-light-surface px-gutter-xl pt-gutter-xl pb-gutter-xl shadow-[0_-8px_32px_rgba(20,21,24,0.08)] flex flex-col gap-gutter-lg">
+      <!-- 卡片顶部标题与返回按钮 -->
+      <header class="flex flex-col gap-gutter-xs">
+        <div class="flex items-center gap-gutter-sm">
+          <!-- [按钮] 返回上一页：跳回「01 登录起始页」 -->
+          <a href="../01-login-start/LoginStart.html" data-component-id="button-icon" data-component-type="button" data-component-variant="icon" aria-label="返回登录起始页" class="w-8 h-8 -ml-gutter-sm rounded-full bg-light-surface-container-low text-light-on-surface flex items-center justify-center transition-transform duration-state-change ease-state-change active:scale-95 hover:bg-light-surface-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+            <span class="material-symbols-outlined text-[22px]" aria-hidden="true">chevron_left</span>
+          </a>
+          <h2 class="font-headline text-headline-lg text-light-on-surface" data-design-text-token="headline-lg">手机号登录</h2>
+        </div>
+        <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">
+          验证码安全登录，未注册手机号将自动注册
+        </p>
+      </header>
+
+      <!--
+        [模块] 登录方式 Tab 切换栏
+        说明：当前选中「验证码登录」；点击「密码登录」跳转到 03 密码登录页。
+      -->
+      <!-- COMPONENT: tabs-horizontal -->
+      <div data-component-id="tabs-horizontal" data-component-type="tabs" data-component-variant="horizontal" class="w-full">
+        <div role="tablist" aria-label="登录方式" class="grid grid-cols-2 border-b border-light-outline-variant">
+          <a role="tab" id="tab-code" aria-selected="true" href="./PhoneCodeLogin.html" tabindex="0" class="pb-gutter-md relative flex flex-col items-center justify-center text-light-on-surface">
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">验证码登录</span>
+            <span class="absolute bottom-0 w-10 h-0.5 rounded-full bg-light-primary"></span>
+          </a>
+          <a role="tab" id="tab-password" aria-selected="false" href="../03-phone-password-login/PhonePasswordLogin.html" tabindex="-1" class="pb-gutter-md relative flex flex-col items-center justify-center text-light-on-surface-variant hover:text-light-on-surface transition-colors duration-state-change">
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">密码登录</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ==================== 3. 验证码登录表单 (#code-login-form) ==================== -->
+      <form id="code-login-form" class="flex flex-col gap-gutter-md" novalidate>
+        <!-- [输入框] 手机号输入 (#phone-input)：仅允许数字，带 +86 区号、一键清空按钮及格式校验错误提示 -->
+        <!-- COMPONENT: input-field-icon (Phone) -->
+        <label data-component-id="input-field-icon" data-component-type="input-field" data-component-variant="with-icon" class="w-full flex flex-col gap-gutter-xs">
+          <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface-variant">手机号</span>
+          <div class="h-12 px-gutter-lg rounded-md bg-light-surface-container flex items-center gap-gutter-md focus-within:ring-2 focus-within:ring-light-secondary">
+            <span aria-hidden="true" class="font-mono text-mono-md text-light-on-surface shrink-0 pr-gutter-md border-r border-light-outline-variant">+86</span>
+            <input id="phone-input" type="tel" inputmode="numeric" maxlength="11" placeholder="请输入 11 位手机号" class="w-full bg-transparent border-none p-0 font-mono text-mono-md text-light-on-surface tabular-nums placeholder:font-body placeholder:text-body-md placeholder:text-light-outline focus:ring-0">
+            <!-- [按钮] 清空手机号 (#clear-phone-btn)：输入非空时显示 -->
+            <button id="clear-phone-btn" type="button" aria-label="清空手机号" class="shrink-0 text-light-outline hover:text-light-on-surface hidden">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true">cancel</span>
+            </button>
+          </div>
+          <span id="phone-error" role="alert" data-design-text-token="body-sm" class="font-body text-body-sm text-error hidden">请输入正确的 11 位手机号码</span>
+        </label>
+
+        <!-- [输入框] 短信验证码 (#code-input) + 右侧「获取验证码」倒计时按钮 (#send-code-btn) -->
+        <!-- COMPONENT: input-field-text (SMS Code) -->
+        <label data-component-id="input-field-text" data-component-type="input-field" data-component-variant="text" class="w-full flex flex-col gap-gutter-xs">
+          <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface-variant">验证码</span>
+          <div class="h-12 px-gutter-lg rounded-md bg-light-surface-container flex items-center gap-gutter-sm focus-within:ring-2 focus-within:ring-light-secondary">
+            <input id="code-input" type="text" inputmode="numeric" maxlength="6" placeholder="请输入验证码" class="w-full bg-transparent border-none p-0 font-mono text-mono-md text-light-on-surface placeholder:font-body placeholder:text-body-md placeholder:text-light-outline focus:ring-0">
+            <!-- [按钮] 获取验证码 (#send-code-btn)：校验手机号后触发 60s 倒计时并弹出提示弹窗 -->
+            <button id="send-code-btn" type="button" class="shrink-0 font-label text-label-sm text-light-on-surface hover:text-light-secondary transition-colors duration-state-change disabled:text-light-outline disabled:cursor-not-allowed">
+              <span id="send-code-label" data-design-text-token="label-sm">获取验证码</span>
+            </button>
+          </div>
+          <span id="code-error" role="alert" data-design-text-token="body-sm" class="font-body text-body-sm text-error hidden">请输入 4-6 位短信验证码</span>
+        </label>
+
+        <!--
+          [按钮] 主提交按钮：验证并登录 (#submit-btn)
+          作用：依次校验手机号、验证码、底部协议勾选状态；全部通过后展示加载态并弹出登录成功弹窗。
+        -->
+        <!-- COMPONENT: button-primary -->
+        <button id="submit-btn" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" type="submit" class="w-full h-12 mt-gutter-xs px-gutter-xl rounded-full bg-light-primary text-light-on-primary flex items-center justify-center gap-gutter-sm shadow-sm transition-transform duration-state-change ease-state-change active:scale-[0.98] hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary focus-visible:ring-offset-2 disabled:opacity-60">
+          <span id="submit-spinner" class="material-symbols-outlined text-[18px] animate-spin hidden" aria-hidden="true">progress_activity</span>
+          <span id="submit-label" data-design-text-token="label-lg" class="font-label text-label-lg">验证并登录</span>
+        </button>
+      </form>
+
+      <!-- 底部用户协议与隐私协议勾选区（与登录起始页通过 sessionStorage 同步勾选状态） -->
+      <div id="agree-row" class="py-gutter-xs px-gutter-sm rounded-md flex items-center justify-center transition-colors duration-state-change">
+        <!-- COMPONENT: checkbox-standard -->
+        <label data-component-id="checkbox-standard" data-component-type="checkbox" data-component-variant="standard" class="inline-flex items-center gap-gutter-sm cursor-pointer select-none">
+          <input id="agree-checkbox" type="checkbox" name="terms" value="accepted" class="w-4 h-4 rounded-sm border-light-outline text-light-primary focus:ring-light-secondary focus:ring-offset-0 cursor-pointer">
+          <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">
+            我已阅读并同意
+            <button type="button" data-policy="用户协议" class="policy-link text-light-on-surface font-medium hover:text-light-secondary underline-offset-2 hover:underline">《用户协议》</button>
+            和
+            <button type="button" data-policy="隐私协议" class="policy-link text-light-on-surface font-medium hover:text-light-secondary underline-offset-2 hover:underline">《隐私协议》</button>
+          </span>
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 4. 弹窗组（原生 dialog） ==================== -->
+
+  <!-- 弹窗 A：未勾选协议提醒弹窗 (#modal-agreement) -->
+  <dialog id="modal-agreement" role="alertdialog" data-component-id="modal-alert" data-component-type="modal" data-component-variant="alert" aria-labelledby="modal-alert-title" aria-describedby="modal-alert-body" class="w-[310px] rounded-lg bg-light-surface text-light-on-surface p-gutter-xl shadow-xl border border-light-outline-variant backdrop:bg-light-primary/45 m-auto">
+    <header class="text-center mb-gutter-sm">
+      <h2 id="modal-alert-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">请先勾选协议</h2>
+    </header>
+    <div id="modal-alert-body" class="text-center mb-gutter-xl">
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">请先阅读并同意《用户协议》和《隐私协议》，再继续登录。</p>
+    </div>
+    <footer class="grid grid-cols-2 gap-gutter-sm">
+      <button id="modal-agreement-cancel" type="button" class="h-11 rounded-full bg-light-surface-container text-light-on-surface flex items-center justify-center">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">暂不同意</span>
+      </button>
+      <button id="modal-agreement-confirm" type="button" class="h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">同意并登录</span>
+      </button>
+    </footer>
+  </dialog>
+
+  <!-- 弹窗 B：验证码已发送提示弹窗 (#modal-sms) -->
+  <dialog id="modal-sms" data-component-id="modal-standard" data-component-type="modal" data-component-variant="standard" aria-labelledby="modal-sms-title" aria-describedby="modal-sms-body" class="w-[310px] rounded-lg bg-light-surface text-light-on-surface p-gutter-xl shadow-xl border border-light-outline-variant backdrop:bg-light-primary/45 m-auto">
+    <header class="text-center mb-gutter-sm">
+      <h2 id="modal-sms-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">验证码已发送</h2>
+    </header>
+    <div id="modal-sms-body" class="text-center mb-gutter-xl">
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">请留意手机短信。当前为原型演示，不会发送真实短信。</p>
+    </div>
+    <footer>
+      <button id="modal-sms-close" type="button" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">知道了</span>
+      </button>
+    </footer>
+  </dialog>
+
+  <!-- 弹窗 C：登录成功提示弹窗 (#modal-success) -->
+  <dialog id="modal-success" data-component-id="modal-standard" data-component-type="modal" data-component-variant="standard" aria-labelledby="modal-success-title" aria-describedby="modal-success-desc modal-success-body" class="w-[310px] rounded-lg bg-light-surface text-light-on-surface p-gutter-xl shadow-xl border border-light-outline-variant backdrop:bg-light-primary/45 m-auto">
+    <header class="flex flex-col items-center text-center gap-gutter-xs mb-gutter-sm">
+      <div class="w-11 h-11 rounded-full bg-success/10 text-success flex items-center justify-center mb-gutter-xs">
+        <span class="material-symbols-outlined text-[24px]" aria-hidden="true">check_circle</span>
+      </div>
+      <h2 id="modal-success-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">登录成功</h2>
+      <p id="modal-success-desc" data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">欢迎来到人设岛遇！</p>
+    </header>
+    <div id="modal-success-body" class="text-center mb-gutter-xl">
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">当前为原型演示，不会发起真实登录。</p>
+    </div>
+    <footer>
+      <button id="modal-success-close" type="button" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">知道了</span>
+      </button>
+    </footer>
+  </dialog>
+
+  <!-- 弹窗 D：用户协议 / 隐私协议底部抽屉 (#modal-policy) -->
+  <dialog id="modal-policy" data-component-id="modal-drawer" data-component-type="modal" data-component-variant="drawer" aria-labelledby="modal-policy-title" class="w-full max-w-[390px] rounded-t-xl bg-light-surface text-light-on-surface p-gutter-xl shadow-xl backdrop:bg-light-primary/45 mt-auto mb-0 mx-auto">
+    <header class="flex items-center justify-between mb-gutter-lg">
+      <h2 id="modal-policy-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">用户协议</h2>
+      <button id="modal-policy-close" type="button" aria-label="关闭" class="w-8 h-8 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface">
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">close</span>
+      </button>
+    </header>
+    <div class="text-body-sm text-light-on-surface-variant flex flex-col gap-gutter-sm mb-gutter-xl">
+      <p data-design-text-token="body-sm">欢迎使用「人设岛遇」服务。在注册或登录前，请仔细阅读本协议条款，了解您的权利与义务及个人信息保护说明。</p>
+      <p data-design-text-token="body-sm" class="text-light-on-surface-variant">当前为交互原型演示，协议内容仅作展示。</p>
+    </div>
+    <button id="modal-policy-agree" type="button" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center">
+      <span data-design-text-token="label-lg" class="font-label text-label-lg">已阅读并同意</span>
+    </button>
+  </dialog>
+
+  <!-- ==================== 5. 页面交互逻辑脚本 ==================== -->
+  <script>
+    (function () {
+      // ---------- DOM 元素引用 ----------
+      const form = document.getElementById('code-login-form');
+      const phoneInput = document.getElementById('phone-input');
+      const clearPhoneBtn = document.getElementById('clear-phone-btn');
+      const codeInput = document.getElementById('code-input');
+      const phoneError = document.getElementById('phone-error');
+      const codeError = document.getElementById('code-error');
+      const agreeCheckbox = document.getElementById('agree-checkbox');
+      const agreeRow = document.getElementById('agree-row');
+      const sendCodeBtn = document.getElementById('send-code-btn');
+      const sendCodeLabel = document.getElementById('send-code-label');
+      const submitBtn = document.getElementById('submit-btn');
+      const submitSpinner = document.getElementById('submit-spinner');
+      const submitLabel = document.getElementById('submit-label');
+
+      const modalAgreement = document.getElementById('modal-agreement');
+      const modalSms = document.getElementById('modal-sms');
+      const modalSuccess = document.getElementById('modal-success');
+      const modalPolicy = document.getElementById('modal-policy');
+      const modalPolicyTitle = document.getElementById('modal-policy-title');
+
+      let countdownTimer = null; // 验证码 60s 倒计时句柄
+
+      // ---------- 协议状态跨页同步 ----------
+      function syncAgreementStorage(checked) {
+        try {
+          sessionStorage.setItem('rsdy_agreed', checked ? '1' : '0');
+        } catch (e) {}
+      }
+
+      // 页面加载时恢复协议勾选状态
+      try {
+        if (sessionStorage.getItem('rsdy_agreed') === '1') {
+          agreeCheckbox.checked = true;
+        }
+      } catch (e) {}
+
+      agreeCheckbox.addEventListener('change', function () {
+        syncAgreementStorage(agreeCheckbox.checked);
+        agreeRow.classList.remove('bg-error/10');
+      });
+
+      // ---------- 输入框过滤与清空逻辑 ----------
+      phoneInput.addEventListener('input', function () {
+        phoneInput.value = phoneInput.value.replace(/\D/g, '');
+        clearPhoneBtn.classList.toggle('hidden', phoneInput.value.length === 0);
+        phoneError.classList.add('hidden');
+      });
+
+      clearPhoneBtn.addEventListener('click', function () {
+        phoneInput.value = '';
+        clearPhoneBtn.classList.add('hidden');
+        phoneInput.focus();
+      });
+
+      codeInput.addEventListener('input', function () {
+        codeInput.value = codeInput.value.replace(/\D/g, '');
+        codeError.classList.add('hidden');
+      });
+
+      // ---------- 表单校验函数 ----------
+      function validatePhone() {
+        const val = phoneInput.value.trim();
+        const valid = /^1\d{10}$/.test(val);
+        phoneError.classList.toggle('hidden', valid);
+        return valid;
+      }
+
+      function validateCode() {
+        const val = codeInput.value.trim();
+        const valid = /^\d{4,6}$/.test(val);
+        codeError.classList.toggle('hidden', valid);
+        return valid;
+      }
+
+      // ---------- 登录提交加载与成功弹窗 ----------
+      function triggerLogin() {
+        submitBtn.disabled = true;
+        submitSpinner.classList.remove('hidden');
+        submitLabel.textContent = '正在登录...';
+        setTimeout(function () {
+          submitBtn.disabled = false;
+          submitSpinner.classList.add('hidden');
+          submitLabel.textContent = '验证并登录';
+          modalSuccess.showModal();
+        }, 420);
+      }
+
+      // 点击「获取验证码」：校验手机号 -> 弹出提示 -> 启动 60s 倒计时
+      sendCodeBtn.addEventListener('click', function () {
+        if (!validatePhone()) {
+          phoneInput.focus();
+          return;
+        }
+        let seconds = 60;
+        sendCodeBtn.disabled = true;
+        sendCodeLabel.textContent = seconds + 's 后重发';
+        modalSms.showModal();
+        codeInput.focus();
+        clearInterval(countdownTimer);
+        countdownTimer = setInterval(function () {
+          seconds -= 1;
+          if (seconds <= 0) {
+            clearInterval(countdownTimer);
+            sendCodeBtn.disabled = false;
+            sendCodeLabel.textContent = '获取验证码';
+          } else {
+            sendCodeLabel.textContent = seconds + 's 后重发';
+          }
+        }, 1000);
+      });
+
+      // 表单提交：校验手机号 + 验证码 + 协议勾选
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const pOk = validatePhone();
+        const cOk = validateCode();
+        if (!pOk || !cOk) return;
+        if (!agreeCheckbox.checked) {
+          agreeRow.classList.add('bg-error/10');
+          modalAgreement.showModal();
+          return;
+        }
+        triggerLogin();
+      });
+
+      // ---------- 各弹窗按钮事件绑定 ----------
+      document.getElementById('modal-agreement-cancel').addEventListener('click', function () {
+        modalAgreement.close();
+      });
+      document.getElementById('modal-agreement-confirm').addEventListener('click', function () {
+        agreeCheckbox.checked = true;
+        syncAgreementStorage(true);
+        agreeRow.classList.remove('bg-error/10');
+        modalAgreement.close();
+        triggerLogin();
+      });
+      document.getElementById('modal-sms-close').addEventListener('click', function () {
+        modalSms.close();
+      });
+      document.getElementById('modal-success-close').addEventListener('click', function () {
+        modalSuccess.close();
+      });
+
+      // 打开《用户协议》/《隐私协议》抽屉
+      document.querySelectorAll('.policy-link').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          modalPolicyTitle.textContent = btn.getAttribute('data-policy') || '协议详情';
+          modalPolicy.showModal();
+        });
+      });
+      document.getElementById('modal-policy-close').addEventListener('click', function () {
+        modalPolicy.close();
+      });
+      document.getElementById('modal-policy-agree').addEventListener('click', function () {
+        agreeCheckbox.checked = true;
+        syncAgreementStorage(true);
+        agreeRow.classList.remove('bg-error/10');
+        modalPolicy.close();
+      });
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 01 登录起始页 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>01 登录起始页 — 人设岛遇</title>
+  <!-- 引入 Tailwind CSS 与项目统一的设计令牌配置 -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <!-- 引入中文字体 Noto Sans SC、数字字体 Plus Jakarta Sans 与图标字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=ZCOOL+KuaiLe&amp;display=block" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .font-mono { font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Noto Sans SC", sans-serif; }
+    .material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }
+    /* 未勾选协议时，协议行左右轻晃提醒动画 */
+    @keyframes agree-shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-5px); }
+      40%, 80% { transform: translateX(5px); }
+    }
+    .animate-agree-shake { animation: agree-shake 320ms ease-in-out; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <!-- 移动端主容器：390px 居中视口 -->
+  <main class="w-full max-w-[390px] min-h-[884px] relative flex flex-col justify-between overflow-hidden bg-light-surface shadow-sm" data-stitch-vh="min-h-[884px]===min-h-screen">
+
+    <!-- ==================== 1. 顶部视觉背景 ==================== -->
+    <div class="relative flex-1 min-h-[500px] w-full overflow-hidden">
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrDs970BXg-qcxQutJYUw-Ozr0sh2bn1yvqgQ1mW3vdfFt6FEW2uytatWfCg0pbjo_HICC_dh_kiW43eSYvkUBkb91I-PvZUBtC0bG4ewZpw4vdbkDrjMx0XW0idyqPvzPfrkD36d3f2K796URJAgeUpLYryhRoMxMUc7DaLiXIY8vvnd8WqmiAaLG2RYeK3uAtN9VK0BAZdoGcjn6l551Ay9MFySu2tdhQW6K7vFIj5m__vuoabLQp3Q_0" alt="人设岛遇浮空岛屿插画" class="absolute inset-0 w-full h-full object-cover object-top">
+    </div>
+
+    <!-- ==================== 2. 底部白色登录卡片区 ==================== -->
+    <section class="relative z-20 -mt-gutter-xl rounded-t-xl bg-light-surface px-gutter-xl pt-gutter-xl pb-gutter-xl shadow-[0_-8px_32px_rgba(20,21,24,0.08)] flex flex-col items-center gap-gutter-lg">
+
+      <!-- 本机脱敏手机号 -->
+      <div class="flex flex-col items-center gap-gutter-xs text-center">
+        <p class="font-mono text-mono-lg text-light-on-surface tabular-nums tracking-wider" data-design-text-token="mono-lg">
+          191****7207
+        </p>
+      </div>
+
+      <!-- 主/次登录按钮组 -->
+      <div class="w-full flex flex-col gap-gutter-md">
+        <!--
+          [按钮] 主按钮：一键登录 (#one-click-btn)
+          作用：
+            1. 先校验底部协议是否已勾选；
+            2. 若未勾选：高亮轻晃协议行、显示气泡提示，并弹出「请先阅读并同意协议」确认弹窗；
+            3. 若已勾选：按钮显示转圈 Spinner（#one-click-spinner）并弹出认证加载浮层，完成后弹出「登录成功」弹窗。
+        -->
+        <!-- COMPONENT: button-primary -->
+        <button id="one-click-btn" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" type="button" class="w-full h-12 px-gutter-xl rounded-full bg-light-primary text-light-on-primary flex items-center justify-center gap-gutter-sm shadow-sm transition-all duration-state-change ease-state-change active:scale-[0.98] hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary focus-visible:ring-offset-2 disabled:opacity-75 disabled:cursor-wait">
+          <svg id="one-click-spinner" class="w-4 h-4 animate-spin hidden shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-opacity="0.25" stroke-width="2.5"></circle>
+            <path d="M21 12C21 7.02944 16.9706 3 12 3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+          <span id="one-click-label" data-design-text-token="label-lg" class="font-label text-label-lg">一键登录</span>
+        </button>
+
+        <!--
+          [按钮/跳转链接] 次按钮：手机号登录 (#other-phone-link)
+          作用：跳转到「02 手机号登录 · 验证码」页面（PhoneCodeLogin.html），用于切换其他手机号或使用验证码/密码登录。
+        -->
+        <!-- COMPONENT: button-secondary -->
+        <a id="other-phone-link" href="../02-phone-code-login/PhoneCodeLogin.html" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="w-full h-12 px-gutter-xl rounded-full bg-light-surface-container text-light-on-surface flex items-center justify-center transition-all duration-state-change ease-state-change active:scale-[0.98] hover:bg-light-surface-container-high focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary focus-visible:ring-offset-2">
+          <span data-design-text-token="label-lg" class="font-label text-label-lg">手机号登录</span>
+        </a>
+      </div>
+
+      <!-- 底部用户协议与隐私协议勾选区 -->
+      <div class="relative w-full flex flex-col items-center">
+        <!-- 未勾选时的浮动气泡提示 (#agree-tip) -->
+        <div id="agree-tip" class="pointer-events-none hidden -top-8 absolute px-3 py-1 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm shadow-md whitespace-nowrap">
+          请先勾选同意协议
+        </div>
+
+        <!--
+          [勾选框 + 协议链接] 协议确认行 (#agree-row)
+          作用：
+            - 点击圆形勾选框或文字区域：切换「我已阅读并同意」勾选状态，并同步保存到 sessionStorage；
+            - 点击《用户协议》或《隐私协议》按钮（.policy-link）：阻止冒泡（不误触勾选），打开对应的底部协议抽屉弹窗。
+        -->
+        <div id="agree-row" class="py-1.5 px-3 rounded-lg flex items-center justify-center border border-transparent transition-all duration-state-change">
+          <!-- COMPONENT: checkbox-standard -->
+          <label data-component-id="checkbox-standard" data-component-type="checkbox" data-component-variant="standard" class="inline-flex items-center gap-1.5 cursor-pointer select-none">
+            <span class="relative inline-flex items-center justify-center w-4 h-4 shrink-0">
+              <input id="agree-checkbox" type="checkbox" name="terms" value="accepted" class="peer sr-only">
+              <span class="w-4 h-4 rounded-full border border-light-outline bg-light-surface transition-all duration-state-change peer-checked:bg-light-primary peer-checked:border-light-primary peer-focus-visible:ring-2 peer-focus-visible:ring-light-secondary peer-focus-visible:ring-offset-1 flex items-center justify-center">
+              </span>
+              <svg class="w-2.5 h-2.5 text-light-on-primary absolute pointer-events-none opacity-0 scale-75 transition-all duration-state-change peer-checked:opacity-100 peer-checked:scale-100" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12.5L9.5 17L19 7.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant whitespace-nowrap">
+              我已阅读并同意<button type="button" data-policy="用户协议" class="policy-link font-body text-body-sm text-light-on-surface hover:underline underline-offset-2">《用户协议》</button>和<button type="button" data-policy="隐私协议" class="policy-link font-body text-body-sm text-light-on-surface hover:underline underline-offset-2">《隐私协议》</button>
+            </span>
+          </label>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 4. 弹窗组（原生 dialog） ==================== -->
+
+  <!-- 弹窗 A：未勾选协议提醒弹窗 (#modal-agreement) -->
+  <dialog id="modal-agreement" role="alertdialog" data-component-id="modal-alert" data-component-type="modal" data-component-variant="alert" aria-labelledby="modal-alert-title" aria-describedby="modal-alert-body" class="w-[310px] rounded-lg bg-light-surface text-light-on-surface p-gutter-xl shadow-xl border border-light-outline-variant backdrop:bg-light-primary/45 m-auto">
+    <header class="text-center mb-gutter-sm">
+      <h2 id="modal-alert-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">请先阅读并同意协议</h2>
+    </header>
+    <div id="modal-alert-body" class="text-center mb-gutter-xl">
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">为了保障您的账号与信息安全，请先同意《用户协议》和《隐私协议》后再登录。</p>
+    </div>
+    <footer class="grid grid-cols-2 gap-gutter-sm">
+      <!-- [按钮] 暂不同意 (#modal-agreement-cancel)：仅关闭弹窗，停留在登录页 -->
+      <button id="modal-agreement-cancel" type="button" class="h-11 rounded-full bg-light-surface-container text-light-on-surface flex items-center justify-center transition-transform duration-state-change active:scale-[0.98]">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">暂不同意</span>
+      </button>
+      <!-- [按钮] 同意并登录 (#modal-agreement-confirm)：自动勾选协议、关闭弹窗并立即触发一键登录 -->
+      <button id="modal-agreement-confirm" type="button" class="h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center transition-transform duration-state-change active:scale-[0.98]">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">同意并登录</span>
+      </button>
+    </footer>
+  </dialog>
+
+  <!-- 弹窗 C：用户协议 / 隐私协议底部抽屉 (#modal-policy) -->
+  <dialog id="modal-policy" data-component-id="modal-drawer" data-component-type="modal" data-component-variant="drawer" aria-labelledby="modal-policy-title" class="w-full max-w-[390px] rounded-t-xl bg-light-surface text-light-on-surface p-gutter-xl shadow-xl backdrop:bg-light-primary/45 mt-auto mb-0 mx-auto">
+    <header class="flex items-center justify-between mb-gutter-md">
+      <h2 id="modal-policy-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">用户协议</h2>
+      <!-- [按钮] 关闭协议抽屉 (#modal-policy-close) -->
+      <button id="modal-policy-close" type="button" aria-label="关闭" class="w-8 h-8 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface">
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">close</span>
+      </button>
+    </header>
+    <!-- 协议正文容器：点击不同链接时由 JS 动态填充对应条款 -->
+    <div id="modal-policy-content" class="text-body-sm text-light-on-surface-variant flex flex-col gap-gutter-sm mb-gutter-xl">
+      <p data-design-text-token="body-sm">欢迎使用「人设岛遇」服务。在注册或登录前，请仔细阅读本协议条款，了解您的权利与义务。</p>
+      <p data-design-text-token="body-sm">1. 本机号码一键登录由运营商提供安全加密校验，仅用于当前设备身份核验。</p>
+      <p data-design-text-token="body-sm">2. 您在平台创作或互动的内容应遵守社区规范，保护原创作者权益。</p>
+    </div>
+    <!-- [按钮] 已阅读并同意 (#modal-policy-agree)：自动勾选协议并关闭抽屉 -->
+    <button id="modal-policy-agree" type="button" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center transition-transform duration-state-change active:scale-[0.98]">
+      <span data-design-text-token="label-lg" class="font-label text-label-lg">已阅读并同意</span>
+    </button>
+  </dialog>
+
+  <!-- ==================== 5. 页面交互逻辑脚本 ==================== -->
+  <script>
+    (function () {
+      // ---------- DOM 元素引用 ----------
+      const agreeCheckbox = document.getElementById('agree-checkbox');
+      const agreeRow = document.getElementById('agree-row');
+      const agreeTip = document.getElementById('agree-tip');
+      const oneClickBtn = document.getElementById('one-click-btn');
+      const oneClickSpinner = document.getElementById('one-click-spinner');
+      const oneClickLabel = document.getElementById('one-click-label');
+      const otherPhoneLink = document.getElementById('other-phone-link');
+      const modalAgreement = document.getElementById('modal-agreement');
+      const modalPolicy = document.getElementById('modal-policy');
+      const modalPolicyTitle = document.getElementById('modal-policy-title');
+      const modalPolicyContent = document.getElementById('modal-policy-content');
+
+      let tipTimer = null;
+      let loginTimer = null;
+
+      // 同步协议勾选状态到 sessionStorage（沙盒环境下加 try/catch 防报错）
+      function syncAgreementStorage(checked) {
+        try {
+          sessionStorage.setItem('rsdy_agreed', checked ? '1' : '0');
+        } catch (e) {}
+      }
+
+      // 清除未勾选协议时的红色高亮与气泡提示
+      function clearAgreeWarning() {
+        agreeRow.classList.remove('bg-error/10', 'border-error/30', 'animate-agree-shake');
+        if (agreeTip) agreeTip.classList.add('hidden');
+        clearTimeout(tipTimer);
+      }
+
+      // 触发未勾选协议提醒：协议行轻晃 + 红色高亮 + 显示顶部气泡
+      function highlightAgreeWarning() {
+        agreeRow.classList.remove('animate-agree-shake');
+        void agreeRow.offsetWidth; // 强制重排以重新触发 CSS 动画
+        agreeRow.classList.add('bg-error/10', 'border-error/30', 'animate-agree-shake');
+        if (agreeTip) {
+          agreeTip.classList.remove('hidden');
+          clearTimeout(tipTimer);
+          tipTimer = setTimeout(function () {
+            agreeTip.classList.add('hidden');
+          }, 2200);
+        }
+      }
+
+      // 页面初始化时恢复之前的勾选状态
+      try {
+        if (sessionStorage.getItem('rsdy_agreed') === '1') {
+          agreeCheckbox.checked = true;
+        }
+      } catch (e) {}
+
+      // 监听勾选框变化
+      agreeCheckbox.addEventListener('change', function () {
+        syncAgreementStorage(agreeCheckbox.checked);
+        if (agreeCheckbox.checked) {
+          clearAgreeWarning();
+        }
+      });
+
+      // 重置一键登录按钮状态
+      function resetLoginLoading() {
+        clearTimeout(loginTimer);
+        loginTimer = null;
+        oneClickBtn.disabled = false;
+        oneClickSpinner.classList.add('hidden');
+        oneClickLabel.textContent = '一键登录';
+        if (otherPhoneLink) otherPhoneLink.classList.remove('pointer-events-none', 'opacity-50');
+      }
+
+      // 执行一键登录加载流程：仅按钮本身转圈加载 -> 直接进入首页
+      function triggerLogin() {
+        if (oneClickBtn.disabled) return;
+        oneClickBtn.disabled = true;
+        oneClickSpinner.classList.remove('hidden');
+        oneClickLabel.textContent = '正在登录...';
+        if (otherPhoneLink) otherPhoneLink.classList.add('pointer-events-none', 'opacity-50');
+
+        loginTimer = setTimeout(function () {
+          resetLoginLoading();
+          window.location.href = '../06-home-feed/HomeFeed.html';
+        }, 650);
+      }
+
+      // 点击「一键登录」主按钮
+      oneClickBtn.addEventListener('click', function () {
+        if (!agreeCheckbox.checked) {
+          highlightAgreeWarning();
+          modalAgreement.showModal();
+        } else {
+          triggerLogin();
+        }
+      });
+
+      // 未勾选弹窗 -> 点击「暂不同意」
+      document.getElementById('modal-agreement-cancel').addEventListener('click', function () {
+        modalAgreement.close();
+      });
+
+      // 未勾选弹窗 -> 点击「同意并登录」
+      document.getElementById('modal-agreement-confirm').addEventListener('click', function () {
+        agreeCheckbox.checked = true;
+        syncAgreementStorage(true);
+        clearAgreeWarning();
+        modalAgreement.close();
+        triggerLogin();
+      });
+
+      // 协议抽屉对应文案配置
+      const POLICY_TEXTS = {
+        '用户协议': [
+          '欢迎使用「人设岛遇」服务。在注册或登录前，请仔细阅读本协议条款，了解您的权利与义务。',
+          '1. 本机号码一键登录由运营商提供安全加密校验，仅用于当前设备身份核验。',
+          '2. 您在平台创作或互动的内容应遵守社区规范，保护原创作者权益。'
+        ],
+        '隐私协议': [
+          '「人设岛遇」高度重视您的个人信息与隐私保护，我们将严格遵循最小必要原则收集信息。',
+          '1. 手机号仅用于账号注册、登录认证及安全找回，不会向无关第三方泄露。',
+          '2. 您的个人设定与私密创作默认受本地及加密权限保护，可随时在设置中管理。'
+        ]
+      };
+
+      // 点击《用户协议》或《隐私协议》文字按钮：打开抽屉并渲染对应条款
+      document.querySelectorAll('.policy-link').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const policyName = btn.getAttribute('data-policy') || '协议详情';
+          modalPolicyTitle.textContent = policyName;
+          const lines = POLICY_TEXTS[policyName] || POLICY_TEXTS['用户协议'];
+          modalPolicyContent.innerHTML = lines.map(function (line) {
+            return '<p data-design-text-token="body-sm">' + line + '</p>';
+          }).join('');
+          modalPolicy.showModal();
+        });
+      });
+
+      // 协议抽屉 -> 点击右上角关闭
+      document.getElementById('modal-policy-close').addEventListener('click', function () {
+        modalPolicy.close();
+      });
+
+      // 协议抽屉 -> 点击「已阅读并同意」
+      document.getElementById('modal-policy-agree').addEventListener('click', function () {
+        agreeCheckbox.checked = true;
+        syncAgreementStorage(true);
+        clearAgreeWarning();
+        modalPolicy.close();
+      });
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 03 手机号登录 · 密码 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>03 手机号登录 · 密码 — 人设岛遇</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <main class="w-full max-w-[390px] min-h-[884px] relative flex flex-col justify-between overflow-hidden bg-light-surface shadow-sm" data-stitch-vh="min-h-[884px]===min-h-screen">
+    <!-- ==================== 1. 顶部视觉背景区（预留 56px 灵动岛安全区） ==================== -->
+    <div class="relative flex-1 min-h-[300px] w-full overflow-hidden pt-safe-top">
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrDs970BXg-qcxQutJYUw-Ozr0sh2bn1yvqgQ1mW3vdfFt6FEW2uytatWfCg0pbjo_HICC_dh_kiW43eSYvkUBkb91I-PvZUBtC0bG4ewZpw4vdbkDrjMx0XW0idyqPvzPfrkD36d3f2K796URJAgeUpLYryhRoMxMUc7DaLiXIY8vvnd8WqmiAaLG2RYeK3uAtN9VK0BAZdoGcjn6l551Ay9MFySu2tdhQW6K7vFIj5m__vuoabLQp3Q_0" alt="人设岛遇浮空岛屿插画" class="absolute inset-0 w-full h-full object-cover object-top">
+    </div>
+
+    <!-- ==================== 2. 底部白色登录卡片区 ==================== -->
+    <section class="relative z-20 -mt-gutter-xl rounded-t-xl bg-light-surface px-gutter-xl pt-gutter-xl pb-gutter-xl shadow-[0_-8px_32px_rgba(20,21,24,0.08)] flex flex-col gap-gutter-lg">
+      <!-- 卡片顶部标题与返回按钮 -->
+      <header class="flex flex-col gap-gutter-xs">
+        <div class="flex items-center gap-gutter-sm">
+          <!-- [按钮] 返回上一页：跳回「01 登录起始页」 -->
+          <a href="../01-login-start/LoginStart.html" data-component-id="button-icon" data-component-type="button" data-component-variant="icon" aria-label="返回登录起始页" class="w-8 h-8 -ml-gutter-sm rounded-full bg-light-surface-container-low text-light-on-surface flex items-center justify-center transition-transform duration-state-change ease-state-change active:scale-95 hover:bg-light-surface-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+            <span class="material-symbols-outlined text-[22px]" aria-hidden="true">chevron_left</span>
+          </a>
+          <h2 class="font-headline text-headline-lg text-light-on-surface" data-design-text-token="headline-lg">手机号登录</h2>
+        </div>
+        <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">
+          使用你的手机号和密码登录
+        </p>
+      </header>
+
+      <!--
+        [模块] 登录方式 Tab 切换栏
+        说明：当前选中「密码登录」；点击「验证码登录」跳转到 02 验证码登录页。
+      -->
+      <!-- COMPONENT: tabs-horizontal -->
+      <div data-component-id="tabs-horizontal" data-component-type="tabs" data-component-variant="horizontal" class="w-full">
+        <div role="tablist" aria-label="登录方式" class="grid grid-cols-2 border-b border-light-outline-variant">
+          <a role="tab" id="tab-code" aria-selected="false" href="../02-phone-code-login/PhoneCodeLogin.html" tabindex="-1" class="pb-gutter-md relative flex flex-col items-center justify-center text-light-on-surface-variant hover:text-light-on-surface transition-colors duration-state-change">
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">验证码登录</span>
+          </a>
+          <a role="tab" id="tab-password" aria-selected="true" href="./PhonePasswordLogin.html" tabindex="0" class="pb-gutter-md relative flex flex-col items-center justify-center text-light-on-surface">
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">密码登录</span>
+            <span class="absolute bottom-0 w-10 h-0.5 rounded-full bg-light-primary"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ==================== 3. 密码登录表单 (#pwd-login-form) ==================== -->
+      <form id="pwd-login-form" class="flex flex-col gap-gutter-md" novalidate>
+        <!-- [输入框] 手机号输入 (#phone-input)：限制 11 位纯数字，支持一键清空 -->
+        <!-- COMPONENT: input-field-icon (Phone) -->
+        <label data-component-id="input-field-icon" data-component-type="input-field" data-component-variant="with-icon" class="w-full flex flex-col gap-gutter-xs">
+          <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface-variant">手机号</span>
+          <div class="h-12 px-gutter-lg rounded-md bg-light-surface-container flex items-center gap-gutter-md focus-within:ring-2 focus-within:ring-light-secondary">
+            <span aria-hidden="true" class="font-mono text-mono-md text-light-on-surface shrink-0 pr-gutter-md border-r border-light-outline-variant">+86</span>
+            <input id="phone-input" type="tel" inputmode="numeric" maxlength="11" placeholder="请输入 11 位手机号" class="w-full bg-transparent border-none p-0 font-mono text-mono-md text-light-on-surface tabular-nums placeholder:font-body placeholder:text-body-md placeholder:text-light-outline focus:ring-0">
+            <!-- [按钮] 清空手机号 (#clear-phone-btn) -->
+            <button id="clear-phone-btn" type="button" aria-label="清空手机号" class="shrink-0 text-light-outline hover:text-light-on-surface hidden">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true">cancel</span>
+            </button>
+          </div>
+          <span id="phone-error" role="alert" data-design-text-token="body-sm" class="font-body text-body-sm text-error hidden">请输入正确的 11 位手机号码</span>
+        </label>
+
+        <!-- [输入框] 密码输入 (#password-input) + 右侧明/密文切换 + 「忘记密码？」入口 -->
+        <!-- COMPONENT: input-field-text (Password) -->
+        <div class="w-full flex flex-col gap-gutter-xs">
+          <label data-component-id="input-field-text" data-component-type="input-field" data-component-variant="password" class="w-full flex flex-col gap-gutter-xs">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface-variant">密码</span>
+            <div class="h-12 px-gutter-lg rounded-md bg-light-surface-container flex items-center gap-gutter-sm focus-within:ring-2 focus-within:ring-light-secondary">
+              <input id="password-input" type="password" autocomplete="current-password" placeholder="请输入密码" class="w-full bg-transparent border-none p-0 font-body text-body-md text-light-on-surface placeholder:text-light-outline focus:ring-0">
+              <!-- [按钮] 显示/隐藏密码 (#toggle-pwd-btn) -->
+              <button id="toggle-pwd-btn" type="button" aria-label="显示或隐藏密码" class="shrink-0 text-light-outline hover:text-light-on-surface transition-colors duration-state-change">
+                <span id="toggle-pwd-icon" class="material-symbols-outlined text-[20px]" aria-hidden="true">visibility_off</span>
+              </button>
+            </div>
+            <span id="password-error" role="alert" data-design-text-token="body-sm" class="font-body text-body-sm text-error hidden">请输入不少于 6 位的登录密码</span>
+          </label>
+
+          <!-- [跳转链接] 忘记密码：跳转到「04 找回密码」页面 -->
+          <div class="flex items-center justify-end pt-gutter-xs">
+            <a href="../04-forgot-password/ForgotPassword.html" class="font-label text-label-sm text-light-on-surface-variant hover:text-light-secondary transition-colors duration-state-change">
+              <span data-design-text-token="label-sm">忘记密码？</span>
+            </a>
+          </div>
+        </div>
+
+        <!--
+          [按钮] 主提交按钮：立即登录 (#submit-btn)
+          作用：校验手机号（11 位）与密码（>=6 位），再校验协议勾选；通过后显示加载态并弹出登录成功弹窗。
+        -->
+        <!-- COMPONENT: button-primary -->
+        <button id="submit-btn" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" type="submit" class="w-full h-12 px-gutter-xl rounded-full bg-light-primary text-light-on-primary flex items-center justify-center gap-gutter-sm shadow-sm transition-transform duration-state-change ease-state-change active:scale-[0.98] hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary focus-visible:ring-offset-2 disabled:opacity-60">
+          <span id="submit-spinner" class="material-symbols-outlined text-[18px] animate-spin hidden" aria-hidden="true">progress_activity</span>
+          <span id="submit-label" data-design-text-token="label-lg" class="font-label text-label-lg">立即登录</span>
+        </button>
+      </form>
+
+      <!-- 底部用户协议与隐私协议勾选区 -->
+      <div id="agree-row" class="py-gutter-xs px-gutter-sm rounded-md flex items-center justify-center transition-colors duration-state-change">
+        <!-- COMPONENT: checkbox-standard -->
+        <label data-component-id="checkbox-standard" data-component-type="checkbox" data-component-variant="standard" class="inline-flex items-center gap-gutter-sm cursor-pointer select-none">
+          <input id="agree-checkbox" type="checkbox" name="terms" value="accepted" class="w-4 h-4 rounded-sm border-light-outline text-light-primary focus:ring-light-secondary focus:ring-offset-0 cursor-pointer">
+          <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">
+            我已阅读并同意
+            <button type="button" data-policy="用户协议" class="policy-link text-light-on-surface font-medium hover:text-light-secondary underline-offset-2 hover:underline">《用户协议》</button>
+            和
+            <button type="button" data-policy="隐私协议" class="policy-link text-light-on-surface font-medium hover:text-light-secondary underline-offset-2 hover:underline">《隐私协议》</button>
+          </span>
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 4. 弹窗组（原生 dialog） ==================== -->
+
+  <!-- 弹窗 A：未勾选协议提醒弹窗 (#modal-agreement) -->
+  <dialog id="modal-agreement" role="alertdialog" data-component-id="modal-alert" data-component-type="modal" data-component-variant="alert" aria-labelledby="modal-alert-title" aria-describedby="modal-alert-body" class="w-[310px] rounded-lg bg-light-surface text-light-on-surface p-gutter-xl shadow-xl border border-light-outline-variant backdrop:bg-light-primary/45 m-auto">
+    <header class="text-center mb-gutter-sm">
+      <h2 id="modal-alert-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">请先勾选协议</h2>
+    </header>
+    <div id="modal-alert-body" class="text-center mb-gutter-xl">
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">请先阅读并同意《用户协议》和《隐私协议》，再继续登录。</p>
+    </div>
+    <footer class="grid grid-cols-2 gap-gutter-sm">
+      <button id="modal-agreement-cancel" type="button" class="h-11 rounded-full bg-light-surface-container text-light-on-surface flex items-center justify-center">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">暂不同意</span>
+      </button>
+      <button id="modal-agreement-confirm" type="button" class="h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">同意并登录</span>
+      </button>
+    </footer>
+  </dialog>
+
+  <!-- 弹窗 B：登录成功提示弹窗 (#modal-success) -->
+  <dialog id="modal-success" data-component-id="modal-standard" data-component-type="modal" data-component-variant="standard" aria-labelledby="modal-success-title" aria-describedby="modal-success-desc modal-success-body" class="w-[310px] rounded-lg bg-light-surface text-light-on-surface p-gutter-xl shadow-xl border border-light-outline-variant backdrop:bg-light-primary/45 m-auto">
+    <header class="flex flex-col items-center text-center gap-gutter-xs mb-gutter-sm">
+      <div class="w-11 h-11 rounded-full bg-success/10 text-success flex items-center justify-center mb-gutter-xs">
+        <span class="material-symbols-outlined text-[24px]" aria-hidden="true">check_circle</span>
+      </div>
+      <h2 id="modal-success-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">登录成功</h2>
+      <p id="modal-success-desc" data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">欢迎来到人设岛遇！</p>
+    </header>
+    <div id="modal-success-body" class="text-center mb-gutter-xl">
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">当前为原型演示，不会发起真实登录。</p>
+    </div>
+    <footer>
+      <button id="modal-success-close" type="button" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">知道了</span>
+      </button>
+    </footer>
+  </dialog>
+
+  <!-- 弹窗 C：用户协议 / 隐私协议底部抽屉 (#modal-policy) -->
+  <dialog id="modal-policy" data-component-id="modal-drawer" data-component-type="modal" data-component-variant="drawer" aria-labelledby="modal-policy-title" class="w-full max-w-[390px] rounded-t-xl bg-light-surface text-light-on-surface p-gutter-xl shadow-xl backdrop:bg-light-primary/45 mt-auto mb-0 mx-auto">
+    <header class="flex items-center justify-between mb-gutter-lg">
+      <h2 id="modal-policy-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">用户协议</h2>
+      <button id="modal-policy-close" type="button" aria-label="关闭" class="w-8 h-8 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface">
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">close</span>
+      </button>
+    </header>
+    <div class="text-body-sm text-light-on-surface-variant flex flex-col gap-gutter-sm mb-gutter-xl">
+      <p data-design-text-token="body-sm">欢迎使用「人设岛遇」服务。在注册或登录前，请仔细阅读本协议条款，了解您的权利与义务及个人信息保护说明。</p>
+      <p data-design-text-token="body-sm" class="text-light-on-surface-variant">当前为交互原型演示，协议内容仅作展示。</p>
+    </div>
+    <button id="modal-policy-agree" type="button" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center">
+      <span data-design-text-token="label-lg" class="font-label text-label-lg">已阅读并同意</span>
+    </button>
+  </dialog>
+
+  <!-- ==================== 5. 页面交互逻辑脚本 ==================== -->
+  <script>
+    (function () {
+      // ---------- DOM 元素引用 ----------
+      const form = document.getElementById('pwd-login-form');
+      const phoneInput = document.getElementById('phone-input');
+      const clearPhoneBtn = document.getElementById('clear-phone-btn');
+      const passwordInput = document.getElementById('password-input');
+      const phoneError = document.getElementById('phone-error');
+      const passwordError = document.getElementById('password-error');
+      const agreeCheckbox = document.getElementById('agree-checkbox');
+      const agreeRow = document.getElementById('agree-row');
+      const togglePwdBtn = document.getElementById('toggle-pwd-btn');
+      const togglePwdIcon = document.getElementById('toggle-pwd-icon');
+      const submitBtn = document.getElementById('submit-btn');
+      const submitSpinner = document.getElementById('submit-spinner');
+      const submitLabel = document.getElementById('submit-label');
+
+      const modalAgreement = document.getElementById('modal-agreement');
+      const modalSuccess = document.getElementById('modal-success');
+      const modalPolicy = document.getElementById('modal-policy');
+      const modalPolicyTitle = document.getElementById('modal-policy-title');
+
+      // ---------- 协议状态跨页同步 ----------
+      function syncAgreementStorage(checked) {
+        try {
+          sessionStorage.setItem('rsdy_agreed', checked ? '1' : '0');
+        } catch (e) {}
+      }
+
+      try {
+        if (sessionStorage.getItem('rsdy_agreed') === '1') {
+          agreeCheckbox.checked = true;
+        }
+      } catch (e) {}
+
+      agreeCheckbox.addEventListener('change', function () {
+        syncAgreementStorage(agreeCheckbox.checked);
+        agreeRow.classList.remove('bg-error/10');
+      });
+
+      // ---------- 输入框过滤、清空与密码可见性切换 ----------
+      phoneInput.addEventListener('input', function () {
+        phoneInput.value = phoneInput.value.replace(/\D/g, '');
+        clearPhoneBtn.classList.toggle('hidden', phoneInput.value.length === 0);
+        phoneError.classList.add('hidden');
+      });
+
+      clearPhoneBtn.addEventListener('click', function () {
+        phoneInput.value = '';
+        clearPhoneBtn.classList.add('hidden');
+        phoneInput.focus();
+      });
+
+      passwordInput.addEventListener('input', function () {
+        passwordError.classList.add('hidden');
+      });
+
+      // 切换密码明文 / 密文显示
+      togglePwdBtn.addEventListener('click', function () {
+        const isPwd = passwordInput.type === 'password';
+        passwordInput.type = isPwd ? 'text' : 'password';
+        togglePwdIcon.textContent = isPwd ? 'visibility' : 'visibility_off';
+      });
+
+      // ---------- 表单校验函数 ----------
+      function validatePhone() {
+        const valid = /^1\d{10}$/.test(phoneInput.value.trim());
+        phoneError.classList.toggle('hidden', valid);
+        return valid;
+      }
+
+      function validatePassword() {
+        const valid = passwordInput.value.length >= 6;
+        passwordError.classList.toggle('hidden', valid);
+        return valid;
+      }
+
+      // ---------- 执行登录提交加载与成功弹窗 ----------
+      function triggerLogin() {
+        submitBtn.disabled = true;
+        submitSpinner.classList.remove('hidden');
+        submitLabel.textContent = '正在登录...';
+        setTimeout(function () {
+          submitBtn.disabled = false;
+          submitSpinner.classList.add('hidden');
+          submitLabel.textContent = '立即登录';
+          modalSuccess.showModal();
+        }, 420);
+      }
+
+      // 表单提交：校验手机号 + 密码长度 + 协议勾选
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const pOk = validatePhone();
+        const pwdOk = validatePassword();
+        if (!pOk || !pwdOk) return;
+        if (!agreeCheckbox.checked) {
+          agreeRow.classList.add('bg-error/10');
+          modalAgreement.showModal();
+          return;
+        }
+        triggerLogin();
+      });
+
+      // ---------- 弹窗按钮事件绑定 ----------
+      document.getElementById('modal-agreement-cancel').addEventListener('click', function () {
+        modalAgreement.close();
+      });
+      document.getElementById('modal-agreement-confirm').addEventListener('click', function () {
+        agreeCheckbox.checked = true;
+        syncAgreementStorage(true);
+        agreeRow.classList.remove('bg-error/10');
+        modalAgreement.close();
+        triggerLogin();
+      });
+      document.getElementById('modal-success-close').addEventListener('click', function () {
+        modalSuccess.close();
+      });
+
+      document.querySelectorAll('.policy-link').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          modalPolicyTitle.textContent = btn.getAttribute('data-policy') || '协议详情';
+          modalPolicy.showModal();
+        });
+      });
+      document.getElementById('modal-policy-close').addEventListener('click', function () {
+        modalPolicy.close();
+      });
+      document.getElementById('modal-policy-agree').addEventListener('click', function () {
+        agreeCheckbox.checked = true;
+        syncAgreementStorage(true);
+        agreeRow.classList.remove('bg-error/10');
+        modalPolicy.close();
+      });
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 04 找回密码 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>04 找回密码 — 人设岛遇</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <main class="w-full max-w-[390px] min-h-[884px] relative flex flex-col justify-between overflow-hidden bg-light-surface shadow-sm" data-stitch-vh="min-h-[884px]===min-h-screen">
+    <!-- ==================== 1. 顶部视觉背景区（预留 56px 灵动岛安全区） ==================== -->
+    <div class="relative flex-1 min-h-[260px] w-full overflow-hidden pt-safe-top">
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrDs970BXg-qcxQutJYUw-Ozr0sh2bn1yvqgQ1mW3vdfFt6FEW2uytatWfCg0pbjo_HICC_dh_kiW43eSYvkUBkb91I-PvZUBtC0bG4ewZpw4vdbkDrjMx0XW0idyqPvzPfrkD36d3f2K796URJAgeUpLYryhRoMxMUc7DaLiXIY8vvnd8WqmiAaLG2RYeK3uAtN9VK0BAZdoGcjn6l551Ay9MFySu2tdhQW6K7vFIj5m__vuoabLQp3Q_0" alt="人设岛遇浮空岛屿插画" class="absolute inset-0 w-full h-full object-cover object-top">
+    </div>
+
+    <!-- ==================== 2. 底部找回密码卡片区 ==================== -->
+    <section class="relative z-20 -mt-gutter-xl rounded-t-xl bg-light-surface px-gutter-xl pt-gutter-xl pb-gutter-xl shadow-[0_-8px_32px_rgba(20,21,24,0.08)] flex flex-col gap-gutter-lg">
+      <!-- 卡片顶部标题与返回按钮 -->
+      <header class="flex flex-col gap-gutter-xs">
+        <div class="flex items-center gap-gutter-sm">
+          <!-- [按钮] 返回上一页：跳回「03 手机号登录 · 密码」 -->
+          <a href="../03-phone-password-login/PhonePasswordLogin.html" data-component-id="button-icon" data-component-type="button" data-component-variant="icon" aria-label="返回密码登录" class="w-8 h-8 -ml-gutter-sm rounded-full bg-light-surface-container-low text-light-on-surface flex items-center justify-center transition-transform duration-state-change ease-state-change active:scale-95 hover:bg-light-surface-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+            <span class="material-symbols-outlined text-[22px]" aria-hidden="true">chevron_left</span>
+          </a>
+          <h2 class="font-headline text-headline-lg text-light-on-surface" data-design-text-token="headline-lg">找回密码</h2>
+        </div>
+        <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">
+          验证注册手机号并设置新的登录密码
+        </p>
+      </header>
+
+      <!-- ==================== 3. 重置密码表单 (#reset-form) ==================== -->
+      <form id="reset-form" class="flex flex-col gap-gutter-md" novalidate>
+        <!-- [输入框] 注册手机号 (#phone-input)：限制 11 位数字，支持一键清空 -->
+        <!-- COMPONENT: input-field-icon (Phone) -->
+        <label data-component-id="input-field-icon" data-component-type="input-field" data-component-variant="with-icon" class="w-full flex flex-col gap-gutter-xs">
+          <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface-variant">手机号</span>
+          <div class="h-12 px-gutter-lg rounded-md bg-light-surface-container flex items-center gap-gutter-md focus-within:ring-2 focus-within:ring-light-secondary">
+            <span aria-hidden="true" class="font-mono text-mono-md text-light-on-surface shrink-0 pr-gutter-md border-r border-light-outline-variant">+86</span>
+            <input id="phone-input" type="tel" inputmode="numeric" maxlength="11" placeholder="请输入注册手机号" class="w-full bg-transparent border-none p-0 font-mono text-mono-md text-light-on-surface tabular-nums placeholder:font-body placeholder:text-body-md placeholder:text-light-outline focus:ring-0">
+            <!-- [按钮] 清空手机号 (#clear-phone-btn) -->
+            <button id="clear-phone-btn" type="button" aria-label="清空手机号" class="shrink-0 text-light-outline hover:text-light-on-surface hidden">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true">cancel</span>
+            </button>
+          </div>
+          <span id="phone-error" role="alert" data-design-text-token="body-sm" class="font-body text-body-sm text-error hidden">请输入正确的 11 位手机号码</span>
+        </label>
+
+        <!-- [输入框] 短信验证码 (#code-input) + 「获取验证码」60s 倒计时按钮 -->
+        <!-- COMPONENT: input-field-text (SMS Code) -->
+        <label data-component-id="input-field-text" data-component-type="input-field" data-component-variant="text" class="w-full flex flex-col gap-gutter-xs">
+          <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface-variant">验证码</span>
+          <div class="h-12 px-gutter-lg rounded-md bg-light-surface-container flex items-center gap-gutter-sm focus-within:ring-2 focus-within:ring-light-secondary">
+            <input id="code-input" type="text" inputmode="numeric" maxlength="6" placeholder="请输入验证码" class="w-full bg-transparent border-none p-0 font-mono text-mono-md text-light-on-surface placeholder:font-body placeholder:text-body-md placeholder:text-light-outline focus:ring-0">
+            <!-- [按钮] 获取验证码 (#send-code-btn) -->
+            <button id="send-code-btn" type="button" class="shrink-0 font-label text-label-sm text-light-on-surface hover:text-light-secondary transition-colors duration-state-change disabled:text-light-outline disabled:cursor-not-allowed">
+              <span id="send-code-label" data-design-text-token="label-sm">获取验证码</span>
+            </button>
+          </div>
+          <span id="code-error" role="alert" data-design-text-token="body-sm" class="font-body text-body-sm text-error hidden">请输入 4-6 位短信验证码</span>
+        </label>
+
+        <!-- [输入框] 新密码 (#new-password-input)：要求 6-20 位字符，支持明/密文切换 -->
+        <!-- COMPONENT: input-field-text (New Password) -->
+        <label data-component-id="input-field-text" data-component-type="input-field" data-component-variant="password" class="w-full flex flex-col gap-gutter-xs">
+          <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface-variant">新密码</span>
+          <div class="h-12 px-gutter-lg rounded-md bg-light-surface-container flex items-center gap-gutter-sm focus-within:ring-2 focus-within:ring-light-secondary">
+            <input id="new-password-input" type="password" autocomplete="new-password" placeholder="请设置 6-20 位新密码" class="w-full bg-transparent border-none p-0 font-body text-body-md text-light-on-surface placeholder:text-light-outline focus:ring-0">
+            <!-- [按钮] 显示/隐藏新密码 (#toggle-pwd-btn) -->
+            <button id="toggle-pwd-btn" type="button" aria-label="显示或隐藏新密码" class="shrink-0 text-light-outline hover:text-light-on-surface transition-colors duration-state-change">
+              <span id="toggle-pwd-icon" class="material-symbols-outlined text-[20px]" aria-hidden="true">visibility_off</span>
+            </button>
+          </div>
+          <span id="password-error" role="alert" data-design-text-token="body-sm" class="font-body text-body-sm text-error hidden">密码长度需为 6 至 20 位字符</span>
+        </label>
+
+        <!-- [按钮] 主提交按钮：确认重置密码 (#submit-btn) -->
+        <!-- COMPONENT: button-primary -->
+        <button id="submit-btn" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" type="submit" class="w-full h-12 mt-gutter-xs px-gutter-xl rounded-full bg-light-primary text-light-on-primary flex items-center justify-center gap-gutter-sm shadow-sm transition-transform duration-state-change ease-state-change active:scale-[0.98] hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary focus-visible:ring-offset-2 disabled:opacity-60">
+          <span id="submit-spinner" class="material-symbols-outlined text-[18px] animate-spin hidden" aria-hidden="true">progress_activity</span>
+          <span id="submit-label" data-design-text-token="label-lg" class="font-label text-label-lg">确认重置密码</span>
+        </button>
+      </form>
+
+      <!-- 底部辅助返回链接：想起密码直接返回密码登录页 -->
+      <div class="flex items-center justify-center">
+        <a href="../03-phone-password-login/PhonePasswordLogin.html" class="font-body text-body-sm text-light-on-surface-variant hover:text-light-secondary transition-colors duration-state-change">
+          <span data-design-text-token="body-sm">想起密码了？返回登录</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 4. 弹窗组（原生 dialog） ==================== -->
+
+  <!-- 弹窗 A：验证码已发送提示弹窗 (#modal-sms) -->
+  <dialog id="modal-sms" data-component-id="modal-standard" data-component-type="modal" data-component-variant="standard" aria-labelledby="modal-sms-title" aria-describedby="modal-sms-body" class="w-[310px] rounded-lg bg-light-surface text-light-on-surface p-gutter-xl shadow-xl border border-light-outline-variant backdrop:bg-light-primary/45 m-auto">
+    <header class="text-center mb-gutter-sm">
+      <h2 id="modal-sms-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">验证码已发送</h2>
+    </header>
+    <div id="modal-sms-body" class="text-center mb-gutter-xl">
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">请留意手机短信。当前为原型演示，不会发送真实短信。</p>
+    </div>
+    <footer>
+      <button id="modal-sms-close" type="button" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">知道了</span>
+      </button>
+    </footer>
+  </dialog>
+
+  <!-- 弹窗 B：密码重置成功弹窗 (#modal-success)，引导返回密码登录页 -->
+  <dialog id="modal-success" data-component-id="modal-standard" data-component-type="modal" data-component-variant="standard" aria-labelledby="modal-success-title" aria-describedby="modal-success-desc modal-success-body" class="w-[310px] rounded-lg bg-light-surface text-light-on-surface p-gutter-xl shadow-xl border border-light-outline-variant backdrop:bg-light-primary/45 m-auto">
+    <header class="flex flex-col items-center text-center gap-gutter-xs mb-gutter-sm">
+      <div class="w-11 h-11 rounded-full bg-success/10 text-success flex items-center justify-center mb-gutter-xs">
+        <span class="material-symbols-outlined text-[24px]" aria-hidden="true">check_circle</span>
+      </div>
+      <h2 id="modal-success-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">密码重置成功</h2>
+      <p id="modal-success-desc" data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">请使用新密码登录人设岛遇</p>
+    </header>
+    <div id="modal-success-body" class="text-center mb-gutter-xl">
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">当前为原型演示，不会修改真实账号密码。</p>
+    </div>
+    <footer>
+      <a href="../03-phone-password-login/PhonePasswordLogin.html" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">返回密码登录</span>
+      </a>
+    </footer>
+  </dialog>
+
+  <!-- ==================== 5. 页面交互逻辑脚本 ==================== -->
+  <script>
+    (function () {
+      // ---------- DOM 元素引用 ----------
+      const form = document.getElementById('reset-form');
+      const phoneInput = document.getElementById('phone-input');
+      const clearPhoneBtn = document.getElementById('clear-phone-btn');
+      const codeInput = document.getElementById('code-input');
+      const newPasswordInput = document.getElementById('new-password-input');
+      const phoneError = document.getElementById('phone-error');
+      const codeError = document.getElementById('code-error');
+      const passwordError = document.getElementById('password-error');
+      const sendCodeBtn = document.getElementById('send-code-btn');
+      const sendCodeLabel = document.getElementById('send-code-label');
+      const togglePwdBtn = document.getElementById('toggle-pwd-btn');
+      const togglePwdIcon = document.getElementById('toggle-pwd-icon');
+      const submitBtn = document.getElementById('submit-btn');
+      const submitSpinner = document.getElementById('submit-spinner');
+      const submitLabel = document.getElementById('submit-label');
+      const modalSms = document.getElementById('modal-sms');
+      const modalSuccess = document.getElementById('modal-success');
+
+      let countdownTimer = null; // 验证码 60s 倒计时句柄
+
+      // ---------- 输入过滤、清空与新密码明/密文切换 ----------
+      phoneInput.addEventListener('input', function () {
+        phoneInput.value = phoneInput.value.replace(/\D/g, '');
+        clearPhoneBtn.classList.toggle('hidden', phoneInput.value.length === 0);
+        phoneError.classList.add('hidden');
+      });
+
+      clearPhoneBtn.addEventListener('click', function () {
+        phoneInput.value = '';
+        clearPhoneBtn.classList.add('hidden');
+        phoneInput.focus();
+      });
+
+      codeInput.addEventListener('input', function () {
+        codeInput.value = codeInput.value.replace(/\D/g, '');
+        codeError.classList.add('hidden');
+      });
+
+      newPasswordInput.addEventListener('input', function () {
+        passwordError.classList.add('hidden');
+      });
+
+      togglePwdBtn.addEventListener('click', function () {
+        const isPwd = newPasswordInput.type === 'password';
+        newPasswordInput.type = isPwd ? 'text' : 'password';
+        togglePwdIcon.textContent = isPwd ? 'visibility' : 'visibility_off';
+      });
+
+      // ---------- 表单校验函数 ----------
+      function validatePhone() {
+        const valid = /^1\d{10}$/.test(phoneInput.value.trim());
+        phoneError.classList.toggle('hidden', valid);
+        return valid;
+      }
+
+      function validateCode() {
+        const valid = /^\d{4,6}$/.test(codeInput.value.trim());
+        codeError.classList.toggle('hidden', valid);
+        return valid;
+      }
+
+      function validatePassword() {
+        const len = newPasswordInput.value.length;
+        const valid = len >= 6 && len <= 20;
+        passwordError.classList.toggle('hidden', valid);
+        return valid;
+      }
+
+      // ---------- 获取验证码：校验手机号并启动 60s 倒计时 ----------
+      sendCodeBtn.addEventListener('click', function () {
+        if (!validatePhone()) {
+          phoneInput.focus();
+          return;
+        }
+        let seconds = 60;
+        sendCodeBtn.disabled = true;
+        sendCodeLabel.textContent = seconds + 's 后重发';
+        modalSms.showModal();
+        codeInput.focus();
+        clearInterval(countdownTimer);
+        countdownTimer = setInterval(function () {
+          seconds -= 1;
+          if (seconds <= 0) {
+            clearInterval(countdownTimer);
+            sendCodeBtn.disabled = false;
+            sendCodeLabel.textContent = '获取验证码';
+          } else {
+            sendCodeLabel.textContent = seconds + 's 后重发';
+          }
+        }, 1000);
+      });
+
+      // ---------- 提交重置表单：全量校验通过后展示提交态并弹出成功弹窗 ----------
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const pOk = validatePhone();
+        const cOk = validateCode();
+        const pwdOk = validatePassword();
+        if (!pOk || !cOk || !pwdOk) return;
+        submitBtn.disabled = true;
+        submitSpinner.classList.remove('hidden');
+        submitLabel.textContent = '正在提交...';
+        setTimeout(function () {
+          submitBtn.disabled = false;
+          submitSpinner.classList.add('hidden');
+          submitLabel.textContent = '确认重置密码';
+          modalSuccess.showModal();
+        }, 420);
+      });
+
+      document.getElementById('modal-sms-close').addEventListener('click', function () {
+        modalSms.close();
+      });
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 05 未勾选协议弹窗 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>05 未勾选协议弹窗 — 人设岛遇</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <main class="w-full max-w-[390px] min-h-[884px] relative flex flex-col justify-between overflow-hidden bg-light-surface shadow-sm" data-stitch-vh="min-h-[884px]===min-h-screen">
+    <!-- ==================== 1. 底层背景：未勾选协议状态下的登录起始页 ==================== -->
+    <div class="relative flex-1 min-h-[500px] w-full overflow-hidden">
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrDs970BXg-qcxQutJYUw-Ozr0sh2bn1yvqgQ1mW3vdfFt6FEW2uytatWfCg0pbjo_HICC_dh_kiW43eSYvkUBkb91I-PvZUBtC0bG4ewZpw4vdbkDrjMx0XW0idyqPvzPfrkD36d3f2K796URJAgeUpLYryhRoMxMUc7DaLiXIY8vvnd8WqmiAaLG2RYeK3uAtN9VK0BAZdoGcjn6l551Ay9MFySu2tdhQW6K7vFIj5m__vuoabLQp3Q_0" alt="人设岛遇浮空岛屿插画" class="absolute inset-0 w-full h-full object-cover object-top">
+      <div class="relative z-10 flex flex-col justify-between px-gutter-lg pt-safe-top">
+        <header class="flex items-center justify-between">
+          <!-- [按钮] 返回登录起始页 -->
+          <a href="../01-login-start/LoginStart.html" data-component-id="button-icon" data-component-type="button" data-component-variant="icon" aria-label="返回登录起始页" class="w-8 h-8 rounded-full bg-light-surface-container-low text-light-on-surface flex items-center justify-center transition-transform duration-state-change ease-state-change active:scale-95 hover:bg-light-surface-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">close</span>
+          </a>
+        </header>
+      </div>
+    </div>
+
+    <!-- 底部半透明遮罩下的登录卡片（展示未勾选协议态） -->
+    <section class="relative z-20 -mt-gutter-xl rounded-t-xl bg-light-surface px-gutter-xl pt-gutter-xl pb-gutter-xl shadow-[0_-8px_32px_rgba(20,21,24,0.08)] flex flex-col items-center gap-gutter-lg">
+      <div class="flex flex-col items-center gap-gutter-xs text-center">
+        <p class="font-mono text-mono-lg text-light-on-surface tabular-nums tracking-wider" data-design-text-token="mono-lg">
+          191****7207
+        </p>
+      </div>
+
+      <div class="w-full flex flex-col gap-gutter-md">
+        <!-- COMPONENT: button-primary -->
+        <button data-component-id="button-primary" data-component-type="button" data-component-variant="primary" type="button" class="w-full h-12 px-gutter-xl rounded-full bg-light-primary text-light-on-primary flex items-center justify-center gap-gutter-sm shadow-sm">
+          <span data-design-text-token="label-lg" class="font-label text-label-lg">本机号码一键登录</span>
+        </button>
+
+        <!-- COMPONENT: button-secondary -->
+        <a href="../02-phone-code-login/PhoneCodeLogin.html" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="w-full h-12 px-gutter-xl rounded-full bg-light-surface-container text-light-on-surface flex items-center justify-center">
+          <span data-design-text-token="label-lg" class="font-label text-label-lg">其他手机号登录</span>
+        </a>
+      </div>
+
+      <!-- 未勾选的协议行 -->
+      <div class="py-gutter-xs px-gutter-sm rounded-md flex items-center justify-center">
+        <label data-component-id="checkbox-standard" data-component-type="checkbox" data-component-variant="standard" class="inline-flex items-center gap-gutter-sm select-none">
+          <input type="checkbox" name="terms" value="accepted" class="w-4 h-4 rounded-sm border-light-outline text-light-primary focus:ring-0">
+          <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">
+            我已阅读并同意
+            <span class="text-light-on-surface font-medium">《用户协议》</span>
+            和
+            <span class="text-light-on-surface font-medium">《隐私协议》</span>
+          </span>
+        </label>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== 2. 弹窗组（原生 dialog） ==================== -->
+
+  <!-- 弹窗 A：未勾选协议提醒弹窗 (#modal-agreement，本页默认自动打开) -->
+  <dialog id="modal-agreement" role="alertdialog" data-component-id="modal-alert" data-component-type="modal" data-component-variant="alert" aria-labelledby="modal-alert-title" aria-describedby="modal-alert-body" class="w-[310px] rounded-lg bg-light-surface text-light-on-surface p-gutter-xl shadow-xl border border-light-outline-variant backdrop:bg-light-primary/45 m-auto">
+    <header class="text-center mb-gutter-sm">
+      <h1 id="modal-alert-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">请先阅读并同意协议</h1>
+    </header>
+    <div id="modal-alert-body" class="text-center mb-gutter-xl">
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant text-pretty">
+        请先阅读并同意
+        <button type="button" data-policy="用户协议" class="policy-link text-light-on-surface font-medium underline underline-offset-2 hover:text-light-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary rounded-sm">《用户协议》</button>
+        和
+        <button type="button" data-policy="隐私协议" class="policy-link text-light-on-surface font-medium underline underline-offset-2 hover:text-light-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary rounded-sm">《隐私协议》</button>
+        后继续登录
+      </p>
+    </div>
+    <footer class="grid grid-cols-2 gap-gutter-sm">
+      <!-- [按钮] 不同意：跳回「01 登录起始页」 -->
+      <a href="../01-login-start/LoginStart.html" class="h-11 rounded-full bg-light-surface-container text-light-on-surface flex items-center justify-center transition-transform duration-state-change active:scale-[0.98] hover:bg-light-surface-container-high focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">不同意</span>
+      </a>
+      <!-- [按钮] 同意并登录 (#modal-agree-confirm)：写入已同意状态、关闭本弹窗并弹出成功提示 -->
+      <button id="modal-agree-confirm" type="button" autofocus class="h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center transition-transform duration-state-change active:scale-[0.98] hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">同意并登录</span>
+      </button>
+    </footer>
+  </dialog>
+
+  <!-- 弹窗 B：登录成功提示弹窗 (#modal-success) -->
+  <dialog id="modal-success" data-component-id="modal-standard" data-component-type="modal" data-component-variant="standard" aria-labelledby="modal-success-title" aria-describedby="modal-success-desc modal-success-body" class="w-[310px] rounded-lg bg-light-surface text-light-on-surface p-gutter-xl shadow-xl border border-light-outline-variant backdrop:bg-light-primary/45 m-auto">
+    <header class="flex flex-col items-center text-center gap-gutter-xs mb-gutter-sm">
+      <div class="w-11 h-11 rounded-full bg-success/10 text-success flex items-center justify-center mb-gutter-xs">
+        <span class="material-symbols-outlined text-[24px]" aria-hidden="true">check_circle</span>
+      </div>
+      <h2 id="modal-success-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">登录成功</h2>
+      <p id="modal-success-desc" data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">欢迎来到人设岛遇！</p>
+    </header>
+    <div id="modal-success-body" class="text-center mb-gutter-xl">
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">已为您勾选并同意《用户协议》和《隐私协议》（当前为原型演示）。</p>
+    </div>
+    <footer>
+      <button id="modal-success-close" type="button" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center transition-transform duration-state-change active:scale-[0.98]">
+        <span data-design-text-token="label-lg" class="font-label text-label-lg">知道了</span>
+      </button>
+    </footer>
+  </dialog>
+
+  <!-- 弹窗 C：用户协议 / 隐私协议底部抽屉 (#modal-policy) -->
+  <dialog id="modal-policy" data-component-id="modal-drawer" data-component-type="modal" data-component-variant="drawer" aria-labelledby="modal-policy-title" class="w-full max-w-[390px] rounded-t-xl bg-light-surface text-light-on-surface p-gutter-xl shadow-xl backdrop:bg-light-primary/45 mt-auto mb-0 mx-auto">
+    <header class="flex items-center justify-between mb-gutter-lg">
+      <h2 id="modal-policy-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">用户协议</h2>
+      <button id="modal-policy-close" type="button" aria-label="关闭" class="w-8 h-8 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface">
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">close</span>
+      </button>
+    </header>
+    <div class="text-body-sm text-light-on-surface-variant flex flex-col gap-gutter-sm mb-gutter-xl">
+      <p data-design-text-token="body-sm">欢迎使用「人设岛遇」服务。在注册或登录前，请仔细阅读本协议条款，了解您的权利与义务及个人信息保护说明。</p>
+      <p data-design-text-token="body-sm">当前为交互原型演示，协议内容仅作展示。</p>
+    </div>
+    <!-- [按钮] 已阅读并同意 (#modal-policy-agree)：同步勾选状态、关闭抽屉并继续登录 -->
+    <button id="modal-policy-agree" type="button" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center">
+      <span data-design-text-token="label-lg" class="font-label text-label-lg">已阅读并同意</span>
+    </button>
+  </dialog>
+
+  <!-- ==================== 3. 页面交互逻辑脚本 ==================== -->
+  <script>
+    (function () {
+      // ---------- DOM 元素引用 ----------
+      const modalAgreement = document.getElementById('modal-agreement');
+      const modalSuccess = document.getElementById('modal-success');
+      const modalPolicy = document.getElementById('modal-policy');
+      const modalPolicyTitle = document.getElementById('modal-policy-title');
+
+      // 同步协议勾选状态到 sessionStorage（与 01/02/03 登录页共享）
+      function syncAgreementStorage(checked) {
+        try {
+          sessionStorage.setItem('rsdy_agreed', checked ? '1' : '0');
+        } catch (e) {}
+      }
+
+      // 本页默认直接弹出「请先阅读并同意协议」提醒弹窗
+      if (modalAgreement && typeof modalAgreement.showModal === 'function') {
+        modalAgreement.showModal();
+      }
+
+      // 点击「同意并登录」：记录已同意状态 -> 关闭提醒弹窗 -> 弹出登录成功弹窗
+      document.getElementById('modal-agree-confirm').addEventListener('click', function () {
+        syncAgreementStorage(true);
+        modalAgreement.close();
+        modalSuccess.showModal();
+      });
+
+      // 关闭登录成功弹窗
+      document.getElementById('modal-success-close').addEventListener('click', function () {
+        modalSuccess.close();
+      });
+
+      // 点击协议链接：打开对应协议抽屉
+      document.querySelectorAll('.policy-link').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          modalPolicyTitle.textContent = btn.getAttribute('data-policy') || '协议详情';
+          modalPolicy.showModal();
+        });
+      });
+
+      document.getElementById('modal-policy-close').addEventListener('click', function () {
+        modalPolicy.close();
+      });
+
+      // 协议抽屉内点击「已阅读并同意」：同步状态并直接完成登录
+      document.getElementById('modal-policy-agree').addEventListener('click', function () {
+        syncAgreementStorage(true);
+        modalPolicy.close();
+        modalAgreement.close();
+        modalSuccess.showModal();
+      });
+    })();
+  </script>
+
+
+</body></html>

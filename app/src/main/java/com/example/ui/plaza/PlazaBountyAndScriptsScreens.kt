@@ -590,6 +590,7 @@ fun PlazaScriptsScreen(
   onApplyEarlyScript: () -> Unit,
   onOpenScriptJoinSheet: (ScriptLobbyItem?) -> Unit,
   onConfirmJoinScript: (String, String) -> Unit,
+  onOpenScriptDetail: (ScriptLobbyItem) -> Unit,
   onShowToast: (String) -> Unit,
 ) {
   Scaffold(
@@ -696,6 +697,8 @@ fun PlazaScriptsScreen(
             modifier =
               Modifier.fillMaxWidth()
                 .border(1.dp, LightOutlineVariant.copy(alpha = 0.7f), RoundedCornerShape(20.dp))
+                .clip(RoundedCornerShape(20.dp))
+                .clickable { onOpenScriptDetail(script) }
                 .testTag("script_card_${script.id}"),
           ) {
             Column(
@@ -808,7 +811,7 @@ fun PlazaScriptsScreen(
                     Modifier.clip(CircleShape)
                       .clickable(enabled = script.status != ScriptStatus.ENDED) {
                         when (script.status) {
-                          ScriptStatus.OPEN -> onOpenScriptJoinSheet(script)
+                          ScriptStatus.OPEN -> onOpenScriptDetail(script)
                           ScriptStatus.ACTIVE -> onShowToast("已进入《${script.title}》实时旁观席位")
                           ScriptStatus.ENDED -> Unit
                         }

@@ -91,6 +91,8 @@ fun PlazaScreen(
   onOpenScripts: () -> Unit,
   onOpenRelayReviews: () -> Unit,
   onOpenTagFinder: (String?) -> Unit,
+  onOpenEmulators: () -> Unit,
+  onOpenMarket: () -> Unit,
   onOpenArticleDetail: (String) -> Unit,
   onJumpToHomeTab: () -> Unit,
   onSelectTag: (String) -> Unit,
@@ -291,7 +293,7 @@ fun PlazaScreen(
             iconBg = LightSurfaceContainer,
             iconTint = LightOnSurfaceVariant,
             icon = { Icon(Icons.Outlined.Smartphone, contentDescription = null, tint = LightOnSurfaceVariant, modifier = Modifier.size(18.dp)) },
-            onClick = { onShowToast("「小手机与模拟器」将在后续版本开放联动") },
+            onClick = onOpenEmulators,
             modifier = Modifier.weight(1f).testTag("plaza_tool_phone"),
           )
           PlazaToolQuickCard(
@@ -300,7 +302,7 @@ fun PlazaScreen(
             iconBg = AmberTintBg,
             iconTint = AmberTintDark,
             icon = { Icon(Icons.Outlined.LocalMall, contentDescription = null, tint = AmberTintDark, modifier = Modifier.size(18.dp)) },
-            onClick = { onShowToast("「破破甲集市」即将上线，敬请期待") },
+            onClick = onOpenMarket,
             modifier = Modifier.weight(1f).testTag("plaza_tool_armor"),
           )
         }

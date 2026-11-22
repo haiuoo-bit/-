@@ -78,3 +78,24 @@ val DarkHeroEnd = Color(0xFF282E3A)
 val DarkVioletHero = Color(0xFF2D1B4E)
 val DarkGreenHero = Color(0xFF0F291E)
 val DarkBrownHero = Color(0xFF3E2723)
+
+// Skeleton Shimmer & Document Format Colors (24 / 29 / 30)
+val SkeletonBase = Color(0xFFEBEDF0)
+val SkeletonMid = Color(0xFFF8F9FB)
+val SkeletonHighlight = Color(0xFFFFFFFF)
+
+val DocWordTintBg = Color(0xFFE8F1FF)
+val DocWordFoldBg = Color(0xFFBFDBFE)
+val DocWordBorder = Color(0xFF3B82F6)
+val DocWordBadge = Color(0xFF2563EB)
+
+val DocTxtTintBg = Color(0xFFF1F3F6)
+val DocTxtFoldBg = Color(0xFFE2E8F0)
+val DocTxtBorder = Color(0xFF64748B)
+val DocTxtBadge = Color(0xFF475569)
+
+val DocMdTintBg = Color(0xFFF3F0FF)
+val DocMdFoldBg = Color(0xFFDDD6FE)
+val DocMdBorder = Color(0xFF7C3AED)
+val DocMdBadge = Color(0xFF6D28D9)
+

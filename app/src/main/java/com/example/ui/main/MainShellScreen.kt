@@ -47,6 +47,12 @@ import com.example.ui.auth.AuthStep
 import com.example.ui.auth.AuthUiState
 import com.example.ui.auth.PrimaryPillButton
 import com.example.ui.auth.SecondaryPillButton
+import com.example.ui.community.CommunityCommentDrawerSheet
+import com.example.ui.community.CommunityDocumentPreviewDialog
+import com.example.ui.community.CommunityQuoteTarget
+import com.example.ui.community.CommunityScreen
+import com.example.ui.community.CommunityShareSheet
+import com.example.ui.community.CommunityViewModel
 import com.example.ui.home.CommentDrawerSheet
 import com.example.ui.home.HomeFeedScreen
 import com.example.ui.home.HomeFeedViewModel
@@ -66,13 +72,20 @@ fun MainShellScreen(
   uiState: AuthUiState,
   homeViewModel: HomeFeedViewModel,
   plazaViewModel: PlazaViewModel,
+  communityViewModel: CommunityViewModel,
   onOpenArticleDetail: (String) -> Unit,
+  onOpenCommunityPostDetail: (String) -> Unit,
+  onOpenCommunityCompose: () -> Unit,
+  onOpenCommunityAccessoryShowcase: () -> Unit,
+  onOpenCommunityGlobalSearch: (String) -> Unit,
   onOpenGlobalSearch: () -> Unit,
   onOpenRankings: () -> Unit,
   onOpenBounty: (BountyPanel) -> Unit,
   onOpenScripts: () -> Unit,
   onOpenRelayReviews: () -> Unit,
   onOpenTagFinder: (String?) -> Unit,
+  onOpenEmulators: () -> Unit,
+  onOpenMarket: () -> Unit,
   onBackToStep: (AuthStep) -> Unit,
   onResetAgreementAndPreviewStart: () -> Unit,
 ) {
@@ -80,6 +93,7 @@ fun MainShellScreen(
   var hasUnreadMessages by rememberSaveable { mutableStateOf(true) }
   val homeState by homeViewModel.uiState.collectAsStateWithLifecycle()
   val plazaState by plazaViewModel.uiState.collectAsStateWithLifecycle()
+  val communityState by communityViewModel.uiState.collectAsStateWithLifecycle()
 
   LaunchedEffect(Unit) {
     homeViewModel.maybeShowInitialUpdatePrompt()
@@ -139,6 +153,8 @@ fun MainShellScreen(
             onOpenScripts = onOpenScripts,
             onOpenRelayReviews = onOpenRelayReviews,
             onOpenTagFinder = onOpenTagFinder,
+            onOpenEmulators = onOpenEmulators,
+            onOpenMarket = onOpenMarket,
             onOpenArticleDetail = onOpenArticleDetail,
             onJumpToHomeTab = { selectedTab = MainTab.HOME },
             onSelectTag = plazaViewModel::selectPlazaTag,
@@ -149,6 +165,35 @@ fun MainShellScreen(
             onOpenCategorySheet = { plazaViewModel.setCategorySheetOpen(true) },
             onDismissCategorySheet = { plazaViewModel.setCategorySheetOpen(false) },
             onShowToast = plazaViewModel::showToast,
+          )
+        } else if (tab == MainTab.COMMUNITY) {
+          CommunityScreen(
+            uiState = communityState,
+            onQueryChange = communityViewModel::updateSearchQuery,
+            onSelectTopic = communityViewModel::selectTopic,
+            onOpenGlobalSearch = onOpenCommunityGlobalSearch,
+            onOpenCompose = onOpenCommunityCompose,
+            onOpenAccessoryShowcase = onOpenCommunityAccessoryShowcase,
+            onReplaySkeleton = communityViewModel::replaySkeletonLoad,
+            onOpenPostDetail = onOpenCommunityPostDetail,
+            onToggleFollow = communityViewModel::toggleFollow,
+            onToggleLike = communityViewModel::toggleLike,
+            onToggleBookmark = communityViewModel::toggleBookmark,
+            onOpenComments = communityViewModel::openCommentDrawer,
+            onOpenShare = communityViewModel::openShareSheet,
+            onSelectPollOption = communityViewModel::selectPollOption,
+            onConfirmOrResetPoll = communityViewModel::confirmOrResetPoll,
+            onApplyBounty = communityViewModel::applyBounty,
+            onToggleMusicPlay = communityViewModel::toggleMusicPlay,
+            onSeekMusic = communityViewModel::seekMusic,
+            onOpenDocumentPreview = communityViewModel::openDocumentPreview,
+            onOpenQuoteTarget = { target ->
+              when (target) {
+                CommunityQuoteTarget.SCRIPT_LOBBY -> onOpenScripts()
+                CommunityQuoteTarget.WECHAT_SKIN -> onOpenEmulators()
+              }
+            },
+            onShowToast = communityViewModel::showToast,
           )
         } else {
           val tabLabel =
@@ -307,7 +352,7 @@ fun MainShellScreen(
       )
 
       OverlayToastPill(
-        message = plazaState.toastMessage ?: homeState.toastMessage,
+        message = communityState.toastMessage ?: plazaState.toastMessage ?: homeState.toastMessage,
         darkPolarity = isNavDark,
         modifier =
           Modifier.align(Alignment.BottomCenter)
@@ -337,6 +382,37 @@ fun MainShellScreen(
       authorName = story.authorName,
       onDismiss = homeViewModel::closeShareSheet,
       onShowToast = homeViewModel::showToast,
+    )
+  }
+
+  communityState.commentDrawerPostId?.let { drawerPostId ->
+    val post = communityState.posts.find { it.id == drawerPostId } ?: communityState.showcasePosts.find { it.id == drawerPostId }
+    CommunityCommentDrawerSheet(
+      totalCommentsCount = post?.commentCount ?: 0,
+      comments = communityState.commentsFor(drawerPostId),
+      replyTarget = communityState.replyTarget,
+      onDismiss = communityViewModel::closeCommentDrawer,
+      onReplyClick = communityViewModel::setReplyTarget,
+      onClearReplyTarget = communityViewModel::clearReplyTarget,
+      onToggleCommentLike = { commentId, replyId -> communityViewModel.toggleCommentLike(drawerPostId, commentId, replyId) },
+      onSubmitComment = { text -> communityViewModel.submitComment(drawerPostId, text) },
+    )
+  }
+
+  communityState.shareSheetPostId?.let { sharePostId ->
+    val post = communityState.posts.find { it.id == sharePostId } ?: communityState.showcasePosts.find { it.id == sharePostId }
+    CommunityShareSheet(
+      postSummary = post?.summaryBody ?: "",
+      onDismiss = communityViewModel::closeShareSheet,
+      onChannelClick = { msg -> communityViewModel.recordShare(sharePostId, msg) },
+    )
+  }
+
+  communityState.previewDocument?.let { doc ->
+    CommunityDocumentPreviewDialog(
+      document = doc,
+      onDismiss = communityViewModel::closeDocumentPreview,
+      onShowToast = communityViewModel::showToast,
     )
   }
 

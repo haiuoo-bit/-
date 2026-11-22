@@ -214,9 +214,9 @@
     <string name="plaza_grid_relay_title">中转测评</string>
     <string name="plaza_grid_relay_sub">稳定省心</string>
     <string name="plaza_tool_phone_title">小手机与模拟器</string>
-    <string name="plaza_tool_phone_sub">计划中 · 敬请期待</string>
+    <string name="plaza_tool_phone_sub">拟真桌面 · 主题壳</string>
     <string name="plaza_tool_armor_title">破破甲集市</string>
-    <string name="plaza_tool_armor_sub">计划中 · 敬请期待</string>
+    <string name="plaza_tool_armor_sub">指令预设 · 皮肤插件</string>
     <string name="plaza_tag_reset">重置</string>
     <string name="plaza_tag_finder_link">标签找设定</string>
     <string name="plaza_section_latest">最新发布</string>
@@ -290,5 +290,60 @@
     <string name="search_group_joined">已加群</string>
     <string name="search_empty_title">暂无完全匹配的结果</string>
     <string name="search_empty_sub">可尝试缩短关键词、切换顶部分类 Tab 或检查群号输入</string>
+
+    <!-- 54 & 55 小手机与模拟器 -->
+    <string name="emu_title">小手机与模拟器</string>
+    <string name="emu_detail_title">模拟器详情</string>
+    <string name="emu_guide_title">安装与导入说明</string>
+    <string name="emu_btn_direct_download">平台直接下载</string>
+    <string name="emu_btn_copy_link">复制下载链接</string>
+    <string name="emu_btn_copy_web">复制在线网址</string>
+    <string name="emu_btn_ready_install">下载完成 · 立即安装</string>
+
+    <!-- 56 & 70 破破甲集市 -->
+    <string name="market_title">破破甲集市</string>
+    <string name="market_detail_title">商品详情</string>
+    <string name="market_sell_btn">我要上架</string>
+    <string name="market_banner_title">创作者与岛民自由交易集市</string>
+    <string name="market_banner_sub">指令预设、聊天皮肤、设定模板与功能插件</string>
+    <string name="market_banner_badge">可买可卖</string>
+    <string name="market_beta_title">输入内测码</string>
+    <string name="market_beta_desc">集市上架功能当前仅限内测创作者体验，输入内测码即可开启上架。</string>
+
+    <!-- 22 中转站详情 & 21 剧本局详情 -->
+    <string name="relay_detail_title">中转站详情</string>
+    <string name="relay_copy_url">复制网址</string>
+    <string name="script_detail_title">剧本局详情</string>
+
+    <!-- 18 / 23 / 24 / 29 / 30 社区与发动态模块 -->
+    <string name="comm_search_placeholder">搜索动态、OC设定或创作者</string>
+    <string name="comm_search_global_btn">搜全站</string>
+    <string name="comm_compose_btn">发动态</string>
+    <string name="comm_hot_badge">热议</string>
+    <string name="comm_hot_topic">「双人宿敌向」人设怎么写出拉扯感而不显油腻？</string>
+    <string name="comm_hot_count">2.4k 讨论</string>
+    <string name="comm_read_full">全文 ›</string>
+    <string name="comm_empty_hint">该话题下暂无匹配帖子，来发第一条吧</string>
+    <string name="comm_empty_global_btn">去全站搜索</string>
+    <string name="comm_empty_post_btn">发一条新帖</string>
+    <string name="comm_poll_confirm">立即投票</string>
+    <string name="comm_poll_revote">重新投票</string>
+    <string name="comm_share_deepseek">DeepSeek打开</string>
+    <string name="comm_detail_title">动态正文</string>
+    <string name="comm_detail_view_attachment">查看附件</string>
+    <string name="comm_detail_comment_hint">写下你的评论或想法...</string>
+    <string name="comm_sort_time">按时间</string>
+    <string name="comm_compose_title">发动态</string>
+    <string name="comm_compose_cancel">取消</string>
+    <string name="comm_compose_publish">发布</string>
+    <string name="comm_compose_body_hint">分享你的 OC 设定、剧本脑洞或 AI 演绎趣事...</string>
+    <string name="comm_compose_tag_hint">#输入标签按空格添加</string>
+    <string name="comm_compose_add_tag"># 添加标签</string>
+    <string name="comm_accessory_showcase_title">动态配件 · 发布后效果</string>
+    <string name="comm_accessory_showcase_badge">6种样式</string>
+    <string name="comm_skeleton_loading">骨架屏加载中 · 1.5s 光带扫过</string>
+    <string name="comm_skeleton_loaded">数据已到达 · 60ms 依次浮现</string>
+    <string name="comm_skeleton_replay">重播动效</string>
 </resources>
+
 

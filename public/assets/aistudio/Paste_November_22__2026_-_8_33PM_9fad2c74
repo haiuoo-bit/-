@@ -1,0 +1,3082 @@
+<!-- 54 广场 · 小手机与模拟器 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人设岛遇 - 54 广场 · 小手机与模拟器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <main class="w-full max-w-[390px] h-[884px] min-h-[884px] relative flex flex-col overflow-hidden bg-light-surface shadow-xl" data-stitch-vh="h-[884px]===h-screen|||min-h-[884px]===min-h-screen">
+
+    <!-- ==================== 1. 顶部安全区导航栏 ==================== -->
+    <header class="shrink-0 pt-safe-top px-gutter-lg pb-gutter-sm bg-light-surface border-b border-light-outline-variant/80 z-20 flex items-center justify-between gap-2">
+      <!-- [返回] 回到广场主页 -->
+      <a href="../08-plaza/Plaza.html" aria-label="返回广场" class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-light-on-surface hover:bg-light-surface-container transition-colors duration-state-change focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+      </a>
+      <h1 data-design-text-token="title-lg" class="font-headline text-title-lg text-light-on-surface">小手机与模拟器</h1>
+      <button id="emu-help-btn" type="button" class="w-8 h-8 rounded-full flex items-center justify-center text-light-on-surface-variant hover:bg-light-surface-container" aria-label="使用说明">
+        <span class="material-symbols-outlined text-[20px]" aria-hidden="true">help</span>
+      </button>
+    </header>
+
+    <!-- ==================== 2. 主滚动内容区 ==================== -->
+    <div class="flex-1 overflow-y-auto no-scrollbar px-gutter-lg py-gutter-md flex flex-col gap-gutter-md bg-light-surface-container-low">
+
+      <!-- 分类筛选栏 -->
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar shrink-0">
+        <button type="button" data-cat="all" class="emu-cat-btn shrink-0 px-3.5 py-1.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm">全部</button>
+        <button type="button" data-cat="free" class="emu-cat-btn shrink-0 px-3.5 py-1.5 rounded-full bg-light-surface border border-light-outline-variant text-light-on-surface-variant font-label text-label-sm">免费开源</button>
+        <button type="button" data-cat="paid" class="emu-cat-btn shrink-0 px-3.5 py-1.5 rounded-full bg-light-surface border border-light-outline-variant text-light-on-surface-variant font-label text-label-sm">主题壳</button>
+      </div>
+
+      <!-- [卡片 1] 星环复古掌机小手机（主题壳） -->
+      <article data-cat="paid" data-id="retro-handheld" class="emu-card rounded-xl bg-light-surface border border-light-outline-variant overflow-hidden shadow-sm">
+        <a href="../55-emulator-detail/EmulatorDetail.html?id=retro-handheld" class="block relative h-44 bg-light-surface-container overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDfr_jleANtBP2HdK3a3SI_CwCsSvnUiNMoBBt_FRXqL-7XKR3JBGh9GjHfADYV3PM-8ASrdZEIvTGF39X1-UMdOKjfKRH37KRUV8WP7tnIogBfOZlYeIsKVoMwSg4HYnvIztAJseLwbW8U6pluBAtlaCdG5qPTskTCw771QCfBBevZJfldfLsQsWKll4Koyiv9ShjqS4ax7-mF0dETCbAWVvMGwlJvVxq9IBul9Cixc7IfGx1OgY3dpSuB" alt="星环复古掌机小手机" class="w-full h-full object-cover">
+          <div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+            <span class="px-2 py-0.5 rounded-full bg-light-primary text-light-on-primary font-mono text-label-sm">￥8</span>
+              <span class="px-2 py-0.5 rounded-full bg-light-surface/90 text-light-on-surface font-mono text-label-sm">Android / HarmonyOS</span>
+            </div>
+            <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-full bg-dark-surface/75 text-dark-on-surface font-mono text-label-sm tabular-nums">v1.9.3 · 28.4 MB</span>
+          </a>
+
+          <div class="p-3.5 flex flex-col gap-2.5">
+            <a href="../55-emulator-detail/EmulatorDetail.html?id=retro-handheld" class="flex items-start justify-between gap-2 group">
+              <div class="min-w-0">
+                <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate group-hover:underline">星环复古掌机小手机（主题壳）</h2>
+                <p class="font-body text-body-sm text-light-on-surface-variant mt-0.5">像素风掌机边框与角色好感度状态栏，购买后即可直接下载</p>
+              </div>
+              <span class="shrink-0 font-label text-label-sm text-light-on-surface-variant mt-0.5">详情 ›</span>
+            </a>
+
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="px-2 py-0.5 rounded-sm bg-light-surface-container font-label text-label-sm text-light-on-surface-variant">像素主题</span>
+              <span class="px-2 py-0.5 rounded-sm bg-light-surface-container font-label text-label-sm text-light-on-surface-variant">先购后下</span>
+              <span class="px-2 py-0.5 rounded-sm bg-light-surface-container font-label text-label-sm text-light-on-surface-variant">6.7k 次下载</span>
+            </div>
+
+            <!-- [未购买态] 购买解锁下载按钮 -->
+            <button type="button" id="buy-btn-retro-handheld" data-emu-id="retro-handheld" data-emu-name="星环复古掌机小手机（主题壳）" data-emu-price="8.00" class="emu-buy-btn w-full h-9 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm flex items-center justify-center gap-1.5 transition-transform duration-state-change active:scale-95">
+              
+              <span>￥8 · 购买解锁下载</span>
+            </button>
+
+            <!-- [已购买态] 解锁后显示直接下载与复制链接（默认隐藏） -->
+            <div id="unlocked-actions-retro-handheld" class="hidden grid grid-cols-2 gap-2 pt-0.5">
+              <button type="button" data-emu-id="retro-handheld" data-emu-name="星环复古掌机小手机" data-emu-size="28.4" class="emu-download-btn h-9 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm flex items-center justify-center gap-1.5 transition-transform duration-state-change active:scale-95">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 4V14.5M12 14.5L8.25 10.75M12 14.5L15.75 10.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M4.75 15.75V17.5C4.75 18.74 5.76 19.75 7 19.75H17C18.24 19.75 19.25 18.74 19.25 17.5V15.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                </svg>
+                <span class="emu-btn-label">平台直接下载</span>
+              </button>
+              <button type="button" data-copy-url="https://daoyu.app/dl/star-retro-handheld-1.9.3.apk" class="emu-copy-btn h-9 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm flex items-center justify-center gap-1.5 hover:bg-light-surface-container-high transition-transform duration-state-change active:scale-95">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M10 13.5C10.4295 14.0741 10.9774 14.5492 11.6066 14.8929C12.2357 15.2367 12.9315 15.4411 13.6467 15.4923C14.3618 15.5435 15.0796 15.4403 15.7513 15.1896C16.4231 14.9388 17.0331 14.5465 17.54 14.039L19.54 12.039C20.4508 11.096 20.9548 9.83295 20.9434 8.52198C20.932 7.21102 20.4062 5.95694 19.4791 5.02985C18.552 4.10276 17.298 3.57691 15.987 3.56553C14.676 3.55414 13.413 4.05814 12.47 4.969L11.33 6.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+                  <path d="M14 10.5C13.5705 9.92588 13.0226 9.45082 12.3934 9.10707C11.7643 8.76332 11.0685 8.55889 10.3533 8.50767C9.63818 8.45645 8.9204 8.55966 8.24867 8.81042C7.57695 9.06118 6.96691 9.45353 6.46 9.961L4.46 11.961C3.54916 12.904 3.04516 14.167 3.05655 15.478C3.06794 16.789 3.59378 18.0431 4.52087 18.9701C5.44797 19.8972 6.70204 20.4231 8.013 20.4345C9.32397 20.4459 10.587 19.9419 11.53 19.031L12.66 17.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+                </svg>
+                <span>复制下载链接</span>
+              </button>
+            </div>
+
+            <div id="prog-box-retro-handheld" class="hidden pt-0.5 flex flex-col gap-1">
+              <div class="flex items-center justify-between font-mono text-label-sm text-light-on-surface-variant tabular-nums">
+                <span class="prog-status">正在拉取安装包...</span>
+                <span class="prog-pct">0 / 28.4 MB</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-light-surface-container-high overflow-hidden">
+                <div class="prog-bar h-full rounded-full bg-light-primary transition-all duration-150" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- [卡片 4] 云端小手机网页版（HTML 离线包） -->
+        <article data-category="cloud" class="emu-card rounded-lg bg-light-surface border border-light-outline-variant overflow-hidden shadow-sm flex flex-col">
+          <a href="../55-emulator-detail/EmulatorDetail.html?id=cloud-pwa" class="block relative w-full aspect-[16/9] bg-light-surface-container overflow-hidden">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrCzvjdz7du9VRMlYqRYew3uOSTAe2MhZAqawFlyekVmop9sMTtol_wdA5kSCX54pXpUOFPDPNW-KDzrijx3rvRKMknh5WRnTI-aaew7jrJspsjn_HgdEvYAlVuN59lrUvXv4JZnMzv-DoNipXBHopXV5Qa4OvJrE7992dQYhdnvSl3qsGY6KzarHSb8t2PDAPI7_GY1zxRPXnXIt_qP-EUdqTcxj0meJcie22yJsJSIaFtR1qTjSVMH" alt="云端小手机网页沙盒预览图" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-surface/65 via-transparent to-transparent"></div>
+            <div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+              <span class="px-2 py-0.5 rounded-full bg-light-surface/90 text-light-on-surface font-mono text-label-sm">Web / PWA 免安装</span>
+            </div>
+            <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-full bg-dark-surface/75 text-dark-on-surface font-mono text-label-sm tabular-nums">离线包 · 14.2 MB</span>
+          </a>
+
+          <div class="p-3.5 flex flex-col gap-2.5">
+            <a href="../55-emulator-detail/EmulatorDetail.html?id=cloud-pwa" class="flex items-start justify-between gap-2 group">
+              <div class="min-w-0">
+                <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate group-hover:underline">云端小手机网页版（HTML 离线包）</h2>
+                <p class="font-body text-body-sm text-light-on-surface-variant mt-0.5">浏览器直接打开即用，也可下载纯静态离线包到本地保存存档</p>
+              </div>
+              <span class="shrink-0 font-label text-label-sm text-light-on-surface-variant mt-0.5">详情 ›</span>
+            </a>
+
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="px-2 py-0.5 rounded-sm bg-light-surface-container font-label text-label-sm text-light-on-surface-variant">iOS 友好</span>
+              <span class="px-2 py-0.5 rounded-sm bg-light-surface-container font-label text-label-sm text-light-on-surface-variant">免越狱</span>
+              <span class="px-2 py-0.5 rounded-sm bg-light-surface-container font-label text-label-sm text-light-on-surface-variant">1.2w 次使用</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 pt-0.5">
+              <button type="button" data-emu-id="cloud-pwa" data-emu-name="云端小手机离线包" data-emu-size="14.2" class="emu-download-btn h-9 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm flex items-center justify-center gap-1.5 transition-transform duration-state-change active:scale-95">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 4V14.5M12 14.5L8.25 10.75M12 14.5L15.75 10.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M4.75 15.75V17.5C4.75 18.74 5.76 19.75 7 19.75H17C18.24 19.75 19.25 18.74 19.25 17.5V15.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                </svg>
+                <span class="emu-btn-label">平台直接下载</span>
+              </button>
+              <button type="button" data-copy-url="https://daoyu.app/cloud-phone/" class="emu-copy-btn h-9 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm flex items-center justify-center gap-1.5 hover:bg-light-surface-container-high transition-transform duration-state-change active:scale-95">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M10 13.5C10.4295 14.0741 10.9774 14.5492 11.6066 14.8929C12.2357 15.2367 12.9315 15.4411 13.6467 15.4923C14.3618 15.5435 15.0796 15.4403 15.7513 15.1896C16.4231 14.9388 17.0331 14.5465 17.54 14.039L19.54 12.039C20.4508 11.096 20.9548 9.83295 20.9434 8.52198C20.932 7.21102 20.4062 5.95694 19.4791 5.02985C18.552 4.10276 17.298 3.57691 15.987 3.56553C14.676 3.55414 13.413 4.05814 12.47 4.969L11.33 6.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+                  <path d="M14 10.5C13.5705 9.92588 13.0226 9.45082 12.3934 9.10707C11.7643 8.76332 11.0685 8.55889 10.3533 8.50767C9.63818 8.45645 8.9204 8.55966 8.24867 8.81042C7.57695 9.06118 6.96691 9.45353 6.46 9.961L4.46 11.961C3.54916 12.904 3.04516 14.167 3.05655 15.478C3.06794 16.789 3.59378 18.0431 4.52087 18.9701C5.44797 19.8972 6.70204 20.4231 8.013 20.4345C9.32397 20.4459 10.587 19.9419 11.53 19.031L12.66 17.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+                </svg>
+                <span>复制在线网址</span>
+              </button>
+            </div>
+
+            <div id="prog-box-cloud-pwa" class="hidden pt-0.5 flex flex-col gap-1">
+              <div class="flex items-center justify-between font-mono text-label-sm text-light-on-surface-variant tabular-nums">
+                <span class="prog-status">正在拉取离线包...</span>
+                <span class="prog-pct">0 / 14.2 MB</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-light-surface-container-high overflow-hidden">
+                <div class="prog-bar h-full rounded-full bg-light-primary transition-all duration-150" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    
+
+    <!-- ==================== 3. 安装与导入指引底部弹窗 ==================== -->
+    <div id="emu-guide-modal" class="hidden fixed inset-0 z-50 flex items-end justify-center bg-black/45" role="dialog" aria-modal="true" aria-label="小手机与模拟器安装指引">
+      <div id="emu-guide-backdrop" class="absolute inset-0"></div>
+      <section class="relative w-full max-w-[390px] bg-light-surface text-light-on-surface rounded-t-xl px-gutter-lg pt-3 pb-8 flex flex-col gap-3 shadow-2xl">
+        <div class="w-9 h-1 rounded-full bg-light-outline-variant mx-auto" aria-hidden="true"></div>
+        <div class="flex items-center justify-between">
+          <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">安装与导入说明</h2>
+          <button id="close-guide-btn" type="button" aria-label="关闭说明" class="w-8 h-8 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface-variant">✕</button>
+        </div>
+        <div class="p-3 rounded-md bg-light-surface-container-low flex flex-col gap-2 font-body text-body-sm text-light-on-surface-variant">
+          <p><span class="font-label text-light-on-surface font-semibold">1. Android 安装包：</span>点击「平台直接下载」后按系统提示允许安装未知来源应用即可。</p>
+          <p><span class="font-label text-light-on-surface font-semibold">2. iOS 设备：</span>推荐使用「云端小手机网页版」，在 Safari 中点击分享并「添加到主屏幕」。</p>
+          <p><span class="font-label text-light-on-surface font-semibold">3. 人设与中转配置：</span>安装后可在设置中粘贴个人 API 中转站地址，或在广场一键导入设定卡。</p>
+        </div>
+        <button id="confirm-guide-btn" type="button" class="h-10 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm">我知道了</button>
+      </section>
+    </div>
+
+  </main>
+
+  <script>
+    (function () {
+      // ---------- 1. 全局轻提示 Toast ----------
+      var toast = document.getElementById('emu-toast');
+      var toastTimer = null;
+      function showToast(msg) {
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toast.classList.add('hidden');
+        }, 2200);
+      }
+
+      // ---------- 2. 分类胶囊筛选 ----------
+      var catButtons = document.querySelectorAll('.emu-cat-btn');
+      var cards = document.querySelectorAll('.emu-card');
+      catButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var targetCat = btn.getAttribute('data-cat');
+          catButtons.forEach(function (b) {
+            var active = b === btn;
+            b.setAttribute('aria-selected', active ? 'true' : 'false');
+            if (active) {
+              b.classList.remove('bg-light-surface-container', 'text-light-on-surface-variant');
+              b.classList.add('bg-light-primary', 'text-light-on-primary');
+            } else {
+              b.classList.remove('bg-light-primary', 'text-light-on-primary');
+              b.classList.add('bg-light-surface-container', 'text-light-on-surface-variant');
+            }
+          });
+          cards.forEach(function (card) {
+            var cat = card.getAttribute('data-category');
+            if (targetCat === 'all' || cat === targetCat) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // ---------- 3. 平台内下载进度模拟 ----------
+      var activeTimers = {};
+      document.querySelectorAll('.emu-download-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var id = btn.getAttribute('data-emu-id');
+          var name = btn.getAttribute('data-emu-name');
+          var totalSize = parseFloat(btn.getAttribute('data-emu-size')) || 40;
+          var label = btn.querySelector('.emu-btn-label');
+          var box = document.getElementById('prog-box-' + id);
+
+          if (btn.getAttribute('data-done') === '1') {
+            showToast(name + ' 已就绪，可随时打开安装');
+            return;
+          }
+          if (activeTimers[id]) return;
+
+          if (box) box.classList.remove('hidden');
+          var bar = box ? box.querySelector('.prog-bar') : null;
+          var pctEl = box ? box.querySelector('.prog-pct') : null;
+          var statusEl = box ? box.querySelector('.prog-status') : null;
+
+          var pct = 0;
+          if (label) label.textContent = '下载中 0%';
+          activeTimers[id] = setInterval(function () {
+            pct += 16;
+            if (pct >= 100) {
+              pct = 100;
+              clearInterval(activeTimers[id]);
+              delete activeTimers[id];
+              btn.setAttribute('data-done', '1');
+              if (label) label.textContent = '下载完成 · 立即安装';
+              if (statusEl) statusEl.textContent = '校验通过，已保存至本地下载';
+              showToast(name + ' 下载完成');
+            } else {
+              if (label) label.textContent = '下载中 ' + pct + '%';
+            }
+            var currentMb = (totalSize * pct / 100).toFixed(1);
+            if (bar) bar.style.width = pct + '%';
+            if (pctEl) pctEl.textContent = currentMb + ' / ' + totalSize.toFixed(1) + ' MB';
+          }, 180);
+        });
+      });
+
+      // ---------- 4. 复制下载链接 ----------
+      document.querySelectorAll('.emu-copy-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var url = btn.getAttribute('data-copy-url');
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).catch(function () {});
+          }
+          showToast('已复制下载链接');
+        });
+      });
+
+      // ---------- 5. 收费模拟器先购买后解锁 ----------
+      document.querySelectorAll('.emu-buy-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (btn.disabled) return;
+          var id = btn.getAttribute('data-emu-id');
+          var name = btn.getAttribute('data-emu-name');
+          var span = btn.querySelector('span');
+          btn.disabled = true;
+          if (span) span.textContent = '正在支付并解锁…';
+          setTimeout(function () {
+            btn.classList.add('hidden');
+            var unlocked = document.getElementById('unlocked-actions-' + id);
+            if (unlocked) unlocked.classList.remove('hidden');
+            showToast(name + ' 购买成功，已解锁下载并同步至「我的岛屿库」');
+          }, 900);
+        });
+      });
+
+      // ---------- 6. 安装指引弹窗开关 ----------
+      var modal = document.getElementById('emu-guide-modal');
+      function openGuide() { if (modal) modal.classList.remove('hidden'); }
+      function closeGuide() { if (modal) modal.classList.add('hidden'); }
+      document.getElementById('emu-help-btn').addEventListener('click', openGuide);
+      document.getElementById('emu-guide-backdrop').addEventListener('click', closeGuide);
+      document.getElementById('close-guide-btn').addEventListener('click', closeGuide);
+      document.getElementById('confirm-guide-btn').addEventListener('click', closeGuide);
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 55 广场 · 模拟器详情 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人设岛遇 - 55 广场 · 模拟器详情</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <main class="w-full max-w-[390px] h-[884px] min-h-[884px] relative flex flex-col overflow-hidden bg-light-surface shadow-xl" data-stitch-vh="h-[884px]===h-screen|||min-h-[884px]===min-h-screen">
+
+    <!-- ==================== 1. 顶部安全区导航栏 ==================== -->
+    <header class="shrink-0 pt-safe-top px-gutter-lg pb-gutter-sm bg-light-surface border-b border-light-outline-variant/80 z-20 flex items-center justify-between gap-2">
+      <!-- [返回] 回到小手机与模拟器列表 -->
+      <a href="../54-plaza-emulators/PlazaEmulators.html" aria-label="返回小手机与模拟器列表" class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-light-on-surface hover:bg-light-surface-container transition-colors duration-state-change focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+      </a>
+      <h1 id="header-title" data-design-text-token="title-lg" class="font-headline text-title-lg text-light-on-surface truncate">模拟器详情</h1>
+      <div class="w-8 shrink-0"></div>
+    </header>
+
+    <!-- ==================== 2. 主滚动内容区 ==================== -->
+    <div class="flex-1 overflow-y-auto no-scrollbar px-gutter-lg py-gutter-md flex flex-col gap-gutter-md bg-light-surface-container-low">
+      <section class="rounded-xl bg-light-surface border border-light-outline-variant p-gutter-md flex flex-col gap-2">
+        <h2 id="emu-title" class="font-title text-title-lg text-light-on-surface">星环复古掌机小手机（主题壳）</h2>
+        <p id="emu-intro" class="font-body text-body-sm text-light-on-surface-variant">像素风掌机边框与角色好感度状态栏，购买后即可直接下载。</p>
+      </section>
+
+      <section id="emu-image-list" class="flex flex-col gap-gutter-sm"></section>
+
+      <div id="detail-prog-box" class="hidden rounded-xl bg-light-surface border border-light-outline-variant p-gutter-md flex flex-col gap-2">
+        <div class="flex items-center justify-between text-label-sm font-label">
+          <span id="detail-prog-status" class="text-light-on-surface">正在下载...</span>
+          <span id="detail-prog-pct" class="font-mono text-light-primary tabular-nums">0%</span>
+        </div>
+        <div class="h-1.5 rounded-full bg-light-surface-container overflow-hidden">
+          <div id="detail-prog-bar" class="h-full bg-light-primary w-0 transition-all"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 3. 底部操作栏 ==================== -->
+    <footer class="shrink-0 bg-light-surface border-t border-light-outline-variant/80 px-gutter-lg py-3 pb-safe-bottom z-20">
+      <div id="detail-free-actions" class="hidden flex items-center gap-2">
+        <button id="footer-copy-btn" type="button" class="h-10 px-4 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm shrink-0">复制链接</button>
+        <button id="footer-download-btn" type="button" class="flex-1 h-10 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm"><span id="footer-download-label">立即下载</span></button>
+      </div>
+      <div id="detail-paid-actions">
+        <button id="footer-buy-btn" type="button" class="w-full h-10 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm flex items-center justify-center gap-1 transition-transform duration-state-change active:scale-95">
+          <span id="footer-buy-price">￥8</span><span>· 购买解锁下载</span>
+        </button>
+      </div>
+    </footer>
+  </main>
+
+  <script data-stitch-original-script="b28df649bfe5acbd===../../images/emu_showcase_home.jpg|||00cdc8f44d2e46e8===../../images/emu_showcase_chat.jpg|||a128608c9b9d425c===../../images/emu_showcase_archive.jpg|||a128608c9b9d425c===../../images/emu_showcase_archive.jpg|||66858643810f2229===../../images/emu_android_studio.jpg|||00cdc8f44d2e46e8===../../images/emu_showcase_chat.jpg|||586d014476cb1537===../../images/emu_retro_handheld.jpg|||b28df649bfe5acbd===../../images/emu_showcase_home.jpg|||00cdc8f44d2e46e8===../../images/emu_showcase_chat.jpg|||f37c941f8c11388f===../../images/emu_cloud_phone.jpg|||00cdc8f44d2e46e8===../../images/emu_showcase_chat.jpg|||a128608c9b9d425c===../../images/emu_showcase_archive.jpg">
+    (function () {
+      // ---------- 1. 模拟器详情数据字典与 URL 参数渲染 ----------
+      var EMULATORS = {
+        'miniphone-os': {
+          badge: '官方主推',
+          platform: 'Android / iOS',
+          title: '岛遇小手机 OS（拟真桌面版）',
+          version: 'v2.4.1',
+          sizeMb: 42.8,
+          price: 0,
+          url: 'https://daoyu.app/dl/miniphone-os-v2.4.1.apk',
+          images: [
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrCsMOu78roHWHK1YqALalOOM0iH405ZDYtkzasMLX6pyovyiS5bWbrjjo7KTV6F1kxAp6iGd1-f8AZMBTr91g1HQ90z9LN_WRp6iBo7Ads4f4G7kO_CQZqXwnzD-iImcQt8MOv4SYZ-zd1U6Jn3uJNEhMA9IZsbs-Mkt8pAAYJ0Cy330q6wkygyZhXc55OHi2OglwhLcIbz6XXksZ1OHPLBfkC_iBX5tMyQaTZhmRpietPva_TopPAcVz5F', caption: '拟真小手机主桌面 · 聊天、相册、备忘录与角色心情组件' },
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrCS93lEI-7XwYnkS-H89Ftb4lfwwtrDY5_nJihpFinf0zyNnyVWAssN293VPzvgZJOFj14sZQchYSFKcBzPYlli9d10S76WYi7oyxzHs5s1Q1K7Vmr1DRxLE9txHJOUWhnJwK-XRXTpb08A89U52ED72WLp0yEdJvDcmS6DudVJVathdl5bY1n2mgT29a0vY0VTX5QSTO9XMuIOnKFTji9FEbxdEiEFjCGuWwjFIMNAmAuckeR_BpZnXHZb', caption: '沉浸式微信风格对话界面 · 支持状态栏与气泡主题切换' },
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrCXpJpMNAt4CjFPosoBYUa3c67nMA2zcpaAzELVzgJVMI3VmVNSHSxi-0F-AlEgyNj5HSBa1moAsh9UQCQd1mLSV87l3nfvebBMpwBYlByj9urEVmdp_JNpU_WA1J-1cbYvhFvisPxjjFHwciCi8fr4UUEoUXFsHMgZBPv3fmG3oPummMSQN6Yxtue8vi0N1SFRE0CvBb2xDyb_TybP6brYvI5HFk5DwsAn5OMD2ma5LCMWgAWCsmKnB0_5SyQf', caption: '人设卡与世界书一键导入 · 多端存档实时同步' }
+          ],
+          intro: '专为 OC 扮演与双人互动打造的拟真虚拟手机系统。内置微信聊天、朋友圈、备忘录、相册、通话记录与锁屏通知，支持一键导入人设卡与世界书，本地离线保存全部聊天记录，也可自由填写个人 API 中转站地址。',
+          tips: '使用说明：支持 Android APK 直接安装与 iOS 描述文件，安装后导入角色卡即可开聊。'
+        },
+        'lime-desktop': {
+          badge: '桌面多开',
+          platform: 'Windows / macOS',
+          title: '青柠桌面安卓模拟器（多开版）',
+          version: 'v5.1.0',
+          sizeMb: 318.0,
+          price: 0,
+          url: 'https://daoyu.app/dl/lime-emu-win-mac-5.1.zip',
+          images: [
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrCXpJpMNAt4CjFPosoBYUa3c67nMA2zcpaAzELVzgJVMI3VmVNSHSxi-0F-AlEgyNj5HSBa1moAsh9UQCQd1mLSV87l3nfvebBMpwBYlByj9urEVmdp_JNpU_WA1J-1cbYvhFvisPxjjFHwciCi8fr4UUEoUXFsHMgZBPv3fmG3oPummMSQN6Yxtue8vi0N1SFRE0CvBb2xDyb_TybP6brYvI5HFk5DwsAn5OMD2ma5LCMWgAWCsmKnB0_5SyQf', caption: '电脑大屏多开同屏 · 同时运行多个小手机角色窗口' },
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrA3flVGwD9hV-VqzslpRcUsHfihqzyDyOIC6_RRfpVBGkVxx-CuZhmymO9VNkQLAFZbG82EQPSJWM5y5ct3h4Ao_OyMwZZqk4u0CaavNdXrhP96h0oLImSAoQshZdukgKxTbPPxV-T1aynCQIbmoRm_QLdDbcMQYjVPeliIp3L27zTn93SjNhW-ZCp6IGxEHX42UtguDEEUpCXo9qfgU-ku8X7tQx-lgiAfirs9MKiHZnHNwGNmaily5WEi', caption: '独立虚拟手机桌面 · 支持键鼠快捷打字与长截图拼接' },
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrCS93lEI-7XwYnkS-H89Ftb4lfwwtrDY5_nJihpFinf0zyNnyVWAssN293VPzvgZJOFj14sZQchYSFKcBzPYlli9d10S76WYi7oyxzHs5s1Q1K7Vmr1DRxLE9txHJOUWhnJwK-XRXTpb08A89U52ED72WLp0yEdJvDcmS6DudVJVathdl5bY1n2mgT29a0vY0VTX5QSTO9XMuIOnKFTji9FEbxdEiEFjCGuWwjFIMNAmAuckeR_BpZnXHZb', caption: '高清群聊与双视角演绎视图 · 一键导出无水印对话长图' }
+          ],
+          intro: '电脑大屏畅玩小手机与聊天皮肤，支持同时运行 2–6 个虚拟手机实例，适合多人剧本局、双视角演绎与长文截图拼接。内置键鼠打字直连与一键无水印长截图，轻薄本也能低功耗流畅运行。',
+          tips: '使用说明：下载压缩包解压后双击启动即可，支持 Windows 10/11 与 macOS Apple Silicon。'
+        },
+        'retro-handheld': {
+          badge: '像素主题',
+          platform: 'Android / HarmonyOS',
+          title: '星环复古掌机小手机（主题壳）',
+          version: 'v1.9.3',
+          sizeMb: 28.4,
+          price: 80,
+          url: 'https://daoyu.app/dl/star-retro-handheld-1.9.3.apk',
+          images: [
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrDfr_jleANtBP2HdK3a3SI_CwCsSvnUiNMoBBt_FRXqL-7XKR3JBGh9GjHfADYV3PM-8ASrdZEIvTGF39X1-UMdOKjfKRH37KRUV8WP7tnIogBfOZlYeIsKVoMwSg4HYnvIztAJseLwbW8U6pluBAtlaCdG5qPTskTCw771QCfBBevZJfldfLsQsWKll4Koyiv9ShjqS4ax7-mF0dETCbAWVvMGwlJvVxq9IBul9Cixc7IfGx1OgY3dpSuB', caption: '半透明复古掌机外壳实拍 · 十字键与 A/B 键触感反馈' },
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrCsMOu78roHWHK1YqALalOOM0iH405ZDYtkzasMLX6pyovyiS5bWbrjjo7KTV6F1kxAp6iGd1-f8AZMBTr91g1HQ90z9LN_WRp6iBo7Ads4f4G7kO_CQZqXwnzD-iImcQt8MOv4SYZ-zd1U6Jn3uJNEhMA9IZsbs-Mkt8pAAYJ0Cy330q6wkygyZhXc55OHi2OglwhLcIbz6XXksZ1OHPLBfkC_iBX5tMyQaTZhmRpietPva_TopPAcVz5F', caption: '内置 6 套像素主题皮肤 · 顶部实时显示好感度与心情' },
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrCS93lEI-7XwYnkS-H89Ftb4lfwwtrDY5_nJihpFinf0zyNnyVWAssN293VPzvgZJOFj14sZQchYSFKcBzPYlli9d10S76WYi7oyxzHs5s1Q1K7Vmr1DRxLE9txHJOUWhnJwK-XRXTpb08A89U52ED72WLp0yEdJvDcmS6DudVJVathdl5bY1n2mgT29a0vY0VTX5QSTO9XMuIOnKFTji9FEbxdEiEFjCGuWwjFIMNAmAuckeR_BpZnXHZb', caption: '剧情向互动对话框 · 支持立绘切换与存档读档' }
+          ],
+          intro: '像素风掌机边框搭配角色好感度状态栏，适合剧情向互动养成。支持十字方向键与 A/B 键触感模拟、顶部实时显示好感度与心情状态，内置 6 款像素外壳皮肤，购买解锁后即可直接下载并同步至「我的岛屿库」。',
+          tips: '使用说明：购买解锁后可立即在当前页面下载安装包，也可随时在「我的岛屿库 · 我的购买」中重新下载。'
+        },
+        'cloud-pwa': {
+          badge: '免安装',
+          platform: 'Web / PWA 全平台',
+          title: '云端小手机网页版（HTML 离线包）',
+          version: 'v2.2.0',
+          sizeMb: 14.2,
+          price: 0,
+          url: 'https://daoyu.app/cloud-phone/',
+          images: [
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrCzvjdz7du9VRMlYqRYew3uOSTAe2MhZAqawFlyekVmop9sMTtol_wdA5kSCX54pXpUOFPDPNW-KDzrijx3rvRKMknh5WRnTI-aaew7jrJspsjn_HgdEvYAlVuN59lrUvXv4JZnMzv-DoNipXBHopXV5Qa4OvJrE7992dQYhdnvSl3qsGY6KzarHSb8t2PDAPI7_GY1zxRPXnXIt_qP-EUdqTcxj0meJcie22yJsJSIaFtR1qTjSVMH', caption: '浏览器打开即用 · 自适应手机、平板与电脑桌面' },
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrCS93lEI-7XwYnkS-H89Ftb4lfwwtrDY5_nJihpFinf0zyNnyVWAssN293VPzvgZJOFj14sZQchYSFKcBzPYlli9d10S76WYi7oyxzHs5s1Q1K7Vmr1DRxLE9txHJOUWhnJwK-XRXTpb08A89U52ED72WLp0yEdJvDcmS6DudVJVathdl5bY1n2mgT29a0vY0VTX5QSTO9XMuIOnKFTji9FEbxdEiEFjCGuWwjFIMNAmAuckeR_BpZnXHZb', caption: '添加到主屏幕全屏沉浸体验 · 本地存储聊天存档' },
+            { src: 'https://lh3.googleusercontent.com/aida/ALJJyrCXpJpMNAt4CjFPosoBYUa3c67nMA2zcpaAzELVzgJVMI3VmVNSHSxi-0F-AlEgyNj5HSBa1moAsh9UQCQd1mLSV87l3nfvebBMpwBYlByj9urEVmdp_JNpU_WA1J-1cbYvhFvisPxjjFHwciCi8fr4UUEoUXFsHMgZBPv3fmG3oPummMSQN6Yxtue8vi0N1SFRE0CvBb2xDyb_TybP6brYvI5HFk5DwsAn5OMD2ma5LCMWgAWCsmKnB0_5SyQf', caption: '纯静态 HTML 离线包 · 断网也能随时翻阅导出记录' }
+          ],
+          intro: 'iOS 与电脑浏览器直接打开即用，Safari 添加到主屏幕即可全屏沉浸使用。也可点击下方下载纯静态 HTML 离线包到本地，断网环境下也能随时翻阅导出的聊天存档，API Key 仅存本地更安心。',
+          tips: '使用说明：复制链接可在任意设备浏览器打开，或直接下载离线包本地双击打开。'
+        }
+      };
+
+      var params = new URLSearchParams(window.location.search);
+      var id = EMULATORS[params.get('id')] ? params.get('id') : 'miniphone-os';
+      var item = EMULATORS[id];
+
+      document.getElementById('header-title').textContent = item.title;
+      document.getElementById('emu-title').textContent = item.title;
+      document.getElementById('emu-intro').textContent = item.intro;
+      document.getElementById('footer-download-label').textContent = '平台直接下载（' + item.sizeMb.toFixed(1) + ' MB）';
+
+      // 根据定价决定显示免费下载栏或购买解锁按钮
+      var freeActions = document.getElementById('detail-free-actions');
+      var paidActions = document.getElementById('detail-paid-actions');
+      var buyBtn = document.getElementById('footer-buy-btn');
+      var buyLabel = document.getElementById('footer-buy-label');
+      if (item.price > 0) {
+        freeActions.classList.add('hidden');
+        paidActions.classList.remove('hidden');
+        const priceEl = document.getElementById('footer-buy-price'); if (priceEl) { const v = Number(item.price) >= 20 ? Number(item.price)/10 : Number(item.price); priceEl.textContent = '￥' + (Number.isInteger(v) ? v : v.toFixed(1)); }
+        buyBtn.addEventListener('click', function () {
+          if (buyBtn.disabled) return;
+          buyBtn.disabled = true;
+          buyLabel.textContent = '正在支付并解锁…';
+          setTimeout(function () {
+            paidActions.classList.add('hidden');
+            freeActions.classList.remove('hidden');
+            showToast('购买成功，已解锁下载并同步至「我的岛屿库」');
+          }, 900);
+        });
+      }
+
+      // 渲染纵向图片列表
+      var imageListEl = document.getElementById('emu-image-list');
+      imageListEl.innerHTML = item.images.map(function (imgObj) {
+        return '<div class="rounded-md overflow-hidden bg-light-surface border border-light-outline-variant shadow-sm">' +
+          '<img src="' + imgObj.src + '" alt="' + item.title + ' - ' + imgObj.caption + '" class="w-full aspect-video object-cover block">' +
+        '</div>';
+      }).join('');
+
+      // ---------- 2. 轻提示与链接复制 ----------
+      var toast = document.getElementById('detail-toast');
+      var toastTimer = null;
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.add('hidden'); }, 2000);
+      }
+
+      function copyUrl() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(item.url).catch(function () {});
+        }
+        showToast('已复制下载地址：' + item.url);
+      }
+      document.getElementById('footer-copy-btn').addEventListener('click', copyUrl);
+
+      // ---------- 3. 平台内下载进度模拟 ----------
+      var dlBtn = document.getElementById('footer-download-btn');
+      var dlLabel = document.getElementById('footer-download-label');
+      var progBox = document.getElementById('detail-prog-box');
+      var progBar = document.getElementById('detail-prog-bar');
+      var progPct = document.getElementById('detail-prog-pct');
+      var progStatus = document.getElementById('detail-prog-status');
+      var dlTimer = null;
+      var dlDone = false;
+
+      dlBtn.addEventListener('click', function () {
+        if (dlDone) {
+          showToast(item.title + ' 已就绪，可随时打开安装');
+          return;
+        }
+        if (dlTimer) return;
+        progBox.classList.remove('hidden');
+        var pct = 0;
+        dlLabel.textContent = '下载中 0%';
+        dlTimer = setInterval(function () {
+          pct += 16;
+          if (pct >= 100) {
+            pct = 100;
+            clearInterval(dlTimer);
+            dlTimer = null;
+            dlDone = true;
+            dlLabel.textContent = '下载完成 · 立即安装';
+            progStatus.textContent = '校验通过，已保存至本地下载';
+            showToast(item.title + ' 下载完成');
+          } else {
+            dlLabel.textContent = '下载中 ' + pct + '%';
+          }
+          var currentMb = (item.sizeMb * pct / 100).toFixed(1);
+          progBar.style.width = pct + '%';
+          progPct.textContent = currentMb + ' / ' + item.sizeMb.toFixed(1) + ' MB';
+        }, 180);
+      });
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 56 广场 · 破破甲集市 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人设岛遇 - 56 广场 · 破破甲集市</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <main class="w-full max-w-[390px] h-[884px] min-h-[884px] relative flex flex-col overflow-hidden bg-light-surface shadow-xl" data-stitch-vh="h-[884px]===h-screen|||min-h-[884px]===min-h-screen">
+
+    <!-- ==================== 1. 顶部安全区导航栏 ==================== -->
+    <header class="shrink-0 pt-safe-top px-gutter-lg pb-gutter-sm bg-light-surface border-b border-light-outline-variant/80 z-20 flex items-center justify-between gap-2">
+      <!-- [返回] 回到广场主页 -->
+      <a href="../08-plaza/Plaza.html" aria-label="返回广场" class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-light-on-surface hover:bg-light-surface-container transition-colors duration-state-change focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+      </a>
+      <h1 data-design-text-token="title-lg" class="font-headline text-title-lg text-light-on-surface">破破甲集市</h1>
+      <button id="open-sell-btn" type="button" class="h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity">我要上架</button>
+    </header>
+
+    <!-- ==================== 2. 主滚动内容区 ==================== -->
+    <div class="flex-1 overflow-y-auto no-scrollbar px-gutter-lg py-gutter-md flex flex-col gap-gutter-md bg-light-surface-container-low">
+
+      <!-- 集市导览横幅 -->
+      <section class="rounded-xl bg-light-surface border border-light-outline-variant p-gutter-md flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3 min-w-0">
+          <div class="w-10 h-10 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">shopping_bag</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="font-title text-title-sm text-light-on-surface">创作者与岛民自由交易集市</span>
+            <span class="font-body text-body-sm text-light-on-surface-variant truncate">指令预设、聊天皮肤、设定模板与功能插件</span>
+          </div>
+        </div>
+        <span class="px-2.5 py-1 rounded-full bg-light-surface-container text-success font-label text-label-sm shrink-0">可买可卖</span>
+      </section>
+
+      <!-- 分类筛选栏 -->
+      <div id="market-filter-tabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar shrink-0">
+        <button type="button" data-cat="all" class="market-cat-btn shrink-0 px-3.5 py-1.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm">全部好物</button>
+        <button type="button" data-cat="prompts" class="market-cat-btn shrink-0 px-3.5 py-1.5 rounded-full bg-light-surface border border-light-outline-variant text-light-on-surface-variant font-label text-label-sm">指令预设</button>
+        <button type="button" data-cat="skins" class="market-cat-btn shrink-0 px-3.5 py-1.5 rounded-full bg-light-surface border border-light-outline-variant text-light-on-surface-variant font-label text-label-sm">聊天皮肤</button>
+        <button type="button" data-cat="templates" class="market-cat-btn shrink-0 px-3.5 py-1.5 rounded-full bg-light-surface border border-light-outline-variant text-light-on-surface-variant font-label text-label-sm">设定模板</button>
+        <button type="button" data-cat="plugins" class="market-cat-btn shrink-0 px-3.5 py-1.5 rounded-full bg-light-surface border border-light-outline-variant text-light-on-surface-variant font-label text-label-sm">功能插件</button>
+      </div>
+
+      <!-- 商品列表 -->
+      <section id="market-list" class="flex flex-col gap-gutter-md">
+        <!-- [商品 1] 指令预设：零OOC角色锚定铁律 -->
+        <article data-category="prompts" data-id="doc-ooc-anchor" data-title="《零OOC角色锚定铁律 · 通用防崩坏指令》" data-price="6" data-format="MD / TXT" data-seller="零度写作" data-preview="【角色锚定铁律】
+1. 性格底线：任何情况下保持核心性格与说话习惯；
+2. 口癖校验：每轮回复保持自然口癖；
+3. 情绪阈值：根据好感度渐进变化，禁止突兀跳变。" class="market-card rounded-lg bg-light-surface border border-light-outline-variant p-gutter-md shadow-sm flex flex-col gap-gutter-sm">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container text-success font-label text-label-sm">指令预设</span>
+              <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant font-mono text-label-sm">MD / TXT</span>
+            </div>
+            <span data-design-text-token="label-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">已售 1,284</span>
+          </div>
+
+          <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface text-balance">《零OOC角色锚定铁律 · 通用防崩坏指令》</h2>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant text-pretty">
+            通过性格底线、口癖校验与情绪阈值三段式约束，防止长对话后期人设漂移、突然降智或语气失真，粘贴即用。
+          </p>
+
+          <div class="flex items-center justify-between gap-2 pt-2 border-t border-light-outline-variant/60">
+            <div class="flex items-center gap-2 min-w-0">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDUyrZMlsLoNImKXfZ9C8zU1BKdsF41nwAO-xNOn64b4334sYorz-OI6eKP9SlblEbwMq_kykVoCoZRCnmUVveLi9HHazxIRlOc3d9Mgjpb71pyavzYYfuhcQu35XKkVrj8piG_HtZKvaLS3Fg8SfWpb9CUG3x6eufiCHidmC8Me6e19zJqvr0vX2Q-BaC1x8Qziy-dF_kbEyToLj8qfGgJrFO2xZ7oCTjD3O5f3izvbzffG0XwlA" alt="零度写作" class="w-6 h-6 rounded-full object-cover shrink-0">
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">零度写作</span>
+            </div>
+            <div class="flex items-center gap-2.5 shrink-0">
+              <span data-design-text-token="title-md" class="font-mono text-title-md text-light-on-surface tabular-nums">￥6</span>
+              <button type="button" class="buy-btn h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity duration-state-change">
+                购买文档
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- [商品 2] 指令预设：DeepSeek 长对话记忆压缩指南 -->
+        <article data-category="prompts" data-id="doc-deepseek-summary" data-title="《DeepSeek 长对话记忆压缩与续聊指令》" data-price="9.9" data-format="PDF / MD" data-seller="林深见鹿" data-preview="【DeepSeek 续聊记忆压缩模板】
+请将前序对话浓缩为以下4段：
+1. 已发生关键事件（按时间线）；
+2. 当前场景、物品状态与未解伏笔；
+3. 双方关系进展与情绪基调；
+4. 下一轮衔接指令（直接续写不复述）。" class="market-card rounded-lg bg-light-surface border border-light-outline-variant p-gutter-md shadow-sm flex flex-col gap-gutter-sm">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container text-success font-label text-label-sm">指令预设</span>
+              <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant font-mono text-label-sm">PDF / MD</span>
+            </div>
+            <span data-design-text-token="label-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">已售 2,410</span>
+          </div>
+
+          <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface text-balance">《DeepSeek 长对话记忆压缩与续聊指令》</h2>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant text-pretty">
+            专为 DeepSeek 优化的对话总结指令：把 50 轮以上剧情压缩进 800 字上下文，告别遗忘，和角色聊得更久。
+          </p>
+
+          <div class="flex items-center justify-between gap-2 pt-2 border-t border-light-outline-variant/60">
+            <div class="flex items-center gap-2 min-w-0">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDzHZENl33wi65M9XLZKtqtzF3NascoRExBRgFEq9GjDD19ZK3sQAVHJu4YeXiWyqomWbIJt5bCJjTQ8iS4RzVk5I-Bm8jycGsXXmHhnCa_hVWAskymbI6xUfe5DnMV_e5ujvU3WqOBGB6SvdFjkltM28GzJ08c9obs309pT947f3ZSKc-gKeHjC4Li2eeUvRuBpa2OKV0E5NtQvtl9PJZsZI6l7TUTMIFmaAn5IS5Zt4ab2Wcer2PLMQ" alt="林深见鹿" class="w-6 h-6 rounded-full object-cover shrink-0">
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">林深见鹿</span>
+            </div>
+            <div class="flex items-center gap-2.5 shrink-0">
+              <span class="inline-flex items-center gap-1"><span data-design-text-token="title-md" class="font-mono text-title-md text-light-on-surface tabular-nums">￥9.9</span></span>
+              <button type="button" class="buy-btn h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity duration-state-change">
+                购买文档
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- [商品 3] 聊天皮肤合集 -->
+        <article data-category="skins" data-id="goods-wechat-skins" data-title="《拟真微信与深夜信纸聊天皮肤 · 6套合集》" data-price="5" data-format="皮肤主题包" data-seller="沈清晏" data-preview="已解锁6套聊天皮肤：经典微信白绿、深夜暗色气泡、旧书店信纸、手机备忘录、复古短信蓝绿、雨夜玻璃。" class="market-card rounded-lg bg-light-surface border border-light-outline-variant p-gutter-md shadow-sm flex flex-col gap-gutter-sm">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm">聊天皮肤</span>
+              <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant font-label text-label-sm">主题资源包</span>
+            </div>
+            <span data-design-text-token="label-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">已售 678</span>
+          </div>
+
+          <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface text-balance">《拟真微信与深夜信纸聊天皮肤 · 6套合集》</h2>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant text-pretty">
+            包含仿微信气泡、手机备忘录、旧书店信纸等 6 款对话皮肤与头像框，支持导入小手机或游玩页直接套用。
+          </p>
+
+          <div class="flex items-center justify-between gap-2 pt-2 border-t border-light-outline-variant/60">
+            <div class="flex items-center gap-2 min-w-0">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDUyrZMlsLoNImKXfZ9C8zU1BKdsF41nwAO-xNOn64b4334sYorz-OI6eKP9SlblEbwMq_kykVoCoZRCnmUVveLi9HHazxIRlOc3d9Mgjpb71pyavzYYfuhcQu35XKkVrj8piG_HtZKvaLS3Fg8SfWpb9CUG3x6eufiCHidmC8Me6e19zJqvr0vX2Q-BaC1x8Qziy-dF_kbEyToLj8qfGgJrFO2xZ7oCTjD3O5f3izvbzffG0XwlA" alt="沈清晏" class="w-6 h-6 rounded-full object-cover shrink-0">
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">沈清晏</span>
+            </div>
+            <div class="flex items-center gap-2.5 shrink-0">
+              <span class="inline-flex items-center gap-1"><span data-design-text-token="title-md" class="font-mono text-title-md text-light-on-surface tabular-nums">￥5</span></span>
+              <button type="button" class="buy-btn h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity duration-state-change">
+                购买合集
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- [商品 4] 世界观与关系线模板 -->
+        <article data-category="presets" data-id="goods-rival-worldbook" data-title="《双人宿敌向 · 完整世界观与关系线模板》" data-price="12" data-format="DOCX / MD" data-seller="岛遇官方严选" data-preview="包含：12个关键冲突节点、双人羁绊好感度触发条件、3套开局冷启动对话示例与隐藏支线。" class="market-card rounded-lg bg-light-surface border border-light-outline-variant p-gutter-md shadow-sm flex flex-col gap-gutter-sm">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm">设定模板</span>
+              <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant font-mono text-label-sm">DOCX / MD</span>
+            </div>
+            <span data-design-text-token="label-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">已售 512</span>
+          </div>
+
+          <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface text-balance">《双人宿敌向 · 完整世界观与关系线模板》</h2>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant text-pretty">
+            内置 12 个冲突事件节点与羁绊好感度触发条件，支持一键导入角色卡或自定义修改，省去从零搭设定的时间。
+          </p>
+
+          <div class="flex items-center justify-between gap-2 pt-2 border-t border-light-outline-variant/60">
+            <div class="flex items-center gap-2 min-w-0">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDzHZENl33wi65M9XLZKtqtzF3NascoRExBRgFEq9GjDD19ZK3sQAVHJu4YeXiWyqomWbIJt5bCJjTQ8iS4RzVk5I-Bm8jycGsXXmHhnCa_hVWAskymbI6xUfe5DnMV_e5ujvU3WqOBGB6SvdFjkltM28GzJ08c9obs309pT947f3ZSKc-gKeHjC4Li2eeUvRuBpa2OKV0E5NtQvtl9PJZsZI6l7TUTMIFmaAn5IS5Zt4ab2Wcer2PLMQ" alt="岛遇官方严选" class="w-6 h-6 rounded-full object-cover shrink-0">
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">岛遇官方严选</span>
+            </div>
+            <div class="flex items-center gap-2.5 shrink-0">
+              <span class="inline-flex items-center gap-1"><span data-design-text-token="title-md" class="font-mono text-title-md text-light-on-surface tabular-nums">￥12</span></span>
+              <button type="button" class="buy-btn h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity duration-state-change">
+                购买模板
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- [商品 5] 功能插件：好感度与状态栏美化插件 -->
+        <article data-category="plugins" data-type="plugin" data-id="plugin-status-panel" data-title="《动态好感度与状态栏美化插件 · 小手机通用》" data-price="8.8" data-format="JSON / 插件包" data-seller="夜航船" data-preview="【插件安装与导入说明】
+1. 本资源为功能扩展包（非纯文本文档），内含正则渲染规则与状态栏 JSON 配置；
+2. 使用方式：点击下方「下载插件包」保存到本地 → 打开小手机或游玩设置 → 插件管理 → 导入配置即可自动显示好感度、时间与心境标签。" class="market-card rounded-lg bg-light-surface border border-light-outline-variant p-gutter-md shadow-sm flex flex-col gap-gutter-sm">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container text-light-secondary font-label text-label-sm">功能插件</span>
+              <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant font-mono text-label-sm">JSON / JS</span>
+            </div>
+            <span data-design-text-token="label-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">已售 936</span>
+          </div>
+
+          <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface text-balance">《动态好感度与状态栏美化插件 · 小手机通用》</h2>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant text-pretty">
+            非纯文档，内含正则渲染脚本与状态栏配置文件；导入后可在对话底部实时显示好感度、场景时间与角色心境标签。
+          </p>
+
+          <div class="flex items-center justify-between gap-2 pt-2 border-t border-light-outline-variant/60">
+            <div class="flex items-center gap-2 min-w-0">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDUyrZMlsLoNImKXfZ9C8zU1BKdsF41nwAO-xNOn64b4334sYorz-OI6eKP9SlblEbwMq_kykVoCoZRCnmUVveLi9HHazxIRlOc3d9Mgjpb71pyavzYYfuhcQu35XKkVrj8piG_HtZKvaLS3Fg8SfWpb9CUG3x6eufiCHidmC8Me6e19zJqvr0vX2Q-BaC1x8Qziy-dF_kbEyToLj8qfGgJrFO2xZ7oCTjD3O5f3izvbzffG0XwlA" alt="夜航船" class="w-6 h-6 rounded-full object-cover shrink-0">
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">夜航船</span>
+            </div>
+            <div class="flex items-center gap-2.5 shrink-0">
+              <span class="inline-flex items-center gap-1"><span data-design-text-token="title-md" class="font-mono text-title-md text-light-on-surface tabular-nums">￥8.8</span></span>
+              <button type="button" class="buy-btn h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity duration-state-change">
+                购买插件
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </section></div>
+    
+
+    <!-- ==================== 3. 购买确认底部抽屉弹窗（三步状态流） ==================== -->
+    <div id="buy-sheet" class="hidden absolute inset-0 z-30 flex flex-col justify-end" role="dialog" aria-modal="true" aria-labelledby="buy-sheet-title">
+      <div id="buy-sheet-backdrop" class="absolute inset-0 bg-dark-surface/50"></div>
+      <div class="relative bg-light-surface rounded-t-xl p-gutter-lg pb-safe-bottom flex flex-col gap-gutter-md shadow-2xl">
+        <div class="flex items-center justify-between">
+          <h3 id="buy-sheet-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">确认购买</h3>
+          <button id="close-buy-sheet" type="button" aria-label="关闭" class="w-8 h-8 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface-variant">✕</button>
+        </div>
+
+        <!-- [步骤 1] 商品信息核对与支付按钮 -->
+        <div id="buy-step-confirm" class="flex flex-col gap-gutter-md">
+          <div class="rounded-md bg-light-surface-container-low border border-light-outline-variant p-gutter-md flex flex-col gap-1.5">
+            <p id="buy-item-name" data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface"></p>
+            <div class="flex items-center justify-between text-body-sm text-light-on-surface-variant">
+              <span id="buy-item-meta"></span>
+              <span id="buy-item-price" class="font-mono text-title-md text-light-on-surface tabular-nums"></span>
+            </div>
+          </div>
+          <button id="confirm-buy-btn" type="button" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary font-label text-label-lg hover:opacity-90 transition-opacity duration-state-change">
+            立即支付并解锁
+          </button>
+        </div>
+
+        <!-- [步骤 2] 支付校验与资源打包加载态 -->
+        <div id="buy-step-loading" class="hidden py-6 flex flex-col items-center justify-center gap-3 text-center">
+          <svg class="w-9 h-9 animate-spin text-light-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-opacity="0.2" stroke-width="2.5"></circle>
+            <path d="M21 12C21 7.02944 16.9706 3 12 3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+          <div class="flex flex-col gap-1">
+            <p data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">正在确认支付并打包文档…</p>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">正在校验权限并生成专属下载资源</p>
+          </div>
+        </div>
+
+        <!-- [步骤 3] 解锁成功：支持在线预览或下载到本地 -->
+        <div id="buy-step-success" class="hidden flex flex-col gap-gutter-md">
+          <div class="rounded-md bg-light-surface-container-low border border-light-outline-variant p-gutter-md flex items-center gap-3">
+            <span class="w-9 h-9 rounded-full bg-light-surface-container text-success flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 12.5L10.2 16.5L18 8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <div class="min-w-0 flex-1">
+              <p id="buy-success-name" data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate"></p>
+              <p data-design-text-token="body-sm" class="font-body text-body-sm text-success">已解锁成功，可立即下载或在线预览</p>
+            </div>
+          </div>
+
+          <!-- [进度条] 弹窗内下载进度（默认隐藏） -->
+          <div id="buy-download-progress" class="hidden flex flex-col gap-1.5">
+            <div class="flex items-center justify-between">
+              <span id="buy-download-status" data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">正在下载文档…</span>
+              <span id="buy-download-pct" class="font-mono text-label-sm text-light-on-surface tabular-nums">0%</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-light-surface-container overflow-hidden">
+              <div id="buy-download-bar" class="h-full w-0 rounded-full bg-light-primary transition-all duration-150"></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-gutter-sm">
+            <button id="buy-open-preview-btn" type="button" class="h-11 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm hover:bg-light-surface-container-high transition-colors duration-state-change">
+              在线预览 / 复制
+            </button>
+            <button id="buy-download-btn" type="button" class="h-11 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity duration-state-change">
+              下载到本地
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 4. 已购内容预览与一键复制抽屉弹窗 ==================== -->
+    <div id="preview-sheet" class="hidden absolute inset-0 z-30 flex flex-col justify-end" role="dialog" aria-modal="true" aria-labelledby="preview-sheet-title">
+      <div id="preview-sheet-backdrop" class="absolute inset-0 bg-dark-surface/50"></div>
+      <div class="relative bg-light-surface rounded-t-xl p-gutter-lg pb-safe-bottom flex flex-col gap-gutter-md shadow-2xl">
+        <div class="flex items-center justify-between">
+          <h3 id="preview-sheet-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface truncate">已购内容预览</h3>
+          <button id="close-preview-sheet" type="button" aria-label="关闭" class="w-8 h-8 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface-variant">✕</button>
+        </div>
+        <pre id="preview-content" class="whitespace-pre-wrap rounded-md bg-light-surface-container-low border border-light-outline-variant p-gutter-md font-body text-body-sm text-light-on-surface leading-relaxed"></pre>
+
+        <div id="preview-download-progress" class="hidden flex flex-col gap-1.5">
+          <div class="flex items-center justify-between">
+            <span id="preview-download-status" data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">正在下载文档…</span>
+            <span id="preview-download-pct" class="font-mono text-label-sm text-light-on-surface tabular-nums">0%</span>
+          </div>
+          <div class="w-full h-2 rounded-full bg-light-surface-container overflow-hidden">
+            <div id="preview-download-bar" class="h-full w-0 rounded-full bg-light-primary transition-all duration-150"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-gutter-sm">
+          <button id="preview-download-btn" type="button" class="h-11 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm hover:bg-light-surface-container-high transition-colors duration-state-change">
+            下载到本地
+          </button>
+          <button id="copy-preview-btn" type="button" class="h-11 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity duration-state-change">
+            一键复制内容
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 5. 创作者内测码校验居中弹窗 ==================== -->
+    <div id="beta-code-modal" class="hidden absolute inset-0 z-30 flex items-center justify-center px-gutter-lg" role="dialog" aria-modal="true" aria-labelledby="beta-modal-title">
+      <div id="beta-modal-backdrop" class="absolute inset-0 bg-dark-surface/50"></div>
+      <form id="beta-code-form" class="relative w-full rounded-xl bg-light-surface p-gutter-lg flex flex-col gap-gutter-md shadow-2xl border border-light-outline-variant">
+        <div class="flex items-start justify-between gap-2">
+          <div class="flex flex-col gap-1">
+            <h3 id="beta-modal-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">输入内测码</h3>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant text-pretty">
+              集市上架功能当前仅限内测创作者体验，输入内测码即可开启上架。
+            </p>
+          </div>
+          <button id="close-beta-modal" type="button" aria-label="关闭" class="w-8 h-8 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface-variant shrink-0">✕</button>
+        </div>
+
+        <label class="flex flex-col gap-1">
+          <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface">内测邀请码</span>
+          <input id="beta-code-input" type="text" placeholder="请输入内测码（演示可填任意内容）" class="h-11 rounded-md border border-light-outline-variant bg-light-surface-container-low px-3 font-mono text-body-md text-light-on-surface focus:outline-none focus:ring-2 focus:ring-light-secondary">
+        </label>
+
+        <div class="grid grid-cols-2 gap-gutter-sm">
+          <button id="cancel-beta-btn" type="button" class="h-10 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm hover:bg-light-surface-container-high transition-colors duration-state-change">
+            取消
+          </button>
+          <button type="submit" class="h-10 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity duration-state-change">
+            验证并继续
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ==================== 6. 我要上架商品表单抽屉弹窗 ==================== -->
+    <div id="sell-sheet" class="hidden absolute inset-0 z-30 flex flex-col justify-end" role="dialog" aria-modal="true" aria-labelledby="sell-sheet-title">
+      <div id="sell-sheet-backdrop" class="absolute inset-0 bg-dark-surface/50"></div>
+      <form id="sell-form" class="relative bg-light-surface rounded-t-xl p-gutter-lg pb-safe-bottom flex flex-col gap-gutter-md shadow-2xl">
+        <div class="flex items-center justify-between">
+          <h3 id="sell-sheet-title" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">上架到破破甲集市</h3>
+          <button id="close-sell-sheet" type="button" aria-label="关闭" class="w-8 h-8 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface-variant">✕</button>
+        </div>
+        <div class="flex flex-col gap-gutter-sm">
+          <label class="flex flex-col gap-1">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface">商品名称</span>
+            <input id="sell-title-input" type="text" required placeholder="例如：DeepSeek 防降智记忆总结模板" class="h-10 rounded-md border border-light-outline-variant bg-light-surface-container-low px-3 font-body text-body-md text-light-on-surface">
+          </label>
+          <div class="grid grid-cols-2 gap-gutter-sm">
+            <label class="flex flex-col gap-1">
+              <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface">商品分类</span>
+              <select id="sell-cat-input" class="h-10 rounded-md border border-light-outline-variant bg-light-surface-container-low px-3 font-body text-body-md text-light-on-surface">
+                <option value="prompts">指令预设</option>
+                <option value="skins">聊天皮肤</option>
+                <option value="presets">设定模板</option>
+                <option value="plugins">功能插件</option>
+              </select>
+            </label>
+            <label class="flex flex-col gap-1">
+              <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface">定价（元）</span>
+              <input id="sell-price-input" type="number" step="0.1" min="1" value="6.0" required class="h-10 rounded-md border border-light-outline-variant bg-light-surface-container-low px-3 font-mono text-body-md text-light-on-surface tabular-nums">
+            </label>
+          </div>
+          <label class="flex flex-col gap-1">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface">简介说明</span>
+            <textarea id="sell-desc-input" rows="2" required placeholder="简要介绍适用场景、文档格式与亮点" class="rounded-md border border-light-outline-variant bg-light-surface-container-low p-3 font-body text-body-md text-light-on-surface"></textarea>
+          </label>
+        </div>
+        <button type="submit" class="w-full h-11 rounded-full bg-light-primary text-light-on-primary font-label text-label-lg">
+          提交并上架集市
+        </button>
+      </form>
+    </div>
+
+  </main>
+
+  <script data-stitch-original-script="527f1f2ebb6355e3===../../images/avatar_me_user.jpg">
+    (function () {
+      // ---------- 1. 全局轻提示与商品分类横向滑动筛选 ----------
+      const toastEl = document.getElementById('market-toast');
+      let toastTimer = null;
+      function showToast(msg) {
+        toastEl.textContent = msg;
+        toastEl.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toastEl.classList.add('hidden'), 2200);
+      }
+
+      const filterTabs = document.getElementById('market-filter-tabs');
+      const catBtns = document.querySelectorAll('.market-cat-btn');
+      const marketList = document.getElementById('market-list');
+
+      function filterCards(cat) {
+        catBtns.forEach((b) => {
+          const active = b.dataset.cat === cat;
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+          b.className = active
+            ? 'market-cat-btn shrink-0 px-3 py-1.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm transition-colors duration-state-change'
+            : 'market-cat-btn shrink-0 px-3 py-1.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm hover:bg-light-surface-container-high transition-colors duration-state-change';
+          if (active && b.scrollIntoView) {
+            b.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' });
+          }
+        });
+        marketList.querySelectorAll('.market-card').forEach((card) => {
+          const match = cat === 'all' || card.dataset.category === cat;
+          card.classList.toggle('hidden', !match);
+        });
+      }
+
+      let hasDragged = false;
+      catBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          if (hasDragged) {
+            e.preventDefault();
+            return;
+          }
+          filterCards(btn.dataset.cat);
+        });
+      });
+
+      // 支持桌面端滚轮、触控与任意位置拖拽横向滑动分类栏
+      if (filterTabs) {
+        filterTabs.addEventListener('wheel', (e) => {
+          if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            filterTabs.scrollLeft += e.deltaY;
+            e.preventDefault();
+          }
+        }, { passive: false });
+
+        let isDown = false;
+        let startX = 0;
+        let scrollLeft = 0;
+        filterTabs.addEventListener('pointerdown', (e) => {
+          if (e.pointerType === 'touch') return;
+          isDown = true;
+          hasDragged = false;
+          startX = e.pageX - filterTabs.offsetLeft;
+          scrollLeft = filterTabs.scrollLeft;
+        });
+        window.addEventListener('pointerup', () => {
+          isDown = false;
+          setTimeout(() => { hasDragged = false; }, 0);
+        });
+        filterTabs.addEventListener('pointermove', (e) => {
+          if (!isDown) return;
+          const x = e.pageX - filterTabs.offsetLeft;
+          const dx = x - startX;
+          if (Math.abs(dx) > 5) hasDragged = true;
+          if (hasDragged) {
+            e.preventDefault();
+            filterTabs.scrollLeft = scrollLeft - dx;
+          }
+        });
+      }
+
+      // 点击商品卡片空白/标题区域跳转至 70 商品详情二级页面
+      marketList.querySelectorAll('.market-card').forEach((card) => {
+        card.classList.add('cursor-pointer', 'hover:border-light-outline', 'transition-colors', 'duration-state-change');
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('button, a')) return;
+          const itemId = card.dataset.id || 'doc-no-ooc';
+          window.location.href = '../70-market-item-detail/MarketItemDetail.html?id=' + encodeURIComponent(itemId);
+        });
+      });
+
+      // ---------- 2. 购买确认弹窗、支付解锁与下载进度 ----------
+      const buySheet = document.getElementById('buy-sheet');
+      const buySheetTitle = document.getElementById('buy-sheet-title');
+      const buyStepConfirm = document.getElementById('buy-step-confirm');
+      const buyStepLoading = document.getElementById('buy-step-loading');
+      const buyStepSuccess = document.getElementById('buy-step-success');
+      const buyItemName = document.getElementById('buy-item-name');
+      const buyItemMeta = document.getElementById('buy-item-meta');
+      const buyItemPrice = document.getElementById('buy-item-price');
+      const buySuccessName = document.getElementById('buy-success-name');
+      const confirmBuyBtn = document.getElementById('confirm-buy-btn');
+      const buyDownloadBtn = document.getElementById('buy-download-btn');
+      const buyOpenPreviewBtn = document.getElementById('buy-open-preview-btn');
+      const buyDlBox = document.getElementById('buy-download-progress');
+      const buyDlStatus = document.getElementById('buy-download-status');
+      const buyDlPct = document.getElementById('buy-download-pct');
+      const buyDlBar = document.getElementById('buy-download-bar');
+
+      const previewSheet = document.getElementById('preview-sheet');
+      const previewTitle = document.getElementById('preview-sheet-title');
+      const previewContent = document.getElementById('preview-content');
+      const previewDownloadBtn = document.getElementById('preview-download-btn');
+      const previewDlBox = document.getElementById('preview-download-progress');
+      const previewDlStatus = document.getElementById('preview-download-status');
+      const previewDlPct = document.getElementById('preview-download-pct');
+      const previewDlBar = document.getElementById('preview-download-bar');
+
+      let activeCard = null;
+      let buyTimer = null;
+      let dlTimer = null;
+
+      function resetBuySheet() {
+        clearTimeout(buyTimer);
+        clearInterval(dlTimer);
+        buySheetTitle.textContent = '确认购买';
+        buyStepConfirm.classList.remove('hidden');
+        buyStepLoading.classList.add('hidden');
+        buyStepSuccess.classList.add('hidden');
+        buyDlBox.classList.add('hidden');
+        buyDlBar.style.width = '0%';
+        buyDlPct.textContent = '0%';
+        buyDownloadBtn.disabled = false;
+        buyDownloadBtn.textContent = '下载到本地';
+      }
+
+      // 通用文档打包下载进度模拟
+      function runDownloadProgress(box, statusEl, pctEl, barEl, btnEl) {
+        clearInterval(dlTimer);
+        box.classList.remove('hidden');
+        btnEl.disabled = true;
+        btnEl.textContent = '正在下载…';
+        statusEl.textContent = '正在打包并下载文档…';
+        let pct = 0;
+        barEl.style.width = '0%';
+        pctEl.textContent = '0%';
+        dlTimer = setInterval(() => {
+          pct += Math.floor(Math.random() * 18) + 14;
+          if (pct >= 100) {
+            pct = 100;
+            clearInterval(dlTimer);
+            barEl.style.width = '100%';
+            pctEl.textContent = '100%';
+            statusEl.textContent = '下载完成，已保存至本地';
+            btnEl.disabled = false;
+            btnEl.textContent = '重新下载';
+            showToast('文档已下载到本地');
+            return;
+          }
+          barEl.style.width = pct + '%';
+          pctEl.textContent = pct + '%';
+        }, 140);
+      }
+
+      // 为商品卡片绑定购买或已购预览事件
+      function isPluginCard(card) {
+        return card && (card.dataset.type === 'plugin' || card.dataset.category === 'plugins');
+      }
+
+      function bindCardBuy(card) {
+        const btn = card.querySelector('.buy-btn');
+        btn.addEventListener('click', () => {
+          activeCard = card;
+          const isPlugin = isPluginCard(card);
+          if (card.dataset.purchased === 'true') {
+            previewTitle.textContent = isPlugin ? '插件安装说明' : card.dataset.title;
+            previewContent.textContent = card.dataset.preview || '已解锁完整内容，可直接复制使用。';
+            previewDlBox.classList.add('hidden');
+            previewDlBar.style.width = '0%';
+            previewDownloadBtn.disabled = false;
+            previewDownloadBtn.textContent = isPlugin ? '下载插件包' : '下载到本地';
+            previewSheet.classList.remove('hidden');
+            return;
+          }
+          resetBuySheet();
+          buyItemName.textContent = card.dataset.title;
+          buyItemMeta.textContent = card.dataset.seller + ' · ' + card.dataset.format;
+          buyItemPrice.textContent = '￥' + card.dataset.price;
+          buySheet.classList.remove('hidden');
+        });
+      }
+
+      marketList.querySelectorAll('.market-card').forEach(bindCardBuy);
+
+      function closeBuy() {
+        clearTimeout(buyTimer);
+        clearInterval(dlTimer);
+        buySheet.classList.add('hidden');
+      }
+      document.getElementById('buy-sheet-backdrop').addEventListener('click', closeBuy);
+      document.getElementById('close-buy-sheet').addEventListener('click', closeBuy);
+
+      confirmBuyBtn.addEventListener('click', () => {
+        if (!activeCard) return;
+        buySheetTitle.textContent = '正在解锁';
+        buyStepConfirm.classList.add('hidden');
+        buyStepLoading.classList.remove('hidden');
+
+        buyTimer = setTimeout(() => {
+          if (!activeCard) return;
+          const isPlugin = isPluginCard(activeCard);
+          activeCard.dataset.purchased = 'true';
+          const btn = activeCard.querySelector('.buy-btn');
+          btn.textContent = isPlugin ? '已购 · 下载/说明' : '已购 · 下载/查看';
+          btn.className = 'buy-btn h-8 px-3.5 rounded-full bg-light-surface-container text-success font-label text-label-sm hover:bg-light-surface-container-high transition-colors duration-state-change';
+
+          buySheetTitle.textContent = '购买成功';
+          buySuccessName.textContent = activeCard.dataset.title;
+          buyOpenPreviewBtn.textContent = isPlugin ? '查看安装说明' : '在线预览 / 复制';
+          buyDownloadBtn.textContent = isPlugin ? '下载插件包' : '下载到本地';
+          buyStepLoading.classList.add('hidden');
+          buyStepSuccess.classList.remove('hidden');
+        }, 900);
+      });
+
+      buyDownloadBtn.addEventListener('click', () => {
+        runDownloadProgress(buyDlBox, buyDlStatus, buyDlPct, buyDlBar, buyDownloadBtn);
+      });
+
+      // ---------- 3. 已购内容预览弹窗与一键复制 ----------
+      buyOpenPreviewBtn.addEventListener('click', () => {
+        if (!activeCard) return;
+        const isPlugin = isPluginCard(activeCard);
+        closeBuy();
+        previewTitle.textContent = isPlugin ? '插件安装说明' : activeCard.dataset.title;
+        previewContent.textContent = activeCard.dataset.preview || '已解锁完整内容，可直接复制使用。';
+        previewDlBox.classList.add('hidden');
+        previewDownloadBtn.disabled = false;
+        previewDownloadBtn.textContent = isPlugin ? '下载插件包' : '下载到本地';
+        previewSheet.classList.remove('hidden');
+      });
+
+      function closePreview() {
+        clearInterval(dlTimer);
+        previewSheet.classList.add('hidden');
+      }
+      document.getElementById('preview-sheet-backdrop').addEventListener('click', closePreview);
+      document.getElementById('close-preview-sheet').addEventListener('click', closePreview);
+      previewDownloadBtn.addEventListener('click', () => {
+        runDownloadProgress(previewDlBox, previewDlStatus, previewDlPct, previewDlBar, previewDownloadBtn);
+      });
+      document.getElementById('copy-preview-btn').addEventListener('click', () => {
+        if (navigator.clipboard && previewContent.textContent) {
+          navigator.clipboard.writeText(previewContent.textContent).catch(() => {});
+        }
+        closePreview();
+        showToast('内容已复制到剪贴板');
+      });
+
+      // ---------- 4. 内测码校验与创作者商品上架 ----------
+      const betaModal = document.getElementById('beta-code-modal');
+      const betaForm = document.getElementById('beta-code-form');
+      const betaInput = document.getElementById('beta-code-input');
+      const sellSheet = document.getElementById('sell-sheet');
+      const sellForm = document.getElementById('sell-form');
+      let betaVerified = false;
+
+      function closeBeta() { betaModal.classList.add('hidden'); }
+      function closeSell() { sellSheet.classList.add('hidden'); }
+
+      document.getElementById('open-sell-btn').addEventListener('click', () => {
+        if (betaVerified) {
+          sellSheet.classList.remove('hidden');
+        } else {
+          betaInput.value = '';
+          betaModal.classList.remove('hidden');
+        }
+      });
+
+      document.getElementById('beta-modal-backdrop').addEventListener('click', closeBeta);
+      document.getElementById('close-beta-modal').addEventListener('click', closeBeta);
+      document.getElementById('cancel-beta-btn').addEventListener('click', closeBeta);
+
+      betaForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const code = betaInput.value.trim();
+        if (!code) {
+          showToast('请先输入内测码');
+          betaInput.focus();
+          return;
+        }
+        betaVerified = true;
+        closeBeta();
+        showToast('内测码验证通过');
+        sellSheet.classList.remove('hidden');
+      });
+
+      document.getElementById('sell-sheet-backdrop').addEventListener('click', closeSell);
+      document.getElementById('close-sell-sheet').addEventListener('click', closeSell);
+
+      const catLabels = {
+        prompts: '指令预设',
+        skins: '聊天皮肤',
+        presets: '设定模板',
+        plugins: '功能插件'
+      };
+
+      // 提交上架表单并动态插入新商品卡片到列表顶部
+      sellForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const title = document.getElementById('sell-title-input').value.trim();
+        const cat = document.getElementById('sell-cat-input').value;
+        const price = Number(document.getElementById('sell-price-input').value || 6).toFixed(2);
+        const desc = document.getElementById('sell-desc-input').value.trim();
+        if (!title || !desc) return;
+
+        const isPlugin = cat === 'plugins';
+        const fmt = isPlugin ? 'JSON / JS' : 'MD / TXT';
+        const card = document.createElement('article');
+        card.className = 'market-card rounded-lg bg-light-surface border border-light-outline-variant p-gutter-md shadow-sm flex flex-col gap-gutter-sm';
+        card.dataset.category = cat;
+        if (isPlugin) card.dataset.type = 'plugin';
+        card.dataset.title = title;
+        card.dataset.price = price;
+        card.dataset.format = fmt;
+        card.dataset.seller = '我 · 岛遇创作者';
+        card.dataset.preview = desc;
+
+        card.innerHTML =
+          '<div class="flex items-start justify-between gap-2">' +
+          '  <div class="flex items-center gap-1.5 flex-wrap">' +
+          '    <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container text-light-secondary font-label text-label-sm">' + (catLabels[cat] || '集市好物') + '</span>' +
+          '    <span data-design-text-token="label-sm" class="px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant font-mono text-label-sm">MD / TXT</span>' +
+          '  </div>' +
+          '  <span data-design-text-token="label-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">刚刚上架</span>' +
+          '</div>' +
+          '<h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface text-balance"></h2>' +
+          '<p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant text-pretty"></p>' +
+          '<div class="flex items-center justify-between gap-2 pt-2 border-t border-light-outline-variant/60">' +
+          '  <div class="flex items-center gap-2 min-w-0">' +
+          '    <img src="https://lh3.googleusercontent.com/aida/ALJJyrDEQtOit7dUyYZrE3Ttq8IJyuHHvf3PZtk3guFGLRtyN1j0MeXZCes-xb49Vqh7bq23vTPI7Dr12-ZIBxFrTU4rZF_cd9kaK86j-u6jOtg8l7Y2Cw_-MAe00GlQgEIOK5bR4EHxZGOWFicDXD5xyt1_nLOu9r3w7SSlSTEnmVnU81nXpRt6370RTjjyEeGhHJvKrueDLt3uIfel7CAzdjQE5Q32ARrahVYfJu7-pGieGXy8ME6uPPTs" alt="我" class="w-6 h-6 rounded-full object-cover shrink-0">' +
+          '    <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">我 · 岛遇创作者</span>' +
+          '  </div>' +
+          '  <div class="flex items-center gap-2.5 shrink-0">' +
+          '    <span data-design-text-token="title-md" class="font-mono text-title-md font-bold text-light-on-surface tabular-nums">' + price + ' 元</span>' +
+          '    <button type="button" class="buy-btn h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity duration-state-change">购买</button>' +
+          '  </div>' +
+          '</div>';
+
+        card.querySelector('h2').textContent = title;
+        card.querySelector('p').textContent = desc;
+        marketList.prepend(card);
+        bindCardBuy(card);
+        filterCards(currentCat);
+        sellForm.reset();
+        closeSell();
+        showToast('已成功上架到破破甲集市');
+      });
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 22 中转测评 · 站点详情 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人设岛遇 - 22 中转测评 · 站点详情</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <main class="w-full max-w-[390px] min-h-[884px] relative flex flex-col overflow-hidden bg-light-surface shadow-xl" data-stitch-vh="min-h-[884px]===min-h-screen">
+
+    <!-- ==================== 1. 顶部上下文导航栏（适配灵动岛安全区） ==================== -->
+    <header class="shrink-0 pt-12 px-gutter-lg pb-gutter-md bg-light-surface border-b border-light-outline-variant/80 z-20 flex items-center justify-between">
+      <!-- [返回] 回到中转测评列表页 -->
+      <a href="../19-relay-reviews/RelayReviews.html" aria-label="返回中转测评列表" class="w-9 h-9 -ml-1.5 rounded-full flex items-center justify-center text-light-on-surface hover:bg-light-surface-container transition-transform duration-state-change active:scale-95">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+      <h1 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">中转站详情</h1>
+      <!-- [操作] 快捷复制中转站接口网址 -->
+      <button id="header-copy-btn" type="button" class="px-3 py-1 rounded-full bg-light-surface-container hover:bg-light-surface-container-high font-label text-label-sm text-light-on-surface transition-transform duration-state-change active:scale-95">
+        复制网址
+      </button>
+    </header>
+
+    <!-- ==================== 2. 主体可滚动详情内容区 ==================== -->
+    <div class="flex-1 overflow-y-auto no-scrollbar px-gutter-lg py-gutter-md flex flex-col gap-gutter-md bg-light-surface-container-low pb-gutter-xl">
+
+      <!-- [模块 1] 站点基础信息、综合评分与接口地址复制卡 -->
+      <section class="p-gutter-md rounded-md bg-light-surface border border-light-outline-variant shadow-sm flex flex-col gap-gutter-sm">
+        <div class="flex items-start justify-between gap-2">
+          <div class="flex items-start gap-2.5 min-w-0">
+            <div id="station-badge" class="w-12 h-12 rounded-md bg-light-primary text-light-on-primary flex items-center justify-center font-mono text-headline-md shrink-0">云</div>
+            <div class="flex flex-col gap-0.5 min-w-0">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <h2 id="station-name" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface leading-tight">云屿直连 · IslandAPI</h2>
+                <span id="station-tag" class="px-2 py-0.5 rounded-sm bg-emerald-50 text-success font-label text-label-sm shrink-0">高分口碑</span>
+              </div>
+              <span class="font-body text-body-sm text-light-on-surface-variant">岛民评分汇总 · 数据仅供参考</span>
+            </div>
+          </div>
+          <div class="flex flex-col items-end shrink-0">
+            <span id="avg-score-display" class="font-mono text-headline-lg text-light-on-surface tabular-nums leading-none">4.9</span>
+            <span id="score-count-display" class="font-body text-body-sm text-light-on-surface-variant mt-1 tabular-nums">42 人评分</span>
+          </div>
+        </div>
+
+        <!-- [指标] 计费倍率 / 参考延迟 / 支持模型 -->
+        <div class="grid grid-cols-3 gap-1 p-gutter-sm rounded-sm bg-light-surface-container-low border border-light-outline-variant/60 text-center">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-body text-body-sm text-light-on-surface-variant">计费倍率</span>
+            <span id="metric-rate" class="font-mono text-label-sm text-light-on-surface tabular-nums">1:1 原价</span>
+          </div>
+          <div class="flex flex-col gap-0.5">
+            <span class="font-body text-body-sm text-light-on-surface-variant">参考延迟</span>
+            <span id="metric-latency" class="font-mono text-label-sm text-success tabular-nums">280 ms</span>
+          </div>
+          <div class="flex flex-col gap-0.5">
+            <span class="font-body text-body-sm text-light-on-surface-variant">支持模型</span>
+            <span id="metric-models" class="font-mono text-label-sm text-light-on-surface tabular-nums">24 个</span>
+          </div>
+        </div>
+
+        <!-- [接口栏] Base URL 展示 + 一键复制 + 跳转游玩设置 -->
+        <div class="pt-2 border-t border-light-outline-variant/60 flex flex-col gap-1.5">
+          <div class="flex items-center justify-between">
+            <span class="font-label text-label-sm text-light-on-surface">中转站网址（接口地址）</span>
+            <span class="font-body text-body-sm text-light-on-surface-variant">兼容 OpenAI 格式</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="flex-1 min-w-0 h-9 px-gutter-sm rounded-sm bg-light-surface-container flex items-center">
+              <span id="station-url" class="font-mono text-body-sm text-light-on-surface truncate">https://api.island-relay.top/v1</span>
+            </div>
+            <button id="copy-url-btn" type="button" class="shrink-0 h-9 px-3 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm transition-transform duration-state-change active:scale-95">复制链接</button>
+            <a href="../12-play-settings/PlaySettings.html" class="shrink-0 h-9 px-3 rounded-full bg-light-surface border border-light-outline-variant text-light-on-surface font-label text-label-sm flex items-center">去配置</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- [模块 2] 支持模型列表与参考倍率表 -->
+      <section class="p-gutter-md rounded-md bg-light-surface border border-light-outline-variant flex flex-col gap-gutter-sm">
+        <div class="flex items-center justify-between">
+          <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">支持模型与参考倍率</h3>
+          <span class="font-body text-body-sm text-light-on-surface-variant">共 24 个可用模型</span>
+        </div>
+        <div class="divide-y divide-light-outline-variant/60 border border-light-outline-variant/60 rounded-sm overflow-hidden">
+          <div class="px-gutter-sm py-2 bg-light-surface-container-low flex items-center justify-between font-label text-label-sm text-light-on-surface-variant">
+            <span>模型名称</span>
+            <span>上下文 / 计费参考</span>
+          </div>
+          <div class="px-gutter-sm py-2 flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="font-label text-label-sm text-light-on-surface">Claude 3.7 Sonnet</span>
+              <span class="font-body text-body-sm text-light-on-surface-variant">长文演绎 · 细腻文风</span>
+            </div>
+            <span class="font-mono text-label-sm text-light-on-surface tabular-nums">200K · 1:1 官价</span>
+          </div>
+          <div class="px-gutter-sm py-2 flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="font-label text-label-sm text-light-on-surface">DeepSeek-R1</span>
+              <span class="font-body text-body-sm text-light-on-surface-variant">推理剧情 · 性价比高</span>
+            </div>
+            <span class="font-mono text-label-sm text-success tabular-nums">64K · 0.8x 优惠</span>
+          </div>
+          <div class="px-gutter-sm py-2 flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="font-label text-label-sm text-light-on-surface">GPT-4o</span>
+              <span class="font-body text-body-sm text-light-on-surface-variant">仿微信短句 · 首字极快</span>
+            </div>
+            <span class="font-mono text-label-sm text-light-on-surface tabular-nums">128K · 1:1 官价</span>
+          </div>
+          <div class="px-gutter-sm py-2 flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="font-label text-label-sm text-light-on-surface">Gemini 2.5 Pro</span>
+              <span class="font-body text-body-sm text-light-on-surface-variant">超大记忆 · 多人剧本局</span>
+            </div>
+            <span class="font-mono text-label-sm text-light-on-surface tabular-nums">1M · 1:1 官价</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- [模块 3] 站点信息与使用说明 -->
+      <section class="p-gutter-md rounded-md bg-light-surface border border-light-outline-variant flex flex-col gap-gutter-sm">
+        <div class="flex items-center justify-between">
+          <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">站点信息与说明</h3>
+          <span class="px-2 py-0.5 rounded-sm bg-light-surface-container font-label text-label-sm text-light-on-surface-variant">岛民反馈参考</span>
+        </div>
+        <div class="flex flex-col gap-2 font-body text-body-sm text-light-on-surface-variant">
+          <div class="p-gutter-sm rounded-sm bg-light-surface-container-low">
+            <span class="font-label text-light-on-surface block mb-0.5">岛民反馈亮点</span>
+            <p>多位岛民反馈晚间高峰长上下文流式输出较稳，首字响应较快，日常长文对话表现稳定。</p>
+          </div>
+          <div class="p-gutter-sm rounded-sm bg-light-surface-container-low">
+            <span class="font-label text-light-on-surface block mb-0.5">新手配置说明</span>
+            <p>复制上方「中转站网址」后，前往「游玩设置 → 自定义接口」，粘贴到 Base URL 并填入你在该站申请的 API Key 即可开始游玩。</p>
+          </div>
+          <div class="p-gutter-sm rounded-sm bg-light-surface-container-low">
+            <span class="font-label text-light-on-surface block mb-0.5">充值与额度提醒</span>
+            <p>支持按量计费且余额永不过期；建议新手首次先充最低档位体验，确认常用模型延迟满意后再长期使用。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- [模块 4] 岛民真实反馈与打分 -->
+      <section class="p-gutter-md rounded-md bg-light-surface border border-light-outline-variant shadow-sm flex flex-col gap-gutter-sm">
+        <div class="flex items-center justify-between gap-2">
+          <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">岛民反馈与打分</h3>
+          <span id="selected-rating-label" class="font-label text-label-sm text-light-on-surface-variant transition-colors duration-200">点击星星评分</span>
+        </div>
+
+        <!-- [控件] 5 星评分条（无多余圆底，圆润星标 + 实时分值） -->
+        <div class="rounded-lg bg-light-surface-container-low border border-light-outline-variant/60 px-3 py-2.5 flex items-center justify-between gap-2">
+          <div id="star-group" class="flex items-center gap-1" role="radiogroup" aria-label="中转站星级评分">
+            <button type="button" data-star="1" aria-label="1 分" class="star-btn w-9 h-9 rounded-md flex items-center justify-center text-light-outline-variant hover:scale-110 active:scale-90 transition-all duration-150">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path></svg>
+            </button>
+            <button type="button" data-star="2" aria-label="2 分" class="star-btn w-9 h-9 rounded-md flex items-center justify-center text-light-outline-variant hover:scale-110 active:scale-90 transition-all duration-150">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path></svg>
+            </button>
+            <button type="button" data-star="3" aria-label="3 分" class="star-btn w-9 h-9 rounded-md flex items-center justify-center text-light-outline-variant hover:scale-110 active:scale-90 transition-all duration-150">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path></svg>
+            </button>
+            <button type="button" data-star="4" aria-label="4 分" class="star-btn w-9 h-9 rounded-md flex items-center justify-center text-light-outline-variant hover:scale-110 active:scale-90 transition-all duration-150">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path></svg>
+            </button>
+            <button type="button" data-star="5" aria-label="5 分" class="star-btn w-9 h-9 rounded-md flex items-center justify-center text-light-outline-variant hover:scale-110 active:scale-90 transition-all duration-150">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"></path></svg>
+            </button>
+          </div>
+          <div class="flex items-baseline gap-0.5 shrink-0">
+            <span id="star-numeric" class="font-mono text-title-md font-bold text-light-on-surface-variant tabular-nums">--</span>
+            <span class="font-mono text-body-sm text-light-on-surface-variant">/ 5</span>
+          </div>
+        </div>
+
+        <!-- [控件] 使用印象标签（支持多选） -->
+        <div class="flex flex-col gap-1.5">
+          <span class="font-body text-body-sm text-light-on-surface-variant">使用印象（可多选）</span>
+          <div class="flex flex-wrap gap-1.5">
+            <button type="button" class="rate-tag px-3 py-1 rounded-full bg-light-surface-container font-label text-label-sm text-light-on-surface-variant transition-all duration-150 active:scale-95">稳定不掉线</button>
+            <button type="button" class="rate-tag px-3 py-1 rounded-full bg-light-surface-container font-label text-label-sm text-light-on-surface-variant transition-all duration-150 active:scale-95">首字很快</button>
+            <button type="button" class="rate-tag px-3 py-1 rounded-full bg-light-surface-container font-label text-label-sm text-light-on-surface-variant transition-all duration-150 active:scale-95">价格透明</button>
+            <button type="button" class="rate-tag px-3 py-1 rounded-full bg-light-surface-container font-label text-label-sm text-light-on-surface-variant transition-all duration-150 active:scale-95">适合长文</button>
+            <button type="button" class="rate-tag px-3 py-1 rounded-full bg-light-surface-container font-label text-label-sm text-light-on-surface-variant transition-all duration-150 active:scale-95">高峰偶有波动</button>
+          </div>
+        </div>
+
+        <!-- [控件] 一句话体验补充（选填） -->
+        <input id="feedback-note-input" type="text" maxlength="80" placeholder="补充一句真实体验，帮其他岛民避坑（选填）" class="w-full h-10 px-3 rounded-md bg-light-surface-container-low border border-light-outline-variant/80 font-body text-body-sm text-light-on-surface placeholder:text-light-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-light-secondary/25 focus:border-light-secondary">
+
+        <!-- [反馈] 提交后内联确认条 -->
+        <div id="rated-banner" class="hidden rounded-sm bg-success/10 border border-success/30 px-3 py-2 flex items-center gap-2 text-success">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          <span id="rated-banner-text" class="font-body text-body-sm"></span>
+        </div>
+
+        <button id="submit-rating-btn" type="button" disabled class="h-11 w-full rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-lg flex items-center justify-center gap-1.5 active:scale-95 disabled:cursor-not-allowed">
+          请先选择星级
+        </button>
+      </section>
+    </div>
+
+    <!-- [反馈] 全局轻提示 Toast -->
+    <div id="detail-toast" role="status" aria-live="polite" class="pointer-events-none hidden absolute top-20 left-1/2 -translate-x-1/2 z-50 px-gutter-lg py-gutter-sm rounded-full bg-light-primary text-light-on-primary font-label text-label-sm shadow-lg whitespace-nowrap"></div>
+  </main>
+
+  <script>
+    (function () {
+      // ---------- 1. 站点数据字典与 URL 参数解析 ----------
+      const STATIONS = {
+        island: {
+          badge: '云',
+          badgeClass: 'w-12 h-12 rounded-md bg-light-primary text-light-on-primary flex items-center justify-center font-mono text-headline-md shrink-0',
+          name: '云屿直连 · IslandAPI',
+          tag: '高分口碑',
+          tagClass: 'px-2 py-0.5 rounded-sm bg-emerald-50 text-success font-label text-label-sm shrink-0',
+          score: 4.9,
+          count: 42,
+          rate: '1:1 原价',
+          latency: '280 ms',
+          models: '24 个',
+          url: 'https://api.island-relay.top/v1'
+        },
+        star: {
+          badge: '星',
+          badgeClass: 'w-12 h-12 rounded-md bg-warning text-light-on-primary flex items-center justify-center font-mono text-headline-md shrink-0',
+          name: '星海算力 · StarToken',
+          tag: '性价比高',
+          tagClass: 'px-2 py-0.5 rounded-sm bg-warning/10 text-warning font-label text-label-sm shrink-0',
+          score: 4.7,
+          count: 29,
+          rate: '0.7x 优惠',
+          latency: '340 ms',
+          models: '18 个',
+          url: 'https://api.startoken-relay.cn/v1'
+        },
+        lime: {
+          badge: '柠',
+          badgeClass: 'w-12 h-12 rounded-md bg-success text-light-on-primary flex items-center justify-center font-mono text-headline-md shrink-0',
+          name: '青柠公益 · LimeFree',
+          tag: '免费试用',
+          tagClass: 'px-2 py-0.5 rounded-sm bg-light-surface-container text-light-on-surface-variant font-label text-label-sm shrink-0',
+          score: 4.3,
+          count: 17,
+          rate: '赠体验金',
+          latency: '520 ms',
+          models: '12 个',
+          url: 'https://api.limefree.org/v1'
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const stationId = STATIONS[params.get('station')] ? params.get('station') : 'island';
+      const station = STATIONS[stationId];
+
+      const badgeEl = document.getElementById('station-badge');
+      const nameEl = document.getElementById('station-name');
+      const tagEl = document.getElementById('station-tag');
+      const avgEl = document.getElementById('avg-score-display');
+      const countEl = document.getElementById('score-count-display');
+      const rateEl = document.getElementById('metric-rate');
+      const latencyEl = document.getElementById('metric-latency');
+      const modelsEl = document.getElementById('metric-models');
+      const urlEl = document.getElementById('station-url');
+
+      if (badgeEl) { badgeEl.textContent = station.badge; badgeEl.className = station.badgeClass; }
+      if (nameEl) nameEl.textContent = station.name;
+      if (tagEl) { tagEl.textContent = station.tag; tagEl.className = station.tagClass; }
+      if (avgEl) avgEl.textContent = station.score.toFixed(1);
+      if (countEl) countEl.textContent = station.count + ' 人评分';
+      if (rateEl) rateEl.textContent = station.rate;
+      if (latencyEl) latencyEl.textContent = station.latency;
+      if (modelsEl) modelsEl.textContent = station.models;
+      if (urlEl) urlEl.textContent = station.url;
+
+      // ---------- 2. 轻提示与复制接口地址 ----------
+      const url = station.url;
+      const toast = document.getElementById('detail-toast');
+      let toastTimer = null;
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.add('hidden'); }, 1800);
+      }
+
+      function copyUrl() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).catch(function () {});
+        }
+        showToast('已复制接口地址：' + url);
+      }
+
+      document.getElementById('copy-url-btn').addEventListener('click', copyUrl);
+      document.getElementById('header-copy-btn').addEventListener('click', copyUrl);
+
+      // ---------- 3. 星级评分、印象标签、体验补充与本地持久化 ----------
+      const starBtns = Array.from(document.querySelectorAll('.star-btn'));
+      const ratingLabel = document.getElementById('selected-rating-label');
+      const starNumeric = document.getElementById('star-numeric');
+      const feedbackNoteInput = document.getElementById('feedback-note-input');
+      const ratedBanner = document.getElementById('rated-banner');
+      const ratedBannerText = document.getElementById('rated-banner-text');
+      const submitRatingBtn = document.getElementById('submit-rating-btn');
+      const labels = ['', '1 星 · 较差', '2 星 · 一般', '3 星 · 可用', '4 星 · 推荐', '5 星 · 非常稳定'];
+      let chosenStar = 0;
+      let hasSubmitted = false;
+
+      function paintStars(val, animate) {
+        chosenStar = val;
+        starBtns.forEach(function (b) {
+          const s = Number(b.getAttribute('data-star'));
+          const active = s <= chosenStar;
+          b.classList.toggle('text-success', active);
+          b.classList.toggle('text-light-outline-variant', !active);
+          b.setAttribute('aria-checked', s === chosenStar ? 'true' : 'false');
+          if (animate && s === chosenStar) {
+            b.classList.add('scale-110');
+            setTimeout(function () { b.classList.remove('scale-110'); }, 160);
+          }
+        });
+        if (ratingLabel) {
+          ratingLabel.textContent = labels[chosenStar] || '点击星星评分';
+          ratingLabel.classList.toggle('text-success', chosenStar > 0);
+          ratingLabel.classList.toggle('text-light-on-surface-variant', chosenStar === 0);
+        }
+        if (starNumeric) {
+          starNumeric.textContent = chosenStar ? (chosenStar + '.0') : '--';
+          starNumeric.classList.toggle('text-success', chosenStar > 0);
+          starNumeric.classList.toggle('text-light-on-surface-variant', chosenStar === 0);
+        }
+        if (submitRatingBtn) {
+          submitRatingBtn.disabled = chosenStar === 0;
+          submitRatingBtn.classList.remove('bg-success');
+          submitRatingBtn.classList.toggle('bg-light-primary', chosenStar > 0);
+          submitRatingBtn.classList.toggle('text-light-on-primary', chosenStar > 0);
+          submitRatingBtn.classList.toggle('bg-light-surface-container', chosenStar === 0);
+          submitRatingBtn.classList.toggle('text-light-on-surface-variant', chosenStar === 0);
+          submitRatingBtn.textContent = chosenStar
+            ? (hasSubmitted ? ('更新 ' + chosenStar + ' 星反馈') : ('提交 ' + chosenStar + ' 星反馈'))
+            : '请先选择星级';
+        }
+      }
+
+      starBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          paintStars(Number(btn.getAttribute('data-star')), true);
+        });
+      });
+
+      // 切换印象标签选中状态
+      document.querySelectorAll('.rate-tag').forEach(function (tag) {
+        tag.addEventListener('click', function () {
+          const active = tag.classList.toggle('bg-light-primary');
+          tag.classList.toggle('text-light-on-primary', active);
+          tag.classList.toggle('bg-light-surface-container', !active);
+          tag.classList.toggle('text-light-on-surface-variant', !active);
+        });
+      });
+
+      // 回显本地已保存的历史评分与反馈
+      try {
+        const raw = localStorage.getItem('island_relay_ratings');
+        if (raw) {
+          const saved = JSON.parse(raw);
+          const entry = saved[stationId];
+          if (entry && entry.myStar) {
+            hasSubmitted = true;
+            paintStars(entry.myStar, false);
+            if (avgEl && entry.avg) avgEl.textContent = entry.avg;
+            if (countEl && entry.count) countEl.textContent = entry.count + ' 人评分';
+            if (feedbackNoteInput && entry.note) feedbackNoteInput.value = entry.note;
+            if (Array.isArray(entry.tags)) {
+              document.querySelectorAll('.rate-tag').forEach(function (t) {
+                if (entry.tags.indexOf(t.textContent.trim()) !== -1) {
+                  t.classList.add('bg-light-primary', 'text-light-on-primary');
+                  t.classList.remove('bg-light-surface-container', 'text-light-on-surface-variant');
+                }
+              });
+            }
+            if (ratedBanner && ratedBannerText) {
+              ratedBannerText.textContent = '你已评 ' + entry.myStar + ' 星，点击上方星级可随时修改';
+              ratedBanner.classList.remove('hidden');
+            }
+            if (submitRatingBtn) {
+              submitRatingBtn.classList.remove('bg-light-primary');
+              submitRatingBtn.classList.add('bg-success');
+              submitRatingBtn.textContent = '已提交反馈 · 点星级可修改';
+            }
+          }
+        }
+      } catch (e) {}
+
+      // 提交反馈与评分并更新综合均分
+      submitRatingBtn.addEventListener('click', function () {
+        if (!chosenStar) {
+          showToast('请先点击星星选择评分');
+          return;
+        }
+        const activeTags = Array.from(document.querySelectorAll('.rate-tag.bg-light-primary')).map(function (t) { return t.textContent.trim(); });
+        const note = feedbackNoteInput ? feedbackNoteInput.value.trim() : '';
+        const newCount = station.count + 1;
+        const newAvg = (((station.score * station.count) + chosenStar) / newCount).toFixed(1);
+
+        if (avgEl) avgEl.textContent = newAvg;
+        if (countEl) countEl.textContent = newCount + ' 人评分';
+        if (ratedBanner && ratedBannerText) {
+          ratedBannerText.textContent = '已提交 ' + chosenStar + ' 星反馈' + (activeTags.length ? '（' + activeTags.join('、') + '）' : '') + '，最新均分 ' + newAvg;
+          ratedBanner.classList.remove('hidden');
+        }
+        submitRatingBtn.classList.remove('bg-light-primary');
+        submitRatingBtn.classList.add('bg-success');
+        submitRatingBtn.textContent = '已提交反馈 · 点星级可修改';
+
+        try {
+          const raw = localStorage.getItem('island_relay_ratings');
+          const saved = raw ? JSON.parse(raw) : {};
+          saved[stationId] = {
+            avg: newAvg,
+            count: newCount,
+            myStar: chosenStar,
+            tags: activeTags,
+            note: note
+          };
+          localStorage.setItem('island_relay_ratings', JSON.stringify(saved));
+        } catch (e) {}
+
+        showToast(hasSubmitted ? ('已更新你的反馈：' + chosenStar + ' 星') : ('感谢反馈！' + station.name + ' 综合评分已更新'));
+        hasSubmitted = true;
+      });
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 21 剧本局 · 活动详情 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人设岛遇 - 21 剧本局 · 活动详情</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <main class="w-full max-w-[390px] h-[884px] min-h-[884px] relative flex flex-col overflow-hidden bg-light-surface shadow-xl" data-stitch-vh="h-[884px]===h-screen|||min-h-[884px]===min-h-screen">
+
+    <!-- ==================== 1. 顶部安全区导航栏 ==================== -->
+    <header class="shrink-0 pt-safe-top px-gutter-lg pb-gutter-sm bg-light-surface border-b border-light-outline-variant/80 z-20 flex items-center justify-between">
+      <!-- [返回] 回到剧本局大厅 -->
+      <a href="../17-plaza-scripts/PlazaScripts.html" aria-label="返回剧本局大厅" class="w-9 h-9 -ml-1.5 rounded-full flex items-center justify-center text-light-on-surface hover:bg-light-surface-container transition-transform duration-state-change active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+      <h1 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">剧本局详情</h1>
+      <!-- [操作] 复制剧本局邀请链接 -->
+      <button id="share-script-btn" type="button" aria-label="分享剧本局" class="w-9 h-9 -mr-1.5 rounded-full flex items-center justify-center text-light-on-surface hover:bg-light-surface-container transition-transform duration-state-change active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M14 4.5L20.25 10.25L14 16V12.5C9.2 12.5 5.9 14.3 4 18.25C4.9 12.75 8.3 8 14 8V4.5Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </header>
+
+    <!-- ==================== 2. 主体可滚动详情区域 ==================== -->
+    <div id="detail-scroll" class="flex-1 overflow-y-auto no-scrollbar flex flex-col">
+
+      <!-- [模块 1] 活动封面图、状态与可展开时间档期 -->
+      <section aria-label="剧本活动封面" class="shrink-0 relative">
+        <img src="https://lh3.googleusercontent.com/aida/ALJJyrCypXxeUwWdNC7M6TW7CtAS_ch_477lXeguC2DCHOC9-DJsOleMr0Lmvex0-RWqW66yhmw7o2JM5LJsvBC4pm55PmKlGsGyHEGgAH_VP3ndzEvGRE9r58J-qwRd9_zgmdECbgFoI69vK6Jhhwrtt9_pNWcl7Xf_UGv0SpnyUn__XQrvhYNuaNnc8JUS1G2IH45AkOb_GvWaqFIeoTrwWbdA170c_sX7kiilIzMRe7qkKvJXIZ8NqoyE7WiHXU4" alt="星际休眠舱：第7号觉醒者" class="w-full h-48 object-cover">
+        <div class="px-gutter-lg pt-gutter-md pb-gutter-md bg-light-surface border-b border-light-outline-variant/60 flex flex-col gap-2">
+          <!-- [状态栏] 左侧状态标签 + 中间可点击时间胶囊 + 右侧报名人数 -->
+          <div class="flex items-center justify-between gap-2">
+            <span id="hero-status-pill" class="shrink-0 px-2.5 py-0.5 rounded-full bg-success text-light-on-primary font-label text-label-sm">报名中</span>
+
+            <button id="time-tab-btn" type="button" aria-expanded="false" class="px-2.5 py-1 rounded-full bg-light-surface-container hover:bg-light-surface-container-high border border-light-outline-variant/70 font-mono text-label-sm text-light-on-surface flex items-center gap-1 transition-colors duration-state-change focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary tabular-nums">
+              <svg class="w-3.5 h-3.5 text-light-on-surface-variant shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"></circle>
+                <path d="M12 7.5V12L15 13.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span>11-18 ~ 11-26</span>
+              <svg id="time-tab-chevron" class="w-3 h-3 text-light-on-surface-variant transition-transform duration-state-change" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+
+            <span class="shrink-0 font-mono text-body-sm text-light-on-surface-variant tabular-nums">3 / 4 人</span>
+          </div>
+
+          <!-- [折叠面板] 点击中间时间胶囊展开完整报名与活动起止节点 -->
+          <div id="time-schedule-panel" class="hidden p-gutter-sm rounded-md bg-light-surface-container-low border border-light-outline-variant grid grid-cols-2 gap-2 text-body-sm">
+            <div class="flex items-center justify-between px-2 py-1 rounded-sm bg-light-surface">
+              <span class="font-label text-label-sm text-light-on-surface-variant">报名开始</span>
+              <span class="font-mono text-label-sm text-light-on-surface tabular-nums">11-18 10:00</span>
+            </div>
+            <div class="flex items-center justify-between px-2 py-1 rounded-sm bg-light-surface">
+              <span class="font-label text-label-sm text-warning">报名截止</span>
+              <span class="font-mono text-label-sm text-light-on-surface tabular-nums">11-24 20:00</span>
+            </div>
+            <div class="flex items-center justify-between px-2 py-1 rounded-sm bg-light-surface">
+              <span class="font-label text-label-sm text-light-on-surface-variant">活动开始</span>
+              <span class="font-mono text-label-sm text-light-on-surface tabular-nums">11-24 20:30</span>
+            </div>
+            <div class="flex items-center justify-between px-2 py-1 rounded-sm bg-light-surface">
+              <span class="font-label text-label-sm text-light-on-surface-variant">活动截止</span>
+              <span class="font-mono text-label-sm text-light-on-surface tabular-nums">11-26 22:00</span>
+            </div>
+          </div>
+
+          <h2 data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">《星际休眠舱：第7号觉醒者》</h2>
+
+          <!-- [房主与奖励] 房主头像昵称、题材标签与奖池摘要 -->
+          <div class="flex items-center justify-between gap-2 pt-0.5">
+            <div class="flex items-center gap-2">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDUyrZMlsLoNImKXfZ9C8zU1BKdsF41nwAO-xNOn64b4334sYorz-OI6eKP9SlblEbwMq_kykVoCoZRCnmUVveLi9HHazxIRlOc3d9Mgjpb71pyavzYYfuhcQu35XKkVrj8piG_HtZKvaLS3Fg8SfWpb9CUG3x6eufiCHidmC8Me6e19zJqvr0vX2Q-BaC1x8Qziy-dF_kbEyToLj8qfGgJrFO2xZ7oCTjD3O5f3izvbzffG0XwlA" alt="零度写作" class="w-6 h-6 rounded-full object-cover">
+              <span class="font-body text-body-sm text-light-on-surface-variant">房主：零度写作 · #星际科幻</span>
+            </div>
+            <span class="font-label text-label-sm text-warning">奖励：星海徽章 +￥200</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- [模块 2] 统一顺滑详情流：可折叠简介/规则 → 选阵营 → 任务资料 → 注意事项 -->
+      <div class="px-gutter-lg py-gutter-md flex flex-col gap-gutter-md pb-gutter-xl">
+
+        <!-- [章节 1] 故事背景与世界观（可点击标题收起/展开） -->
+        <section class="rounded-md bg-light-surface border border-light-outline-variant/80 overflow-hidden">
+          <button type="button" data-collapse-target="collapse-story" aria-expanded="true" class="collapse-toggle w-full px-gutter-md py-3 flex items-center justify-between gap-2 text-left hover:bg-light-surface-container-low transition-colors">
+            <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">故事背景与世界观</h3>
+            <svg class="collapse-chevron w-4 h-4 text-light-on-surface-variant rotate-180 transition-transform duration-200 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+          <div id="collapse-story" class="px-gutter-md pb-gutter-md">
+            <p data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface-variant text-pretty">
+              公元 2198 年，“方舟七号”承载着三千名休眠殖民者驶向开普勒星域。深空航行第 40 年，7 号休眠舱提前 120 天意外开启，主控记录已被人为擦除。四位苏醒者各自握有一段残缺记忆——有人隐瞒航线偏离真相，有人必须阻止返航。全程由 AI 主持实时演绎分支剧情。
+            </p>
+          </div>
+        </section>
+
+        <!-- [章节 2] 玩法规则与活动奖励（可点击标题收起/展开） -->
+        <section class="rounded-md bg-light-surface border border-light-outline-variant/80 overflow-hidden">
+          <button type="button" data-collapse-target="collapse-rules" aria-expanded="true" class="collapse-toggle w-full px-gutter-md py-3 flex items-center justify-between gap-2 text-left hover:bg-light-surface-container-low transition-colors">
+            <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">玩法规则与奖励</h3>
+            <svg class="collapse-chevron w-4 h-4 text-light-on-surface-variant rotate-180 transition-transform duration-200 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+          <div id="collapse-rules" class="px-gutter-md pb-gutter-md flex flex-col gap-gutter-sm">
+            <ul class="flex flex-col gap-1.5 font-body text-body-md text-light-on-surface-variant list-disc pl-5">
+              <li>共三幕演绎：每幕 25 分钟，由 AI 主持人同步推进飞船事件。</li>
+              <li>每位玩家每幕可发起 1 次“私密搜证”或“阵营密谈”。</li>
+              <li>最终投票决定飞船“返航”或“深空跃迁”，解锁多分支结局。</li>
+            </ul>
+            <div class="p-gutter-sm rounded-sm bg-light-surface-container-low border border-light-outline-variant/60 flex flex-col gap-1.5 font-body text-body-sm text-light-on-surface">
+              <div class="flex items-center justify-between">
+                <span class="text-light-on-surface-variant">通关基础奖励</span>
+                <span class="font-semibold text-warning">星海限定徽章 + 300 积分</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-light-on-surface-variant">获胜阵营 / MVP</span>
+                <span class="font-semibold text-warning">￥200 奖池平分</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- [章节 3] 选择阵营（报名核心动作） -->
+        <section class="flex flex-col gap-gutter-sm pt-1">
+          <div class="flex items-center justify-between">
+            <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">选择阵营</h3>
+            <span id="faction-hint-text" class="font-label text-label-sm text-success">点击可选阵营报名</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2">
+            <!-- 阵营 1：返航派（默认选中） -->
+            <button type="button" data-faction="返航派" data-remain="1" aria-pressed="true" class="faction-card p-2.5 rounded-md bg-light-primary/5 border-2 border-light-primary flex flex-col items-center gap-1.5 text-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+              <span class="font-title text-title-md text-light-on-surface">返航派</span>
+              <span class="font-mono text-label-sm text-light-on-surface-variant tabular-nums">1 / 2 人</span>
+              <span class="faction-badge px-2.5 py-0.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm">已选中</span>
+            </button>
+
+            <!-- 阵营 2：机械师团（可报名） -->
+            <button type="button" data-faction="机械师团" data-remain="1" aria-pressed="false" class="faction-card p-2.5 rounded-md bg-light-surface border border-light-outline-variant hover:border-light-secondary flex flex-col items-center gap-1.5 text-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+              <span class="font-title text-title-md text-light-on-surface">机械师团</span>
+              <span class="font-mono text-label-sm text-light-on-surface-variant tabular-nums">1 / 2 人</span>
+              <span class="faction-badge px-2.5 py-0.5 rounded-full bg-success/10 text-success font-label text-label-sm">可报名</span>
+            </button>
+
+            <!-- 阵营 3：星港联盟（可报名） -->
+            <button type="button" data-faction="星港联盟" data-remain="2" aria-pressed="false" class="faction-card p-2.5 rounded-md bg-light-surface border border-light-outline-variant hover:border-light-secondary flex flex-col items-center gap-1.5 text-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+              <span class="font-title text-title-md text-light-on-surface">星港联盟</span>
+              <span class="font-mono text-label-sm text-light-on-surface-variant tabular-nums">0 / 2 人</span>
+              <span class="faction-badge px-2.5 py-0.5 rounded-full bg-success/10 text-success font-label text-label-sm">可报名</span>
+            </button>
+
+            <!-- 阵营 4：觉醒派（已满员红标禁用） -->
+            <div class="p-2.5 rounded-md bg-light-surface-container-low border border-light-outline-variant/60 flex flex-col items-center gap-1.5 text-center opacity-85">
+              <span class="font-title text-title-md text-light-on-surface-variant">觉醒派</span>
+              <span class="font-mono text-label-sm text-light-on-surface-variant tabular-nums">2 / 2 人</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-error/10 text-error font-label text-label-sm">已满员</span>
+            </div>
+
+            <!-- 阵营 5：观测站（已满员红标禁用） -->
+            <div class="p-2.5 rounded-md bg-light-surface-container-low border border-light-outline-variant/60 flex flex-col items-center gap-1.5 text-center opacity-85">
+              <span class="font-title text-title-md text-light-on-surface-variant">观测站</span>
+              <span class="font-mono text-label-sm text-light-on-surface-variant tabular-nums">2 / 2 人</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-error/10 text-error font-label text-label-sm">已满员</span>
+            </div>
+
+            <!-- 阵营 6：深空会（可报名） -->
+            <button type="button" data-faction="深空会" data-remain="1" aria-pressed="false" class="faction-card p-2.5 rounded-md bg-light-surface border border-light-outline-variant hover:border-light-secondary flex flex-col items-center gap-1.5 text-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+              <span class="font-title text-title-md text-light-on-surface">深空会</span>
+              <span class="font-mono text-label-sm text-light-on-surface-variant tabular-nums">1 / 2 人</span>
+              <span class="faction-badge px-2.5 py-0.5 rounded-full bg-success/10 text-success font-label text-label-sm">可报名</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- [章节 4] 剧本设定文档（报名后解锁下载设定文档与上传通关截图） -->
+        <section id="task-hub-card" class="p-gutter-md rounded-md bg-light-surface-container-low border border-light-outline-variant flex flex-col gap-gutter-sm">
+          <div class="flex items-center justify-between gap-2">
+            <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">剧本设定文档</h3>
+            <span id="unlock-badge" class="shrink-0 px-2.5 py-0.5 rounded-full bg-light-surface-container font-label text-label-sm text-light-on-surface-variant">报名后解锁</span>
+          </div>
+
+          <div class="p-2.5 rounded-sm bg-light-surface border border-light-outline-variant/80 flex items-center gap-3">
+            <svg class="w-10 h-10 shrink-0" width="40" height="40" viewBox="0 0 48 48" fill="none" aria-label="Markdown设定文档">
+              <path d="M9 10C9 6.69 11.69 4 15 4H27.2C28.53 4 29.8 4.53 30.74 5.46L37.54 12.26C38.47 13.2 39 14.47 39 15.8V38C39 41.31 36.31 44 33 44H15C11.69 44 9 41.31 9 38V10Z" fill="#F3F0FF" stroke="#7C3AED" stroke-width="1.6"></path>
+              <path d="M28 4.2V11C28 12.66 29.34 14 31 14H38.8" fill="#DDD6FE" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M15.5 19H24.5M15.5 23H21.5" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round"></path>
+              <rect x="12" y="27.5" width="24" height="12" rx="6" fill="#6D28D9"></rect>
+              <text x="24" y="36" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.4">MD</text>
+            </svg>
+            <div class="flex flex-col min-w-0 flex-1">
+              <span class="font-title text-title-md text-light-on-surface truncate">方舟七号 · 角色与世界观设定.md</span>
+              <span class="font-body text-body-sm text-light-on-surface-variant truncate">含 MD / TXT / Word 版本 · 2.4 MB</span>
+            </div>
+          </div>
+
+          <p id="task-locked-tip" class="font-body text-body-sm text-light-on-surface-variant leading-snug">
+            选好阵营并点击底部「立即报名」后，即可下载完整设定文档并上传通关截图。
+          </p>
+
+          <div id="task-actions-row" class="hidden grid grid-cols-2 gap-gutter-sm">
+            <button id="download-doc-btn" type="button" class="h-11 px-3 rounded-md bg-light-surface border border-light-outline-variant hover:border-light-secondary flex items-center justify-center gap-1.5 font-label text-label-sm text-light-on-surface transition-transform duration-state-change active:scale-95">
+              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 4V15M12 15L8 11M12 15L16 11" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M5 18H19" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"></path>
+              </svg>
+              <span>下载设定文档</span>
+            </button>
+
+            <button id="upload-proof-btn" type="button" class="h-11 px-3 rounded-md bg-light-surface border border-light-outline-variant hover:border-light-secondary flex items-center justify-center gap-1.5 font-label text-label-sm text-light-on-surface transition-transform duration-state-change active:scale-95">
+              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 16V5M12 5L8 9M12 5L16 9" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M5 19H19" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"></path>
+              </svg>
+              <span id="upload-proof-label">上传通关截图</span>
+            </button>
+          </div>
+
+          <p id="proof-status-text" class="hidden font-body text-body-sm text-success">已上传通关结算截图（待房主核验发放奖励）</p>
+        </section>
+
+        <!-- [章节 5] 注意事项 -->
+        <section class="flex flex-col gap-1.5">
+          <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">注意事项</h3>
+          <ul class="flex flex-col gap-1.5 font-body text-body-sm text-light-on-surface-variant list-disc pl-5">
+            <li>请于活动开始前 15 分钟下载设定文档并熟悉个人人物小传。</li>
+            <li>严禁剧透或场外贴脸，通关后需在截止时间前上传结算截图方可领取奖励。</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <!-- ==================== 3. 底部吸底报名与领奖操作栏 ==================== -->
+    <footer class="shrink-0 z-20 bg-light-surface border-t border-light-outline-variant px-gutter-lg pt-gutter-sm pb-gutter-lg flex items-center justify-between gap-gutter-md">
+      <div class="flex flex-col">
+        <span id="footer-stage-text" data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface">报名中 · 剩 1 席（返航派）</span>
+        <span id="footer-time-text" data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums">11-24 20:00 报名截止</span>
+      </div>
+
+      <button id="primary-cta-btn" type="button" class="shrink-0 h-11 px-gutter-xl rounded-full bg-light-primary text-light-on-primary font-label text-label-lg transition-transform duration-state-change active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+        立即报名
+      </button>
+    </footer>
+
+    <!-- [反馈] 全局轻提示 Toast -->
+    <div id="script-toast" role="status" aria-live="polite" class="pointer-events-none hidden absolute top-20 left-1/2 -translate-x-1/2 z-50 px-gutter-lg py-gutter-sm rounded-full bg-light-primary text-light-on-primary font-label text-label-sm shadow-lg whitespace-nowrap"></div>
+  </main>
+
+  <script>
+    (function () {
+      // ---------- 1. 轻提示 ----------
+      const toast = document.getElementById('script-toast');
+      let toastTimer = null;
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toast.classList.add('hidden');
+        }, 2000);
+      }
+
+      // ---------- 2. 阵营选择与报名/领奖状态机 ----------
+      let enrolled = false;
+      let proofUploaded = false;
+      let rewardClaimed = false;
+      let selectedFaction = '返航派';
+      let selectedRemain = '1';
+
+      const factionCards = Array.from(document.querySelectorAll('.faction-card'));
+      const factionHintText = document.getElementById('faction-hint-text');
+      const primaryCta = document.getElementById('primary-cta-btn');
+      const footerStageText = document.getElementById('footer-stage-text');
+      const footerTimeText = document.getElementById('footer-time-text');
+      const taskHubCard = document.getElementById('task-hub-card');
+      const taskLockedTip = document.getElementById('task-locked-tip');
+      const taskActionsRow = document.getElementById('task-actions-row');
+      const unlockBadge = document.getElementById('unlock-badge');
+      const downloadDocBtn = document.getElementById('download-doc-btn');
+      const uploadProofBtn = document.getElementById('upload-proof-btn');
+      const uploadProofLabel = document.getElementById('upload-proof-label');
+      const proofStatusText = document.getElementById('proof-status-text');
+      const heroStatusPill = document.getElementById('hero-status-pill');
+
+      // 可折叠章节（故事背景与世界观 / 玩法规则与奖励）
+      document.querySelectorAll('.collapse-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const targetId = btn.getAttribute('data-collapse-target');
+          const panel = targetId ? document.getElementById(targetId) : null;
+          const chevron = btn.querySelector('.collapse-chevron');
+          if (!panel) return;
+          const willCollapse = !panel.classList.contains('hidden');
+          panel.classList.toggle('hidden', willCollapse);
+          btn.setAttribute('aria-expanded', willCollapse ? 'false' : 'true');
+          if (chevron) chevron.classList.toggle('rotate-180', !willCollapse);
+        });
+      });
+
+      factionCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          if (enrolled) {
+            showToast('已锁定阵营：' + selectedFaction);
+            return;
+          }
+          selectedFaction = card.getAttribute('data-faction') || '返航派';
+          selectedRemain = card.getAttribute('data-remain') || '1';
+          factionCards.forEach(function (c) {
+            const active = c === card;
+            c.setAttribute('aria-pressed', active ? 'true' : 'false');
+            c.classList.toggle('border-2', active);
+            c.classList.toggle('border-light-primary', active);
+            c.classList.toggle('bg-light-primary/5', active);
+            c.classList.toggle('border', !active);
+            c.classList.toggle('border-light-outline-variant', !active);
+            c.classList.toggle('bg-light-surface', !active);
+            c.classList.toggle('hover:border-light-secondary', !active);
+            const badge = c.querySelector('.faction-badge');
+            if (badge) {
+              badge.textContent = active ? '已选中' : '可报名';
+              badge.className = active
+                ? 'faction-badge px-2.5 py-0.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm'
+                : 'faction-badge px-2.5 py-0.5 rounded-full bg-success/10 text-success font-label text-label-sm';
+            }
+          });
+          syncState();
+        });
+      });
+
+      // 根据报名、上传截图、领奖状态同步底部栏与任务资料解锁状态
+      function syncState() {
+        if (!enrolled) {
+          primaryCta.textContent = '立即报名';
+          footerStageText.textContent = '报名中 · 剩 ' + selectedRemain + ' 席（' + selectedFaction + '）';
+          footerTimeText.textContent = '11-24 20:00 报名截止';
+          unlockBadge.textContent = '报名后解锁';
+          unlockBadge.className = 'px-2 py-0.5 rounded-full bg-light-surface-container font-label text-label-sm text-light-on-surface-variant';
+          if (taskLockedTip) taskLockedTip.classList.remove('hidden');
+          if (taskActionsRow) taskActionsRow.classList.add('hidden');
+          return;
+        }
+
+        heroStatusPill.textContent = '已报名';
+        if (factionHintText) {
+          factionHintText.textContent = '已锁定阵营：' + selectedFaction;
+          factionHintText.className = 'font-label text-label-sm text-light-on-surface-variant';
+        }
+        unlockBadge.textContent = '已解锁 · 可下载/上传';
+        unlockBadge.className = 'px-2 py-0.5 rounded-full bg-success text-light-on-primary font-label text-label-sm';
+        if (taskLockedTip) taskLockedTip.classList.add('hidden');
+        if (taskActionsRow) taskActionsRow.classList.remove('hidden');
+        if (taskHubCard) {
+          taskHubCard.classList.remove('border-light-outline-variant', 'bg-light-surface-container-low');
+          taskHubCard.classList.add('border-success/40', 'bg-success/5');
+        }
+
+        if (!proofUploaded) {
+          primaryCta.textContent = '去下载/传图';
+          footerStageText.textContent = '已锁定阵营：' + selectedFaction;
+          footerTimeText.textContent = '11-24 20:30 准时开局';
+        } else if (!rewardClaimed) {
+          primaryCta.textContent = '领取奖励';
+          footerStageText.textContent = '已上传通关截图';
+          footerTimeText.textContent = '可领取星海徽章 +￥200';
+        } else {
+          primaryCta.textContent = '已领取';
+          primaryCta.classList.add('opacity-70');
+          footerStageText.textContent = '活动奖励已到账';
+          footerTimeText.textContent = '感谢参与本场剧本局';
+        }
+      }
+
+      function scrollToTaskHub() {
+        if (taskHubCard) {
+          taskHubCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+
+      primaryCta.addEventListener('click', function () {
+        if (!enrolled) {
+          enrolled = true;
+          syncState();
+          showToast('报名成功！已解锁设定文档下载');
+          scrollToTaskHub();
+        } else if (!proofUploaded) {
+          scrollToTaskHub();
+          showToast('可点击「下载设定文档」或「上传通关截图」');
+        } else if (!rewardClaimed) {
+          rewardClaimed = true;
+          syncState();
+          showToast('奖励「星海徽章 +￥200」已领取！');
+        }
+      });
+
+      // ---------- 3. 设定文档下载、通关截图上传与时间轴展开 ----------
+      downloadDocBtn.addEventListener('click', function () {
+        if (!enrolled) {
+          showToast('请先点击下方「立即报名」解锁设定文档');
+          return;
+        }
+        showToast('正在保存《星际休眠舱_完整设定文档.pdf》');
+      });
+
+      uploadProofBtn.addEventListener('click', function () {
+        if (!enrolled) {
+          showToast('请先报名参与活动后再上传通关截图');
+          return;
+        }
+        proofUploaded = true;
+        uploadProofLabel.textContent = '已上传通关截图';
+        proofStatusText.classList.remove('hidden');
+        syncState();
+        showToast('通关截图上传成功，可点击下方「领取奖励」');
+      });
+
+      document.getElementById('share-script-btn').addEventListener('click', function () {
+        showToast('剧本局邀请链接已复制');
+      });
+
+      const timeTabBtn = document.getElementById('time-tab-btn');
+      const timeSchedulePanel = document.getElementById('time-schedule-panel');
+      const timeTabChevron = document.getElementById('time-tab-chevron');
+      if (timeTabBtn && timeSchedulePanel) {
+        timeTabBtn.addEventListener('click', function () {
+          const isHidden = timeSchedulePanel.classList.toggle('hidden');
+          timeTabBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+          if (timeTabChevron) {
+            timeTabChevron.classList.toggle('rotate-180', !isHidden);
+          }
+        });
+      }
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 70 破破甲集市 · 商品详情 -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人设岛遇 - 70 破破甲集市 · 商品详情</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.97; opacity: 0.92; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <main class="w-full max-w-[390px] h-[884px] min-h-[884px] relative flex flex-col overflow-hidden bg-light-surface shadow-xl" data-stitch-vh="h-[884px]===h-screen|||min-h-[884px]===min-h-screen">
+
+    <!-- ==================== 1. 顶部安全区导航栏 ==================== -->
+    <header class="shrink-0 pt-safe-top px-gutter-lg pb-gutter-sm bg-light-surface border-b border-light-outline-variant/80 z-20 flex items-center justify-between gap-2">
+      <a href="../56-popojia-market/PopojiaMarket.html" aria-label="返回破破甲集市" class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-light-on-surface hover:bg-light-surface-container transition-colors duration-state-change focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+      </a>
+      <h1 data-design-text-token="title-lg" class="font-headline text-title-lg text-light-on-surface">商品详情</h1>
+      <button id="share-item-btn" type="button" aria-label="分享商品" class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-light-on-surface hover:bg-light-surface-container">
+        <span class="material-symbols-outlined text-[20px]" aria-hidden="true">share</span>
+      </button>
+    </header>
+
+    <!-- ==================== 2. 主滚动内容区 ==================== -->
+    <div class="flex-1 overflow-y-auto no-scrollbar px-gutter-lg py-gutter-md flex flex-col gap-gutter-md bg-light-surface-container-low">
+
+      <!-- [模块 1] 商品头卡 -->
+      <section class="rounded-xl bg-light-surface border border-light-outline-variant p-gutter-md flex flex-col gap-2.5 shadow-sm">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span id="detail-cat-badge" class="px-2 py-0.5 rounded-full bg-light-surface-container text-success font-label text-label-sm">指令预设</span>
+            <span id="detail-format-badge" class="px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant font-mono text-label-sm">MD / TXT</span>
+          </div>
+          <span id="detail-sales" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">已售 1,284</span>
+        </div>
+
+        <h2 id="detail-title" data-design-text-token="title-lg" class="font-title text-title-lg text-light-on-surface text-balance">
+          《零OOC角色锚定铁律 · 通用防崩坏指令》
+        </h2>
+
+        <div class="pt-2.5 border-t border-light-outline-variant/50 flex items-center justify-between gap-2">
+          <div class="flex items-center gap-1.5">
+            <span id="detail-price" class="font-mono text-headline-md font-bold text-light-on-surface tabular-nums">￥6</span>
+          </div>
+          <span data-design-text-token="body-sm" class="inline-flex items-center gap-1 font-body text-body-sm text-success">
+            <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12.5L9.5 17L19 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            购买后可直接下载
+          </span>
+        </div>
+      </section>
+
+      <!-- [模块 2] 效果图 -->
+      <section class="flex flex-col gap-2">
+        <div class="flex items-center justify-between px-0.5">
+          <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">效果图</h3>
+          <span id="detail-gallery-count" data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">3 张 · 点击放大</span>
+        </div>
+        <div id="detail-gallery" class="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-0.5">
+          <button type="button" data-img="../../images/emu_detail_chat_ui.jpg" class="gallery-thumb shrink-0 w-44 h-28 rounded-xl overflow-hidden border border-light-outline-variant/80 bg-light-surface shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrBFaa_5eYl-f01UBiY0F-29LOLn991HCVMr1s4N9hJpIsBrgq12PkB4bkQOhOcJjKSI0AXsY50pUpMRsIMkKdwM6VLVUcRmpaOsk9-UIBiqybBEcWVK4MYX3VJ6Z7TqMf6ZcaHJpCbCGzG2qpUYQVcCUz8jY2inYlbQoelx2JH5a8fuDikjAFFduJsVmo4pbNC_gfSRWKq55peV8xlMxbtulp_Sei9Rxe4kfu3rP8UY6UwWxLUnMLO7CEkt" alt="效果图 1" class="w-full h-full object-cover">
+          </button>
+          <button type="button" data-img="../../images/emu_detail_themes.jpg" class="gallery-thumb shrink-0 w-44 h-28 rounded-xl overflow-hidden border border-light-outline-variant/80 bg-light-surface shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrA6QKY_qg6iJDg-XsDLPeta3LxrvOy0gyokUv23EuABkEMi7wElnakVjLMaJ5hh-gufTyZTahxQL3qjeTVeaDNEruhUAse4O9NUXvNjBIsf6IWKFe1CTebZ6A5RL8LQik1RNpL8F9zDXe5S81aDacoZE69Z3CUP5HCrT2qLRbFxIY8UAU1m_-lCrFmBDRIGVL45rZOI85IdIB8Enk09SgyWKR7AXzlF8VAPwF7pWu_r7HoVum5GERH9MmCf" alt="效果图 2" class="w-full h-full object-cover">
+          </button>
+          <button type="button" data-img="../../images/emu_showcase_chat.jpg" class="gallery-thumb shrink-0 w-44 h-28 rounded-xl overflow-hidden border border-light-outline-variant/80 bg-light-surface shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrCS93lEI-7XwYnkS-H89Ftb4lfwwtrDY5_nJihpFinf0zyNnyVWAssN293VPzvgZJOFj14sZQchYSFKcBzPYlli9d10S76WYi7oyxzHs5s1Q1K7Vmr1DRxLE9txHJOUWhnJwK-XRXTpb08A89U52ED72WLp0yEdJvDcmS6DudVJVathdl5bY1n2mgT29a0vY0VTX5QSTO9XMuIOnKFTji9FEbxdEiEFjCGuWwjFIMNAmAuckeR_BpZnXHZb" alt="效果图 3" class="w-full h-full object-cover">
+          </button>
+        </div>
+      </section>
+
+      <!-- [模块 3] 商品介绍 -->
+      <section class="rounded-xl bg-light-surface border border-light-outline-variant/80 p-4 shadow-sm flex flex-col gap-2">
+        <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">商品介绍</h3>
+        <p id="detail-summary" data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface-variant leading-relaxed">
+          通过性格底线、口癖校验与情绪阈值三段式约束，防止长对话后期人设漂移、突然降智或语气失真。适合长期养卡和长线剧情使用，下载文件后直接复制或导入即可。
+        </p>
+      </section>
+
+      <!-- [模块 4] 原文件（未解锁时可直接点击购买解锁，解锁后可直接下载） -->
+      <section class="rounded-xl bg-light-surface border border-light-outline-variant/80 p-4 shadow-sm flex flex-col gap-2.5">
+        <div class="flex items-center justify-between">
+          <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">原文件</h3>
+          <span id="file-lock-badge" data-design-text-token="label-sm" class="px-2.5 py-0.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm">未解锁</span>
+        </div>
+
+        <div class="rounded-lg bg-light-surface-container-low border border-light-outline-variant/70 px-3 py-3 flex items-center justify-between gap-2.5">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="w-10 h-10 rounded-lg bg-light-surface border border-light-outline-variant/60 text-light-on-surface flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V8L14 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+                <path d="M14 3V8H19" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <div class="min-w-0">
+              <p id="detail-file-name" data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface truncate">零OOC角色锚定铁律.md</p>
+              <p id="detail-file-meta" class="font-mono text-body-sm text-light-on-surface-variant">48 KB · 购买后可下载</p>
+            </div>
+          </div>
+          <button id="file-action-btn" type="button" class="shrink-0 h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm hover:opacity-90 transition-opacity duration-state-change">
+            立即购买
+          </button>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ==================== 3. 底部固定操作栏 ==================== -->
+    <footer class="shrink-0 bg-light-surface border-t border-light-outline-variant/80 px-gutter-lg py-3 z-20 flex items-center gap-3">
+      <button id="fav-item-btn" type="button" aria-pressed="false" class="shrink-0 px-2 flex flex-col items-center justify-center text-light-on-surface-variant hover:text-light-on-surface transition-colors duration-state-change">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 17.75L5.828 20.995L7.007 14.122L2.014 9.255L8.914 8.253L12 2L15.086 8.253L21.986 9.255L16.993 14.122L18.172 20.995L12 17.75Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+        </svg>
+        <span data-design-text-token="label-sm" class="font-label text-label-sm">收藏</span>
+      </button>
+
+      <button id="detail-buy-btn" type="button" class="flex-1 h-11 rounded-full bg-light-primary text-light-on-primary font-label text-label-lg hover:opacity-90 transition-opacity duration-state-change">
+        立即购买文档
+      </button>
+    </footer>
+
+    <!-- ==================== 4. 效果图放大预览弹窗 ==================== -->
+    <div id="lightbox-modal" class="hidden absolute inset-0 z-40 flex items-center justify-center p-gutter-lg" role="dialog" aria-modal="true" aria-label="效果图放大预览">
+      <div id="lightbox-backdrop" class="absolute inset-0 bg-dark-surface/80"></div>
+      <div class="relative w-full flex flex-col items-end gap-2">
+        <button id="close-lightbox" type="button" aria-label="关闭预览" class="w-8 h-8 rounded-full bg-light-surface text-light-on-surface flex items-center justify-center shadow-lg">✕</button>
+        <img id="lightbox-img" src alt="效果图预览" class="w-full max-h-[618px] object-contain rounded-lg bg-light-surface shadow-2xl" data-stitch-vh="max-h-[618px]===max-h-[70vh]">
+      </div>
+    </div>
+
+  </main>
+
+  <script data-stitch-original-script="2d6c7ff30a1212bd===../../images/avatar_lingdu.jpg|||9b48daffd8616467===../../images/emu_detail_chat_ui.jpg|||08b00344c94ba1ae===../../images/emu_detail_themes.jpg|||00cdc8f44d2e46e8===../../images/emu_showcase_chat.jpg|||319e8ca057bfab64===../../images/hero_island_sky.jpg|||00cdc8f44d2e46e8===../../images/emu_showcase_chat.jpg|||9b48daffd8616467===../../images/emu_detail_chat_ui.jpg|||2d6c7ff30a1212bd===../../images/avatar_lingdu.jpg|||08b00344c94ba1ae===../../images/emu_detail_themes.jpg|||9b48daffd8616467===../../images/emu_detail_chat_ui.jpg|||b28df649bfe5acbd===../../images/emu_showcase_home.jpg|||319e8ca057bfab64===../../images/hero_island_sky.jpg|||a128608c9b9d425c===../../images/emu_showcase_archive.jpg|||3acadd36a3f51163===../../images/emu_detail_desktop_multi.jpg|||2d6c7ff30a1212bd===../../images/avatar_lingdu.jpg|||08b00344c94ba1ae===../../images/emu_detail_themes.jpg|||c1fc9573baafe4ea===../../images/emu_miniphone_os.jpg|||9b48daffd8616467===../../images/emu_detail_chat_ui.jpg">
+    (function () {
+      const ITEMS = {
+        'doc-no-ooc': {
+          cat: '指令预设',
+          format: 'MD / TXT',
+          sales: '已售 1,284',
+          title: '《零OOC角色锚定铁律 · 通用防崩坏指令》',
+          summary: '通过性格底线、口癖校验与情绪阈值三段式约束，防止长对话后期人设漂移、突然降智或语气失真。适合长期养卡和长线剧情使用，下载文件后直接复制或导入即可。',
+          price: '￥6',
+          seller: '零度写作',
+          avatar: 'https://lh3.googleusercontent.com/aida/ALJJyrDUyrZMlsLoNImKXfZ9C8zU1BKdsF41nwAO-xNOn64b4334sYorz-OI6eKP9SlblEbwMq_kykVoCoZRCnmUVveLi9HHazxIRlOc3d9Mgjpb71pyavzYYfuhcQu35XKkVrj8piG_HtZKvaLS3Fg8SfWpb9CUG3x6eufiCHidmC8Me6e19zJqvr0vX2Q-BaC1x8Qziy-dF_kbEyToLj8qfGgJrFO2xZ7oCTjD3O5f3izvbzffG0XwlA',
+          bio: '专注长对话稳定性与防崩坏指令调优',
+          fileName: '零OOC角色锚定铁律.md',
+          fileMeta: '48 KB · 购买后可下载',
+          btnText: '立即购买文档',
+          images: ['https://lh3.googleusercontent.com/aida/ALJJyrBFaa_5eYl-f01UBiY0F-29LOLn991HCVMr1s4N9hJpIsBrgq12PkB4bkQOhOcJjKSI0AXsY50pUpMRsIMkKdwM6VLVUcRmpaOsk9-UIBiqybBEcWVK4MYX3VJ6Z7TqMf6ZcaHJpCbCGzG2qpUYQVcCUz8jY2inYlbQoelx2JH5a8fuDikjAFFduJsVmo4pbNC_gfSRWKq55peV8xlMxbtulp_Sei9Rxe4kfu3rP8UY6UwWxLUnMLO7CEkt', 'https://lh3.googleusercontent.com/aida/ALJJyrA6QKY_qg6iJDg-XsDLPeta3LxrvOy0gyokUv23EuABkEMi7wElnakVjLMaJ5hh-gufTyZTahxQL3qjeTVeaDNEruhUAse4O9NUXvNjBIsf6IWKFe1CTebZ6A5RL8LQik1RNpL8F9zDXe5S81aDacoZE69Z3CUP5HCrT2qLRbFxIY8UAU1m_-lCrFmBDRIGVL45rZOI85IdIB8Enk09SgyWKR7AXzlF8VAPwF7pWu_r7HoVum5GERH9MmCf', 'https://lh3.googleusercontent.com/aida/ALJJyrCS93lEI-7XwYnkS-H89Ftb4lfwwtrDY5_nJihpFinf0zyNnyVWAssN293VPzvgZJOFj14sZQchYSFKcBzPYlli9d10S76WYi7oyxzHs5s1Q1K7Vmr1DRxLE9txHJOUWhnJwK-XRXTpb08A89U52ED72WLp0yEdJvDcmS6DudVJVathdl5bY1n2mgT29a0vY0VTX5QSTO9XMuIOnKFTji9FEbxdEiEFjCGuWwjFIMNAmAuckeR_BpZnXHZb']
+        },
+        'doc-deepseek-summary': {
+          cat: '指令预设',
+          format: 'PDF / MD',
+          sales: '已售 2,410',
+          title: '《DeepSeek 长对话记忆压缩与续聊指令》',
+          summary: '专为 DeepSeek 优化的对话总结指令，把 50 轮以上剧情压缩进 800 字上下文，告别遗忘，和角色聊得更久。',
+          price: '￥9.9',
+          seller: '林深见鹿',
+          avatar: 'https://lh3.googleusercontent.com/aida/ALJJyrDzHZENl33wi65M9XLZKtqtzF3NascoRExBRgFEq9GjDD19ZK3sQAVHJu4YeXiWyqomWbIJt5bCJjTQ8iS4RzVk5I-Bm8jycGsXXmHhnCa_hVWAskymbI6xUfe5DnMV_e5ujvU3WqOBGB6SvdFjkltM28GzJ08c9obs309pT947f3ZSKc-gKeHjC4Li2eeUvRuBpa2OKV0E5NtQvtl9PJZsZI6l7TUTMIFmaAn5IS5Zt4ab2Wcer2PLMQ',
+          bio: '长线剧情与记忆压缩方案作者',
+          fileName: 'DeepSeek长对话续聊压缩指令.pdf',
+          fileMeta: '124 KB · 购买后可下载',
+          btnText: '立即购买文档',
+          images: ['https://lh3.googleusercontent.com/aida/ALJJyrCS93lEI-7XwYnkS-H89Ftb4lfwwtrDY5_nJihpFinf0zyNnyVWAssN293VPzvgZJOFj14sZQchYSFKcBzPYlli9d10S76WYi7oyxzHs5s1Q1K7Vmr1DRxLE9txHJOUWhnJwK-XRXTpb08A89U52ED72WLp0yEdJvDcmS6DudVJVathdl5bY1n2mgT29a0vY0VTX5QSTO9XMuIOnKFTji9FEbxdEiEFjCGuWwjFIMNAmAuckeR_BpZnXHZb', 'https://lh3.googleusercontent.com/aida/ALJJyrBFaa_5eYl-f01UBiY0F-29LOLn991HCVMr1s4N9hJpIsBrgq12PkB4bkQOhOcJjKSI0AXsY50pUpMRsIMkKdwM6VLVUcRmpaOsk9-UIBiqybBEcWVK4MYX3VJ6Z7TqMf6ZcaHJpCbCGzG2qpUYQVcCUz8jY2inYlbQoelx2JH5a8fuDikjAFFduJsVmo4pbNC_gfSRWKq55peV8xlMxbtulp_Sei9Rxe4kfu3rP8UY6UwWxLUnMLO7CEkt']
+        },
+        'goods-wechat-skins': {
+          cat: '聊天皮肤',
+          format: '主题资源包',
+          sales: '已售 678',
+          title: '《拟真微信与深夜信纸聊天皮肤 · 6套合集》',
+          summary: '包含仿微信气泡、手机备忘录、旧书店信纸等 6 款对话皮肤与头像框，下载资源包后支持导入小手机或游玩页直接套用。',
+          price: '￥5',
+          seller: '沈清晏',
+          avatar: 'https://lh3.googleusercontent.com/aida/ALJJyrDUyrZMlsLoNImKXfZ9C8zU1BKdsF41nwAO-xNOn64b4334sYorz-OI6eKP9SlblEbwMq_kykVoCoZRCnmUVveLi9HHazxIRlOc3d9Mgjpb71pyavzYYfuhcQu35XKkVrj8piG_HtZKvaLS3Fg8SfWpb9CUG3x6eufiCHidmC8Me6e19zJqvr0vX2Q-BaC1x8Qziy-dF_kbEyToLj8qfGgJrFO2xZ7oCTjD3O5f3izvbzffG0XwlA',
+          bio: '拟真UI与氛围感聊天主题设计师',
+          fileName: '拟真聊天皮肤6套合集.zip',
+          fileMeta: '3.2 MB · 购买后可下载',
+          btnText: '立即购买合集',
+          images: ['https://lh3.googleusercontent.com/aida/ALJJyrA6QKY_qg6iJDg-XsDLPeta3LxrvOy0gyokUv23EuABkEMi7wElnakVjLMaJ5hh-gufTyZTahxQL3qjeTVeaDNEruhUAse4O9NUXvNjBIsf6IWKFe1CTebZ6A5RL8LQik1RNpL8F9zDXe5S81aDacoZE69Z3CUP5HCrT2qLRbFxIY8UAU1m_-lCrFmBDRIGVL45rZOI85IdIB8Enk09SgyWKR7AXzlF8VAPwF7pWu_r7HoVum5GERH9MmCf', 'https://lh3.googleusercontent.com/aida/ALJJyrBFaa_5eYl-f01UBiY0F-29LOLn991HCVMr1s4N9hJpIsBrgq12PkB4bkQOhOcJjKSI0AXsY50pUpMRsIMkKdwM6VLVUcRmpaOsk9-UIBiqybBEcWVK4MYX3VJ6Z7TqMf6ZcaHJpCbCGzG2qpUYQVcCUz8jY2inYlbQoelx2JH5a8fuDikjAFFduJsVmo4pbNC_gfSRWKq55peV8xlMxbtulp_Sei9Rxe4kfu3rP8UY6UwWxLUnMLO7CEkt', 'https://lh3.googleusercontent.com/aida/ALJJyrCsMOu78roHWHK1YqALalOOM0iH405ZDYtkzasMLX6pyovyiS5bWbrjjo7KTV6F1kxAp6iGd1-f8AZMBTr91g1HQ90z9LN_WRp6iBo7Ads4f4G7kO_CQZqXwnzD-iImcQt8MOv4SYZ-zd1U6Jn3uJNEhMA9IZsbs-Mkt8pAAYJ0Cy330q6wkygyZhXc55OHi2OglwhLcIbz6XXksZ1OHPLBfkC_iBX5tMyQaTZhmRpietPva_TopPAcVz5F']
+        },
+        'goods-rival-worldbook': {
+          cat: '设定模板',
+          format: 'DOCX / MD',
+          sales: '已售 512',
+          title: '《双人宿敌向 · 完整世界观与关系线模板》',
+          summary: '内置 12 个冲突事件节点与羁绊好感度触发条件，支持一键导入角色卡或自定义修改，省去从零搭设定的时间。',
+          price: '￥12',
+          seller: '岛遇官方严选',
+          avatar: 'https://lh3.googleusercontent.com/aida/ALJJyrDzHZENl33wi65M9XLZKtqtzF3NascoRExBRgFEq9GjDD19ZK3sQAVHJu4YeXiWyqomWbIJt5bCJjTQ8iS4RzVk5I-Bm8jycGsXXmHhnCa_hVWAskymbI6xUfe5DnMV_e5ujvU3WqOBGB6SvdFjkltM28GzJ08c9obs309pT947f3ZSKc-gKeHjC4Li2eeUvRuBpa2OKV0E5NtQvtl9PJZsZI6l7TUTMIFmaAn5IS5Zt4ab2Wcer2PLMQ',
+          bio: '官方精选高质量世界观与角色卡模板',
+          fileName: '双人宿敌世界观与关系线模板.docx',
+          fileMeta: '210 KB · 购买后可下载',
+          btnText: '立即购买模板',
+          images: ['https://lh3.googleusercontent.com/aida/ALJJyrCXpJpMNAt4CjFPosoBYUa3c67nMA2zcpaAzELVzgJVMI3VmVNSHSxi-0F-AlEgyNj5HSBa1moAsh9UQCQd1mLSV87l3nfvebBMpwBYlByj9urEVmdp_JNpU_WA1J-1cbYvhFvisPxjjFHwciCi8fr4UUEoUXFsHMgZBPv3fmG3oPummMSQN6Yxtue8vi0N1SFRE0CvBb2xDyb_TybP6brYvI5HFk5DwsAn5OMD2ma5LCMWgAWCsmKnB0_5SyQf', 'https://lh3.googleusercontent.com/aida/ALJJyrBTCSy68x2trmCT2bwS73wA8tVL_j4JKIbYjJuqIskyuVh1IiMcnbLq1N1JIYbKYIcBTI1MqezuEvU7Sm28hgF28TQJAF2ppGy9rfMWHZ-fHahB6dRhvU3dD3bVNNWXhPlgtRW2AuplQIRMIZBvpwI2_tfJU5vCRacpfzURyLgR-NVXKq02Rl1o1PEXvyfYJKIHvCYQSoPWx0VCJc488Mi0z9cJUnGTYYNznKTdiNok7UYzy-Zdk0dqmRy4NQYzUHP0PA']
+        },
+        'plugin-status-panel': {
+          cat: '功能插件',
+          format: 'JSON / JS',
+          sales: '已售 936',
+          title: '《动态好感度与状态栏美化插件 · 小手机通用》',
+          summary: '内含正则渲染脚本与状态栏配置文件；下载后在小手机或游玩设置的插件管理中导入，即可在对话底部实时显示好感度、场景时间与角色心境标签。',
+          price: '￥8.8',
+          seller: '夜航船',
+          avatar: 'https://lh3.googleusercontent.com/aida/ALJJyrDUyrZMlsLoNImKXfZ9C8zU1BKdsF41nwAO-xNOn64b4334sYorz-OI6eKP9SlblEbwMq_kykVoCoZRCnmUVveLi9HHazxIRlOc3d9Mgjpb71pyavzYYfuhcQu35XKkVrj8piG_HtZKvaLS3Fg8SfWpb9CUG3x6eufiCHidmC8Me6e19zJqvr0vX2Q-BaC1x8Qziy-dF_kbEyToLj8qfGgJrFO2xZ7oCTjD3O5f3izvbzffG0XwlA',
+          bio: '小手机扩展脚本与正则美化开发者',
+          fileName: '动态好感度状态栏插件包.zip',
+          fileMeta: '340 KB · 购买后可下载',
+          btnText: '立即购买插件',
+          images: ['https://lh3.googleusercontent.com/aida/ALJJyrA6QKY_qg6iJDg-XsDLPeta3LxrvOy0gyokUv23EuABkEMi7wElnakVjLMaJ5hh-gufTyZTahxQL3qjeTVeaDNEruhUAse4O9NUXvNjBIsf6IWKFe1CTebZ6A5RL8LQik1RNpL8F9zDXe5S81aDacoZE69Z3CUP5HCrT2qLRbFxIY8UAU1m_-lCrFmBDRIGVL45rZOI85IdIB8Enk09SgyWKR7AXzlF8VAPwF7pWu_r7HoVum5GERH9MmCf', 'https://lh3.googleusercontent.com/aida/ALJJyrDoyQkVxd4AP89JA2ph22P9MfeSYr_n5kEWRtX7PPnTatdD3uJMpwN-zaI3nZYraZoMVKHayQ8V0S048ECbAIlkKD88UmWWQXU_1Zz1MGjlrTbUxqQScJfAtSTdV2PP50NFYnoA3__jNlqqk1BgGmKU2dIMg4FNsEYR6m2LNRAtZ11SXTJbTDj8HCoFjQkjrSb8j57FxszgE_sG7REYtPn_dNwfz962S5sks6zTjNj7BcT0hGNFxyLHLA', 'https://lh3.googleusercontent.com/aida/ALJJyrBFaa_5eYl-f01UBiY0F-29LOLn991HCVMr1s4N9hJpIsBrgq12PkB4bkQOhOcJjKSI0AXsY50pUpMRsIMkKdwM6VLVUcRmpaOsk9-UIBiqybBEcWVK4MYX3VJ6Z7TqMf6ZcaHJpCbCGzG2qpUYQVcCUz8jY2inYlbQoelx2JH5a8fuDikjAFFduJsVmo4pbNC_gfSRWKq55peV8xlMxbtulp_Sei9Rxe4kfu3rP8UY6UwWxLUnMLO7CEkt']
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      const item = ITEMS[id] || ITEMS['doc-no-ooc'];
+
+      document.getElementById('detail-cat-badge').textContent = item.cat;
+      document.getElementById('detail-format-badge').textContent = item.format;
+      document.getElementById('detail-sales').textContent = item.sales;
+      document.getElementById('detail-title').textContent = item.title;
+      document.getElementById('detail-summary').textContent = item.summary;
+      const pVal = parseFloat(String(item.price).replace(/[^0-9.]/g, '')) || 6; const rmbVal = pVal >= 20 ? (pVal / 10) : pVal; document.getElementById('detail-price').textContent = '￥' + (Number.isInteger(rmbVal) ? rmbVal : rmbVal.toFixed(1));
+      document.getElementById('detail-file-name').textContent = item.fileName;
+      document.getElementById('detail-file-meta').textContent = item.fileMeta;
+      document.getElementById('detail-buy-btn').textContent = item.btnText;
+
+      document.getElementById('detail-gallery-count').textContent = item.images.length + ' 张 · 点击放大';
+      const galleryEl = document.getElementById('detail-gallery');
+      galleryEl.innerHTML = item.images.map((src, idx) =>
+        '<button type="button" data-img="' + src + '" class="gallery-thumb shrink-0 w-44 h-28 rounded-xl overflow-hidden border border-light-outline-variant/80 bg-light-surface shadow-sm">' +
+        '  <img src="' + src + '" alt="效果图 ' + (idx + 1) + '" class="w-full h-full object-cover">' +
+        '</button>'
+      ).join('');
+
+      const lightbox = document.getElementById('lightbox-modal');
+      const lightboxImg = document.getElementById('lightbox-img');
+      galleryEl.querySelectorAll('.gallery-thumb').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          lightboxImg.src = btn.dataset.img;
+          lightbox.classList.remove('hidden');
+        });
+      });
+      function closeLightbox() { lightbox.classList.add('hidden'); }
+      document.getElementById('lightbox-backdrop').addEventListener('click', closeLightbox);
+      document.getElementById('close-lightbox').addEventListener('click', closeLightbox);
+
+      const toastEl = document.getElementById('detail-toast');
+      let toastTimer = null;
+      function showToast(msg) {
+        toastEl.textContent = msg;
+        toastEl.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toastEl.classList.add('hidden'), 2000);
+      }
+
+      document.getElementById('share-item-btn').addEventListener('click', () => {
+        showToast('已复制商品分享链接');
+      });
+
+      const favBtn = document.getElementById('fav-item-btn');
+      let faved = false;
+      favBtn.addEventListener('click', () => {
+        faved = !faved;
+        favBtn.setAttribute('aria-pressed', faved ? 'true' : 'false');
+        favBtn.className = faved
+          ? 'shrink-0 px-2 flex flex-col items-center justify-center text-light-secondary transition-colors duration-state-change'
+          : 'shrink-0 px-2 flex flex-col items-center justify-center text-light-on-surface-variant hover:text-light-on-surface transition-colors duration-state-change';
+        showToast(faved ? '已加入收藏' : '已取消收藏');
+      });
+
+      const buyBtn = document.getElementById('detail-buy-btn');
+      const fileActionBtn = document.getElementById('file-action-btn');
+      const lockBadge = document.getElementById('file-lock-badge');
+      let unlocked = false;
+
+      function handlePurchaseOrDownload() {
+        if (unlocked) {
+          showToast('正在下载 ' + item.fileName);
+          return;
+        }
+        buyBtn.disabled = true;
+        fileActionBtn.disabled = true;
+        buyBtn.textContent = '正在解锁…';
+        fileActionBtn.textContent = '解锁中…';
+        setTimeout(() => {
+          unlocked = true;
+          buyBtn.disabled = false;
+          fileActionBtn.disabled = false;
+          buyBtn.textContent = '已购 · 下载原文件';
+          buyBtn.className = 'flex-1 h-11 rounded-full bg-light-surface-container text-success font-label text-label-lg hover:bg-light-surface-container-high transition-colors duration-state-change';
+          fileActionBtn.textContent = '下载文件';
+          fileActionBtn.className = 'shrink-0 h-8 px-3 rounded-full bg-light-surface-container text-success font-label text-label-sm hover:bg-light-surface-container-high transition-colors duration-state-change';
+          lockBadge.textContent = '已解锁';
+          lockBadge.className = 'px-2 py-0.5 rounded-full bg-light-surface-container text-success font-label text-label-sm';
+          showToast('购买成功，可立即下载文件');
+        }, 700);
+      }
+
+      buyBtn.addEventListener('click', handlePurchaseOrDownload);
+      fileActionBtn.addEventListener('click', handlePurchaseOrDownload);
+    })();
+  </script>
+
+
+</body></html>

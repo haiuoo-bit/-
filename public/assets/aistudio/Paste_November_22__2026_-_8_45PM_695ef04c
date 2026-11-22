@@ -1,0 +1,2118 @@
+<!-- 13 消息 · 通知与私信 -->
+<!--
+  页面名称：13 消息 · 通知与私信
+  功能说明：展示消息页顶部搜索入口、四大通知分类宫格（互动信息/订阅上新/接单通知/官方信息）、私信会话列表及底部主导航
+--><!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人设岛遇 - 13 消息 · 通知与私信</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .nav-item .icon-filled { display: none; }
+    .nav-item[aria-current="page"] .icon-outline { display: none; }
+    .nav-item[aria-current="page"] .icon-filled { display: block; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <!-- 移动端主视口容器（390px 居中） -->
+  <main class="w-full max-w-[390px] h-[884px] min-h-[884px] relative flex flex-col overflow-hidden bg-light-surface shadow-xl" data-stitch-vh="h-[884px]===h-screen|||min-h-[884px]===min-h-screen">
+
+    <!-- ==================== 1. 顶部安全区搜索栏 ==================== -->
+    <header class="shrink-0 pt-safe-top px-gutter-lg pb-gutter-md bg-light-surface border-b border-light-outline-variant/70 z-20">
+      <!-- [跳转] 点击进入 52 聊天记录与联系人搜索页 -->
+      <a href="../52-message-search/MessageSearch.html" aria-label="搜索聊天记录与联系人" class="w-full h-10 rounded-full bg-light-surface-container px-gutter-md flex items-center gap-gutter-sm hover:bg-light-surface-container-high transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+        <svg class="w-4 h-4 text-light-on-surface-variant shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"></circle>
+          <path d="M16.5 16.5L20.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <span class="font-body text-body-sm text-light-on-surface-variant truncate">搜索联系人、私信或聊天记录...</span>
+      </a>
+    </header>
+
+    <!-- ==================== 2. 可滚动主体：通知分类 + 私信列表 ==================== -->
+    <div id="msg-scroll" class="flex-1 overflow-y-auto no-scrollbar flex flex-col">
+
+      <!-- [模块 1] 五大通知分类入口：互动信息 / 订阅上新 / 接单通知 / 群通知 / 官方信息 -->
+      <section aria-label="消息分类" class="px-gutter-md py-gutter-md border-b border-light-outline-variant/70 bg-light-surface">
+        <div class="grid grid-cols-5 gap-1">
+          <!-- 1. 互动信息 -->
+          <a href="../58-msg-interactions/MsgInteractions.html" data-cat="互动信息" class="msg-tab group flex flex-col items-center gap-1.5 py-1 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+            <span class="relative w-11 h-11 flex items-center justify-center transition-transform duration-state-change group-hover:scale-105 group-active:scale-95">
+              <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="msg-bg-interact" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FFF1F2"></stop>
+                    <stop offset="100%" stop-color="#FFE4E6"></stop>
+                  </linearGradient>
+                  <linearGradient id="msg-fg-interact" x1="14" y1="14" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FB7185"></stop>
+                    <stop offset="100%" stop-color="#E11D48"></stop>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="44" height="44" rx="14" fill="url(#msg-bg-interact)"></rect>
+                <circle cx="34" cy="14" r="6" fill="#FECDD3" fill-opacity="0.7"></circle>
+                <path d="M24 34.5C24 34.5 13 27.6 13 20.1C13 16.75 15.65 14 19 14C21.05 14 22.85 15.05 24 16.65C25.15 15.05 26.95 14 29 14C32.35 14 35 16.75 35 20.1C35 27.6 24 34.5 24 34.5Z" fill="url(#msg-fg-interact)"></path>
+                <path d="M18.2 18.2C17.2 18.6 16.6 19.4 16.4 20.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.75"></path>
+              </svg>
+              <span class="absolute -top-1 -right-1 min-w-4 h-4 px-1 rounded-full bg-error text-light-on-primary font-mono text-[10px] font-bold leading-4 text-center tabular-nums ring-2 ring-light-surface">12</span>
+            </span>
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface whitespace-nowrap">互动信息</span>
+          </a>
+
+          <!-- 2. 订阅上新 -->
+          <a href="../59-msg-subscriptions/MsgSubscriptions.html" data-cat="订阅上新" class="msg-tab group flex flex-col items-center gap-1.5 py-1 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+            <span class="relative w-11 h-11 flex items-center justify-center transition-transform duration-state-change group-hover:scale-105 group-active:scale-95">
+              <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="msg-bg-sub" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#EFF6FF"></stop>
+                    <stop offset="100%" stop-color="#DBEAFE"></stop>
+                  </linearGradient>
+                  <linearGradient id="msg-fg-sub" x1="15" y1="12" x2="33" y2="35" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#60A5FA"></stop>
+                    <stop offset="100%" stop-color="#2563EB"></stop>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="44" height="44" rx="14" fill="url(#msg-bg-sub)"></rect>
+                <circle cx="15" cy="14" r="5.5" fill="#BFDBFE" fill-opacity="0.75"></circle>
+                <path d="M16 21.5C16 17.08 19.58 13.5 24 13.5C28.42 13.5 32 17.08 32 21.5V27.6L34.4 30.8C34.7 31.2 34.4 31.8 33.9 31.8H14.1C13.6 31.8 13.3 31.2 13.6 30.8L16 27.6V21.5Z" fill="url(#msg-fg-sub)"></path>
+                <path d="M21.2 33.2C21.75 34.65 22.8 35.4 24 35.4C25.2 35.4 26.25 34.65 26.8 33.2" stroke="#2563EB" stroke-width="2" stroke-linecap="round"></path>
+                <path d="M31.5 13L32.2 15L34.2 15.7L32.2 16.4L31.5 18.4L30.8 16.4L28.8 15.7L30.8 15L31.5 13Z" fill="#60A5FA"></path>
+              </svg>
+              <span class="absolute -top-1 -right-1 min-w-4 h-4 px-1 rounded-full bg-error text-light-on-primary font-mono text-[10px] font-bold leading-4 text-center tabular-nums ring-2 ring-light-surface">5</span>
+            </span>
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface whitespace-nowrap">订阅上新</span>
+          </a>
+
+          <!-- 3. 接单通知 -->
+          <a href="../60-msg-commissions/MsgCommissions.html" data-cat="接单通知" class="msg-tab group flex flex-col items-center gap-1.5 py-1 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+            <span class="relative w-11 h-11 flex items-center justify-center transition-transform duration-state-change group-hover:scale-105 group-active:scale-95">
+              <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="msg-bg-order" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FFFBEB"></stop>
+                    <stop offset="100%" stop-color="#FEF3C7"></stop>
+                  </linearGradient>
+                  <linearGradient id="msg-fg-order" x1="14" y1="13" x2="34" y2="35" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FBBF24"></stop>
+                    <stop offset="100%" stop-color="#D97706"></stop>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="44" height="44" rx="14" fill="url(#msg-bg-order)"></rect>
+                <circle cx="34" cy="34" r="6" fill="#FDE68A" fill-opacity="0.8"></circle>
+                <rect x="14" y="13.5" width="20" height="21" rx="4.5" fill="url(#msg-fg-order)"></rect>
+                <rect x="19" y="11" width="10" height="4.5" rx="2.25" fill="#F59E0B"></rect>
+                <path d="M18.5 21.5H29.5M18.5 26.5H24.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+                <circle cx="29" cy="27.5" r="3" fill="#FFFFFF"></circle>
+                <path d="M27.8 27.5L28.7 28.4L30.4 26.7" stroke="#D97706" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span class="absolute -top-1 -right-1 min-w-4 h-4 px-1 rounded-full bg-error text-light-on-primary font-mono text-[10px] font-bold leading-4 text-center tabular-nums ring-2 ring-light-surface">3</span>
+            </span>
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface whitespace-nowrap">接单通知</span>
+          </a>
+
+          <!-- 4. 群通知 -->
+          <a href="../67-msg-groups/MsgGroups.html" data-cat="群通知" class="msg-tab group flex flex-col items-center gap-1.5 py-1 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+            <span class="relative w-11 h-11 flex items-center justify-center transition-transform duration-state-change group-hover:scale-105 group-active:scale-95">
+              <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="msg-bg-group" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#F5F3FF"></stop>
+                    <stop offset="100%" stop-color="#EDE9FE"></stop>
+                  </linearGradient>
+                  <linearGradient id="msg-fg-group" x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#A78BFA"></stop>
+                    <stop offset="100%" stop-color="#7C3AED"></stop>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="44" height="44" rx="14" fill="url(#msg-bg-group)"></rect>
+                <circle cx="19" cy="19" r="4.5" fill="url(#msg-fg-group)"></circle>
+                <circle cx="30" cy="20.5" r="3.5" fill="#C4B5FD"></circle>
+                <path d="M11.5 33.5C12 29 15 26.5 19 26.5C23 26.5 26 29 26.5 33.5H11.5Z" fill="url(#msg-fg-group)"></path>
+                <path d="M26 33.5C26.3 30.2 28.2 28.2 31 28.2C33.8 28.2 35.7 30.2 36 33.5H26Z" fill="#C4B5FD"></path>
+              </svg>
+              <span class="absolute -top-1 -right-1 min-w-4 h-4 px-1 rounded-full bg-error text-light-on-primary font-mono text-[10px] font-bold leading-4 text-center tabular-nums ring-2 ring-light-surface">2</span>
+            </span>
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface whitespace-nowrap">群通知</span>
+          </a>
+
+          <!-- 5. 官方信息 -->
+          <a href="../61-msg-official/MsgOfficial.html" data-cat="官方信息" class="msg-tab group flex flex-col items-center gap-1.5 py-1 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary">
+            <span class="relative w-11 h-11 flex items-center justify-center transition-transform duration-state-change group-hover:scale-105 group-active:scale-95">
+              <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="msg-bg-official" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#ECFDF5"></stop>
+                    <stop offset="100%" stop-color="#D1FAE5"></stop>
+                  </linearGradient>
+                  <linearGradient id="msg-fg-official" x1="14" y1="12" x2="34" y2="36" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#34D399"></stop>
+                    <stop offset="100%" stop-color="#059669"></stop>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="44" height="44" rx="14" fill="url(#msg-bg-official)"></rect>
+                <circle cx="14" cy="34" r="5.5" fill="#A7F3D0" fill-opacity="0.7"></circle>
+                <path d="M24 12L34 16V23.4C34 29.5 29.7 34.7 24 36.2C18.3 34.7 14 29.5 14 23.4V16L24 12Z" fill="url(#msg-fg-official)"></path>
+                <path d="M19.8 24.2L22.6 27L28.5 21" stroke="#FFFFFF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span class="absolute top-0.5 right-0.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-light-surface" aria-hidden="true"></span>
+            </span>
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface whitespace-nowrap">官方信息</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- [标题栏] 私信与群聊列表分组标题与筛选重置 -->
+      <div class="px-gutter-lg pt-gutter-md pb-gutter-xs flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <h2 id="dm-section-title" data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">私信与群聊</h2>
+          <span id="dm-filter-reset" class="hidden text-label-sm font-label text-light-secondary cursor-pointer">查看全部</span>
+        </div>
+        <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">5 条未读</span>
+      </div>
+
+      <!-- [模块 2] 私信与群聊会话列表 -->
+      <section aria-label="私信与群聊列表" id="dm-group-list" class="flex flex-col divide-y divide-light-outline-variant/60 pb-gutter-lg">
+
+        <!-- 群聊会话 1：京华深处 · 剧本研习社 -->
+        <a href="../68-group-chat/GroupChat.html?gid=g1" data-gid="g1" data-name="京华深处 · 剧本研习社" class="dm-row group-msg-row px-gutter-lg py-gutter-md flex items-center gap-gutter-md hover:bg-light-surface-container-low transition-colors duration-state-change">
+          <div class="relative shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrBYUEfF61kgx9PKb6hooUymoQZLdIaOI7u_DG59J0_oogUyyqsYRAewYcsTXG-ii0tPxy4P7WPwOx6RcAl7-E-PMjNFsKcjQlsh9ZutlxoJEshDMrSNbZ1CePSAYGMtckwJfv1OdWapvQvC5-34GOMOeZ06l6jdVukh-k5cczMIYdBvb0ZZvFang9A8U7UpfWQ2B9DKzANrFSj8QQDTVAy6NTNVqlnReHX49F3WhPXbjH9Z-9WoVXflZMw6Q6U" alt="京华深处 · 剧本研习社" class="w-12 h-12 rounded-xl object-cover ring-1 ring-light-outline-variant/60">
+            <span class="absolute -bottom-1 -right-1 px-1 py-0.5 rounded bg-light-primary text-light-on-primary font-label text-[9px] leading-none">群聊</span>
+          </div>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 min-w-0">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">京华深处 · 剧本研习社</span>
+              </div>
+              <span class="group-msg-time font-body text-body-sm text-light-on-surface-variant shrink-0 tabular-nums">17:32</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <p class="group-msg-preview font-body text-body-sm text-light-on-surface-variant truncate">零度写作：我已经把修订版剧本置顶在群公告里，八点准时开局。</p>
+              <span class="min-w-4 h-4 px-1.5 rounded-full bg-error text-light-on-primary font-mono text-[10px] font-bold leading-4 text-center tabular-nums shrink-0">2</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 群聊会话 2：现代悬疑·宿敌脑洞屋 -->
+        <a href="../68-group-chat/GroupChat.html?gid=gj1" data-gid="gj1" data-name="现代悬疑·宿敌脑洞屋" class="dm-row group-msg-row px-gutter-lg py-gutter-md flex items-center gap-gutter-md hover:bg-light-surface-container-low transition-colors duration-state-change">
+          <div class="relative shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrCypXxeUwWdNC7M6TW7CtAS_ch_477lXeguC2DCHOC9-DJsOleMr0Lmvex0-RWqW66yhmw7o2JM5LJsvBC4pm55PmKlGsGyHEGgAH_VP3ndzEvGRE9r58J-qwRd9_zgmdECbgFoI69vK6Jhhwrtt9_pNWcl7Xf_UGv0SpnyUn__XQrvhYNuaNnc8JUS1G2IH45AkOb_GvWaqFIeoTrwWbdA170c_sX7kiilIzMRe7qkKvJXIZ8NqoyE7WiHXU4" alt="现代悬疑·宿敌脑洞屋" class="w-12 h-12 rounded-xl object-cover ring-1 ring-light-outline-variant/60">
+            <span class="absolute -bottom-1 -right-1 px-1 py-0.5 rounded bg-light-primary text-light-on-primary font-label text-[9px] leading-none">群聊</span>
+          </div>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 min-w-0">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">现代悬疑·宿敌脑洞屋</span>
+              </div>
+              <span class="group-msg-time font-body text-body-sm text-light-on-surface-variant shrink-0 tabular-nums">16:50</span>
+            </div>
+            <p class="group-msg-preview font-body text-body-sm text-light-on-surface-variant truncate">月见草：周五晚 20:30 刑侦顾问×法医剧本局报名开始！</p>
+          </div>
+        </a>
+
+        <!-- 会话 1：零度写作（红V认证，未读 3 条） -->
+        <a href="../14-dm-chat/DMChat.html" data-name="零度写作" class="dm-row px-gutter-lg py-gutter-md flex items-center gap-gutter-md hover:bg-light-surface-container-low transition-colors duration-state-change">
+          <div class="relative shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrDci_Xw1bcfU1DTisOU93vq85a2yFLxyyp1WlFXsCZ85xCVOrP31O16Vuz_5ptuTQBz-AIhMk8Q17zVhvtfVLmFGBOS_itVgaJtwzKBqJMbcZIK8__5txmj0K3Tn1meTveqGqAndYGncW4O_-_34n6PQZx2J2dbIh0Ow2berdDYbVl3kNBlD_CHgdvjM8q90jsAMjYPRs9xX8nifQaOeg9XLDaj0J4_tJ1Uzk3hsRsFyULdH_zQUg" alt="零度写作" class="w-12 h-12 rounded-full object-cover">
+          </div>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 min-w-0">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">零度写作</span>
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 40 40" fill="none" aria-label="红V认证">
+                  <defs>
+                    <linearGradient id="msg-red-v" x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#FDA4AF"></stop>
+                      <stop offset="45%" stop-color="#F43F5E"></stop>
+                      <stop offset="100%" stop-color="#BE123C"></stop>
+                    </linearGradient>
+                  </defs>
+                  <path d="M20 3.2C22.4 3.2 23.8 5.2 26 5.8C28.2 6.4 30.4 5.4 32.1 7.1C33.8 8.8 32.8 11 33.4 13.2C34 15.4 36.8 16.8 36.8 19.2C36.8 21.6 34.4 23 33.8 25.2C33.2 27.4 34.2 29.8 32.5 31.5C30.8 33.2 28.4 32.2 26.2 32.8C24 33.4 22.4 36.8 20 36.8C17.6 36.8 16 33.4 13.8 32.8C11.6 32.2 9.2 33.2 7.5 31.5C5.8 29.8 6.8 27.4 6.2 25.2C5.6 23 3.2 21.6 3.2 19.2C3.2 16.8 6 15.4 6.6 13.2C7.2 11 6.2 8.8 7.9 7.1C9.6 5.4 11.8 6.4 14 5.8C16.2 5.2 17.6 3.2 20 3.2Z" fill="url(#msg-red-v)"></path>
+                  <path d="M13.8 14.2L20 26.8L26.2 14.2" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant shrink-0 tabular-nums">17:24</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">《京华深处》第二幕双人剧本已经更新啦，快来看看</p>
+              <span class="min-w-4 h-4 px-1.5 rounded-full bg-error text-light-on-primary font-mono text-[10px] font-bold leading-4 text-center tabular-nums shrink-0">3</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 会话 2：南风知意 · 约稿对接（紫V认证） -->
+        <a href="../14-dm-chat/DMChat.html" data-name="浮空岛定制" class="dm-row px-gutter-lg py-gutter-md flex items-center gap-gutter-md hover:bg-light-surface-container-low transition-colors duration-state-change">
+          <div class="relative shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrA3-9_rNKhPKC759MrDr8u_lA-6O7fNvrz2T2JynH-lGG-EY2hmMxvoGlQxhStmqZsVoAR93VjnWqPxmZ1W4xXAhicM6QRwimGCDK-xAZip4lwaI5hCvvfsaDBdMYQjQzfR8-_aR0LW8hdVe7FDelJwGIV2BpQnvF_gK8zVthH23q3v3bOR2_wsdPlJxWAFXAmlCH133dXhv_a3Anmi0Og3vpoKQzJhDm2MaHorT0qwppbHUM9ma3JoYvf4Wc6iniw" alt="浮空岛定制" class="w-12 h-12 rounded-full object-cover">
+          </div>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 min-w-0">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">南风知意 · 约稿对接</span>
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 40 40" fill="none" aria-label="紫V认证">
+                  <defs>
+                    <linearGradient id="msg-purple-v" x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#E9D5FF"></stop>
+                      <stop offset="45%" stop-color="#A855F7"></stop>
+                      <stop offset="100%" stop-color="#6D28D9"></stop>
+                    </linearGradient>
+                  </defs>
+                  <path d="M20 3.2C22.4 3.2 23.8 5.2 26 5.8C28.2 6.4 30.4 5.4 32.1 7.1C33.8 8.8 32.8 11 33.4 13.2C34 15.4 36.8 16.8 36.8 19.2C36.8 21.6 34.4 23 33.8 25.2C33.2 27.4 34.2 29.8 32.5 31.5C30.8 33.2 28.4 32.2 26.2 32.8C24 33.4 22.4 36.8 20 36.8C17.6 36.8 16 33.4 13.8 32.8C11.6 32.2 9.2 33.2 7.5 31.5C5.8 29.8 6.8 27.4 6.2 25.2C5.6 23 3.2 21.6 3.2 19.2C3.2 16.8 6 15.4 6.6 13.2C7.2 11 6.2 8.8 7.9 7.1C9.6 5.4 11.8 6.4 14 5.8C16.2 5.2 17.6 3.2 20 3.2Z" fill="url(#msg-purple-v)"></path>
+                  <path d="M13.8 14.2L20 26.8L26.2 14.2" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant shrink-0 tabular-nums">昨天</span>
+            </div>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">你定制的《星际休眠舱》人物小传初稿已发送，请查收确认</p>
+          </div>
+        </a>
+
+        <!-- 会话 3：沈清晏 -->
+        <a href="../14-dm-chat/DMChat.html" data-name="沈清晏" class="dm-row px-gutter-lg py-gutter-md flex items-center gap-gutter-md hover:bg-light-surface-container-low transition-colors duration-state-change">
+          <div class="relative shrink-0">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrDzHZENl33wi65M9XLZKtqtzF3NascoRExBRgFEq9GjDD19ZK3sQAVHJu4YeXiWyqomWbIJt5bCJjTQ8iS4RzVk5I-Bm8jycGsXXmHhnCa_hVWAskymbI6xUfe5DnMV_e5ujvU3WqOBGB6SvdFjkltM28GzJ08c9obs309pT947f3ZSKc-gKeHjC4Li2eeUvRuBpa2OKV0E5NtQvtl9PJZsZI6l7TUTMIFmaAn5IS5Zt4ab2Wcer2PLMQ" alt="沈清晏" class="w-12 h-12 rounded-full object-cover">
+          </div>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-2">
+              <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">沈清晏</span>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant shrink-0 tabular-nums">周二</span>
+            </div>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">晚上八点开《雨夜旧怀表》四人剧本局，来不来？</p>
+          </div>
+        </a>
+
+        <!-- 会话 4：岛遇官方助手 -->
+        <a href="../08-plaza/Plaza.html" data-name="人设岛遇官方" class="dm-row px-gutter-lg py-gutter-md flex items-center gap-gutter-md hover:bg-light-surface-container-low transition-colors duration-state-change">
+          <div class="relative shrink-0 w-12 h-12 rounded-full bg-light-surface-container flex items-center justify-center text-light-secondary">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3.75L18.75 6.5V11.8C18.75 15.85 15.85 19.35 12 20.5C8.15 19.35 5.25 15.85 5.25 11.8V6.5L12 3.75Z" fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+              <path d="M9.5 12L11.25 13.75L14.75 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5 min-w-0">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">岛遇官方助手</span>
+                <span class="px-1.5 py-0.5 rounded-sm bg-success font-label text-label-sm text-light-on-primary shrink-0">官方</span>
+              </div>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant shrink-0 tabular-nums">11-15</span>
+            </div>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">你的创作者蓝V认证截图已审核通过，徽章已点亮</p>
+          </div>
+        </a>
+      </section>
+    </div>
+
+    <!-- ==================== 3. 底部 5 Tab 主导航栏（消息高亮） ==================== -->
+    <nav aria-label="主导航" class="shrink-0 relative z-20 w-full bg-light-surface border-t border-light-outline-variant px-gutter-md pt-gutter-sm pb-gutter-lg">
+      <div class="relative">
+        <!-- 激活态胶囊指示器（translateX(300%) 对应第 4 项“消息”） -->
+        <div id="nav-indicator" aria-hidden="true" class="pointer-events-none absolute top-1 left-0 w-1/5 flex justify-center z-0" style="transform: translateX(300%);">
+          <span class="w-12 h-7 rounded-full bg-light-surface-container"></span>
+        </div>
+        <ul class="relative z-10 grid grid-cols-5 items-center">
+          <!-- 1. 首页 -->
+          <li>
+            <a href="../06-home-feed/HomeFeed.html" data-tab="home" class="nav-item w-full py-gutter-xs flex flex-col items-center justify-center gap-gutter-xs text-light-on-surface-variant hover:text-light-on-surface transition-transform duration-state-change active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary rounded-md">
+              <span class="relative flex items-center justify-center w-7 h-7">
+                <svg class="icon-outline w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M3.75 10.4C3.75 9.25 4.28 8.16 5.19 7.45L10.39 3.41C11.34 2.67 12.66 2.67 13.61 3.41L18.81 7.45C19.72 8.16 20.25 9.25 20.25 10.4V17.25C20.25 19.18 18.68 20.75 16.75 20.75H7.25C5.32 20.75 3.75 19.18 3.75 17.25V10.4Z" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M9.75 15.75C9.75 14.65 10.65 13.75 11.75 13.75H12.25C13.35 13.75 14.25 14.65 14.25 15.75V20.75H9.75V15.75Z" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <svg class="icon-filled w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M3.5 10.35C3.5 9.1 4.08 7.92 5.07 7.15L10.27 3.11C11.29 2.31 12.71 2.31 13.73 3.11L18.93 7.15C19.92 7.92 20.5 9.1 20.5 10.35V17.25C20.5 19.32 18.82 21 16.75 21H7.25C5.18 21 3.5 19.32 3.5 17.25V10.35Z" fill="currentColor"></path>
+                  <rect x="10" y="13.5" width="4" height="5" rx="2" fill="#FFFFFF"></rect>
+                </svg>
+              </span>
+              <span data-design-text-token="label-sm" class="font-label text-label-sm">首页</span>
+            </a>
+          </li>
+
+          <!-- 2. 广场 -->
+          <li>
+            <a href="../08-plaza/Plaza.html" data-tab="plaza" class="nav-item w-full py-gutter-xs flex flex-col items-center justify-center gap-gutter-xs text-light-on-surface-variant hover:text-light-on-surface transition-transform duration-state-change active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary rounded-md">
+              <span class="relative flex items-center justify-center w-7 h-7">
+                <svg class="icon-outline w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.75" stroke="currentColor" stroke-width="1.85"></circle>
+                  <path d="M12 7.4C12.35 9.65 14.35 11.65 16.6 12C14.35 12.35 12.35 14.35 12 16.6C11.65 14.35 9.65 12.35 7.4 12C9.65 11.65 11.65 9.65 12 7.4Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <svg class="icon-filled w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9.25" fill="currentColor"></circle>
+                  <path d="M12 7.2C12.42 9.68 14.32 11.58 16.8 12C14.32 12.42 12.42 14.32 12 16.8C11.58 14.32 9.68 12.42 7.2 12C9.68 11.58 11.58 9.68 12 7.2Z" fill="#FFFFFF"></path>
+                </svg>
+              </span>
+              <span data-design-text-token="label-sm" class="font-label text-label-sm">广场</span>
+            </a>
+          </li>
+
+          <!-- 3. 社区 -->
+          <li>
+            <a href="../18-community/Community.html" data-tab="community" class="nav-item w-full py-gutter-xs flex flex-col items-center justify-center gap-gutter-xs text-light-on-surface-variant hover:text-light-on-surface transition-transform duration-state-change active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary rounded-md">
+              <span class="relative flex items-center justify-center w-7 h-7">
+                <svg class="icon-outline w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="9.25" cy="8.5" r="3" stroke="currentColor" stroke-width="1.85"></circle>
+                  <path d="M3.75 18.75C4.15 15.8 6.45 14 9.25 14C12.05 14 14.35 15.8 14.75 18.75" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"></path>
+                  <circle cx="16.25" cy="9.5" r="2.25" stroke="currentColor" stroke-width="1.75"></circle>
+                  <path d="M16.25 14.25C18.35 14.45 19.95 15.95 20.25 18.25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path>
+                </svg>
+                <svg class="icon-filled w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="9.25" cy="8.25" r="3.25" fill="currentColor"></circle>
+                  <path d="M3.5 19C3.95 15.65 6.35 13.5 9.25 13.5C12.15 13.5 14.55 15.65 15 19H3.5Z" fill="currentColor"></path>
+                  <circle cx="16.5" cy="9.5" r="2.35" fill="currentColor"></circle>
+                  <path d="M16.3 13.85C18.6 14.1 20.2 15.75 20.5 18.5H16.25C16.05 16.65 15.4 15.05 14.35 13.95C14.95 13.85 15.6 13.8 16.3 13.85Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <span data-design-text-token="label-sm" class="font-label text-label-sm">社区</span>
+            </a>
+          </li>
+
+          <!-- 4. 消息（当前激活页） -->
+          <li>
+            <button type="button" data-tab="messages" aria-current="page" class="nav-item w-full py-gutter-xs flex flex-col items-center justify-center gap-gutter-xs text-light-on-surface transition-transform duration-state-change active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary rounded-md">
+              <span class="relative flex items-center justify-center w-7 h-7">
+                <svg class="icon-outline w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4.25 11.5C4.25 7.49 7.6 4.25 12 4.25C16.4 4.25 19.75 7.49 19.75 11.5C19.75 15.51 16.4 18.75 12 18.75C10.77 18.75 9.61 18.5 8.58 18.06L4.75 19.5L5.72 16.17C4.79 14.88 4.25 13.26 4.25 11.5Z" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <svg class="icon-filled w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 11.5C4 7.36 7.58 4 12 4C16.42 4 20 7.36 20 11.5C20 15.64 16.42 19 12 19C10.75 19 9.57 18.73 8.52 18.25L4.5 19.75L5.55 16.25C4.57 14.92 4 13.28 4 11.5Z" fill="currentColor"></path>
+                </svg>
+                <span class="absolute -top-0.5 -right-1.5 min-w-4 h-4 px-1 rounded-full bg-error text-light-on-primary font-mono text-[10px] font-bold leading-4 text-center tabular-nums">25</span>
+              </span>
+              <span data-design-text-token="label-sm" class="font-label text-label-sm">消息</span>
+            </button>
+          </li>
+
+          <!-- 5. 我 -->
+          <li>
+            <button type="button" data-tab="me" class="nav-item w-full py-gutter-xs flex flex-col items-center justify-center gap-gutter-xs text-light-on-surface-variant hover:text-light-on-surface transition-transform duration-state-change active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary rounded-md">
+              <span class="relative flex items-center justify-center w-7 h-7">
+                <svg class="icon-outline w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="8.25" r="3.5" stroke="currentColor" stroke-width="1.85"></circle>
+                  <path d="M5.25 19.25C5.72 16.18 8.48 14 12 14C15.52 14 18.28 16.18 18.75 19.25" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"></path>
+                </svg>
+                <svg class="icon-filled w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="8" r="3.75" fill="currentColor"></circle>
+                  <path d="M4.75 19.5C5.25 15.95 8.2 13.5 12 13.5C15.8 13.5 18.75 15.95 19.25 19.5H4.75Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <span data-design-text-token="label-sm" class="font-label text-label-sm">我</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </main>
+
+  <!-- ==================== 4. 页面交互脚本 ==================== -->
+  <script>
+    (function () {
+      // ---------- 1. DOM 引用 ----------
+      const searchInput = document.getElementById('msg-search');
+      const dmRows = Array.from(document.querySelectorAll('.dm-row'));
+      const sectionTitle = document.getElementById('dm-section-title');
+      const resetBtn = document.getElementById('dm-filter-reset');
+
+      // ---------- 2. 本地关键词过滤（兼容内联搜索框） ----------
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          const q = searchInput.value.trim().toLowerCase();
+          dmRows.forEach(function (row) {
+            const text = row.textContent.toLowerCase();
+            row.classList.toggle('hidden', q && text.indexOf(q) === -1);
+          });
+        });
+      }
+
+      // ---------- 3. 四大通知分类切换与恢复全部 ----------
+      document.querySelectorAll('.msg-tab').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const cat = btn.getAttribute('data-cat');
+          if (sectionTitle) sectionTitle.textContent = cat;
+          if (resetBtn) resetBtn.classList.remove('hidden');
+        });
+      });
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          if (sectionTitle) sectionTitle.textContent = '私信与群聊';
+          resetBtn.classList.add('hidden');
+        });
+      }
+
+      // ---------- 4. 联动 68 群聊最新消息预览 ----------
+      try {
+        const lastMsgMap = JSON.parse(localStorage.getItem('daoyu_group_last_msg_v1') || '{}');
+        document.querySelectorAll('.group-msg-row').forEach(function (row) {
+          const gid = row.getAttribute('data-gid');
+          if (gid && lastMsgMap[gid]) {
+            const previewEl = row.querySelector('.group-msg-preview');
+            const timeEl = row.querySelector('.group-msg-time');
+            if (previewEl && lastMsgMap[gid].text) previewEl.textContent = lastMsgMap[gid].text;
+            if (timeEl && lastMsgMap[gid].time) timeEl.textContent = lastMsgMap[gid].time;
+          }
+        });
+      } catch (e) {}
+
+      // ---------- 5. 下拉刷新动效 ----------
+      function initPullToRefresh(scrollEl, onRefresh) {
+        if (!scrollEl || scrollEl.dataset.ptrBound) return;
+        scrollEl.dataset.ptrBound = '1';
+        const indicator = document.createElement('div');
+        indicator.className = 'ptr-indicator flex items-center justify-center gap-1.5 overflow-hidden text-light-on-surface-variant font-label text-label-sm transition-all duration-200 select-none';
+        indicator.style.height = '0px';
+        indicator.style.opacity = '0';
+        indicator.innerHTML = '<svg class="ptr-spinner w-4 h-4 transition-transform duration-200" viewBox="0 0 24 24" fill="none"><path d="M12 4V7M12 17V20M4 12H7M17 12H20M6.34 6.34L8.46 8.46M15.54 15.54L17.66 17.66M6.34 17.66L8.46 15.54M15.54 8.46L17.66 6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="ptr-label">下拉刷新</span>';
+        scrollEl.insertBefore(indicator, scrollEl.firstChild);
+        const spinner = indicator.querySelector('.ptr-spinner');
+        const label = indicator.querySelector('.ptr-label');
+        let startY = 0; let pulling = false; let refreshing = false;
+        const THRESHOLD = 56;
+        function startPull(y) { if (refreshing || scrollEl.scrollTop > 0) return; startY = y; pulling = true; indicator.style.transition = 'none'; }
+        function movePull(y) {
+          if (!pulling || refreshing) return;
+          const dy = y - startY;
+          if (dy <= 0) { indicator.style.height = '0px'; indicator.style.opacity = '0'; return; }
+          const dist = Math.min(84, dy * 0.48);
+          indicator.style.height = dist + 'px';
+          indicator.style.opacity = String(Math.min(1, dist / 40));
+          if (spinner) spinner.style.transform = 'rotate(' + (dist * 4) + 'deg)';
+          if (label) label.textContent = dist >= THRESHOLD ? '释放立即刷新' : '下拉刷新';
+        }
+        function endPull() {
+          if (!pulling || refreshing) return;
+          pulling = false;
+          indicator.style.transition = 'all 200ms cubic-bezier(0.22, 1, 0.36, 1)';
+          const h = parseFloat(indicator.style.height) || 0;
+          if (h >= THRESHOLD) {
+            refreshing = true;
+            indicator.style.height = '44px';
+            indicator.style.opacity = '1';
+            if (spinner) spinner.classList.add('animate-spin');
+            if (label) label.textContent = '正在刷新...';
+            setTimeout(function () {
+              if (spinner) spinner.classList.remove('animate-spin');
+              indicator.style.height = '0px';
+              indicator.style.opacity = '0';
+              refreshing = false;
+              if (onRefresh) onRefresh();
+            }, 650);
+          } else {
+            indicator.style.height = '0px';
+            indicator.style.opacity = '0';
+          }
+        }
+        scrollEl.addEventListener('touchstart', function (e) { if (e.touches[0]) startPull(e.touches[0].clientY); }, { passive: true });
+        scrollEl.addEventListener('touchmove', function (e) { if (e.touches[0]) movePull(e.touches[0].clientY); }, { passive: true });
+        scrollEl.addEventListener('touchend', endPull, { passive: true });
+        scrollEl.addEventListener('mousedown', function (e) { if (e.button === 0) startPull(e.clientY); });
+        window.addEventListener('mousemove', function (e) { if (pulling) movePull(e.clientY); });
+        window.addEventListener('mouseup', function () { if (pulling) endPull(); });
+      }
+      initPullToRefresh(document.getElementById('msg-scroll'));
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 58 消息 · 互动信息 -->
+<!--
+  页面名称：58 消息 · 互动信息
+  功能说明：展示点赞与收藏、评论与回复、新增关注等互动通知，支持分类筛选、全部已读、快捷回关与行内回复
+--><!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>人设岛遇 - 58 消息 · 互动信息</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <!-- 移动端主视口容器（390px 居中） -->
+  <main class="w-full max-w-[390px] min-h-[884px] relative flex flex-col bg-light-surface shadow-xl" data-stitch-vh="min-h-[884px]===min-h-screen">
+
+    <!-- ==================== 1. 顶部导航栏与分段标签 ==================== -->
+    <header class="sticky top-0 z-20 pt-safe-top bg-light-surface border-b border-light-outline-variant/60 flex flex-col">
+      <div class="px-gutter-lg flex items-center justify-between gap-2 h-11">
+        <a href="../13-messages/Messages.html" aria-label="返回消息列表" class="w-9 h-9 -ml-2 rounded-full flex items-center justify-center text-light-on-surface hover:bg-light-surface-container transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <h1 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">互动信息</h1>
+        <button id="inter-read-all-btn" type="button" data-design-text-token="label-sm" class="px-2.5 py-1 rounded-full text-light-on-surface-variant hover:text-light-on-surface hover:bg-light-surface-container font-label text-label-sm flex items-center gap-1 transition-colors shrink-0">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span>全部已读</span>
+        </button>
+      </div>
+
+      <!-- 互动分类下划线分段标签 -->
+      <nav aria-label="互动类型筛选" class="relative grid grid-cols-4 px-gutter-sm">
+        <button type="button" data-filter="all" class="inter-tab relative py-2.5 flex items-center justify-center gap-1 font-title text-label-sm text-light-on-surface transition-colors">
+          <span>全部</span>
+        </button>
+        <button type="button" data-filter="like" class="inter-tab relative py-2.5 flex items-center justify-center gap-1 font-label text-label-sm text-light-on-surface-variant hover:text-light-on-surface transition-colors">
+          <span>赞与收藏</span>
+          <span class="inter-tab-dot w-1.5 h-1.5 rounded-full bg-error"></span>
+        </button>
+        <button type="button" data-filter="comment" class="inter-tab relative py-2.5 flex items-center justify-center gap-1 font-label text-label-sm text-light-on-surface-variant hover:text-light-on-surface transition-colors">
+          <span>评论与@</span>
+          <span class="inter-tab-dot w-1.5 h-1.5 rounded-full bg-error"></span>
+        </button>
+        <button type="button" data-filter="follow" class="inter-tab relative py-2.5 flex items-center justify-center gap-1 font-label text-label-sm text-light-on-surface-variant hover:text-light-on-surface transition-colors">
+          <span>新增关注</span>
+          <span class="inter-tab-dot w-1.5 h-1.5 rounded-full bg-error"></span>
+        </button>
+        <div id="msgi-tab-indicator-bar" aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 w-1/4 flex justify-center transition-transform duration-200 ease-out" style="transform: translateX(0%);">
+          <span class="w-5 h-0.5 rounded-full bg-light-primary"></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ==================== 2. 极简互动通知列表 ==================== -->
+    <div id="inter-list" class="flex-1 divide-y divide-light-outline-variant/50 pb-24">
+
+      <!-- 1. 评论通知（未读） -->
+      <article data-type="comment" data-user="零度叙事" class="inter-item px-gutter-lg py-3.5 flex items-start gap-3 bg-light-surface hover:bg-light-surface-container-low/60 transition-colors cursor-pointer">
+        <div class="relative shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDci_Xw1bcfU1DTisOU93vq85a2yFLxyyp1WlFXsCZ85xCVOrP31O16Vuz_5ptuTQBz-AIhMk8Q17zVhvtfVLmFGBOS_itVgaJtwzKBqJMbcZIK8__5txmj0K3Tn1meTveqGqAndYGncW4O_-_34n6PQZx2J2dbIh0Ow2berdDYbVl3kNBlD_CHgdvjM8q90jsAMjYPRs9xX8nifQaOeg9XLDaj0J4_tJ1Uzk3hsRsFyULdH_zQUg" alt="零度叙事" class="w-10 h-10 rounded-full object-cover">
+          <span class="inter-dot absolute -top-0.5 -left-0.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-light-surface" aria-label="未读"></span>
+        </div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <div class="flex items-center gap-1.5 text-label-sm text-light-on-surface-variant min-w-0">
+            <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">零度叙事</span>
+            <span class="shrink-0">评论了你 · 10分钟前</span>
+          </div>
+
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface leading-relaxed">
+            雨夜长廊那段对峙写得太有张力了，沈砚辞撑伞回头那句“过来”直接戳中！
+          </p>
+
+          <div class="inter-my-reply hidden mt-0.5 px-2.5 py-1.5 rounded-lg bg-light-surface-container-low text-body-sm text-light-on-surface"></div>
+
+          <div class="pt-0.5 flex items-center gap-4">
+            <button type="button" class="inter-reply-trigger inline-flex items-center gap-1 font-label text-label-sm text-light-on-surface-variant hover:text-light-on-surface transition-colors">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 11.5C21 16.19 16.97 20 12 20C10.52 20 9.12 19.66 7.89 19.06L3 20.5L4.35 16.43C3.5 15.02 3 13.33 3 11.5C3 6.81 7.03 3 12 3C16.97 3 21 6.81 21 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+              </svg>
+              <span>回复</span>
+            </button>
+            <button type="button" data-liked="false" class="inter-like-comment inline-flex items-center gap-1 font-label text-label-sm text-light-on-surface-variant hover:text-error transition-colors">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21C12 21 4 14.8 4 9.2C4 6.5 6.1 4.5 8.6 4.5C10.1 4.5 11.4 5.2 12 6.3C12.6 5.2 13.9 4.5 15.4 4.5C17.9 4.5 20 6.5 20 9.2C20 14.8 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+              </svg>
+              <span>赞</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="../07-article-detail/ArticleDetail.html" aria-label="查看《京华深处》" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrBYUEfF61kgx9PKb6hooUymoQZLdIaOI7u_DG59J0_oogUyyqsYRAewYcsTXG-ii0tPxy4P7WPwOx6RcAl7-E-PMjNFsKcjQlsh9ZutlxoJEshDMrSNbZ1CePSAYGMtckwJfv1OdWapvQvC5-34GOMOeZ06l6jdVukh-k5cczMIYdBvb0ZZvFang9A8U7UpfWQ2B9DKzANrFSj8QQDTVAy6NTNVqlnReHX49F3WhPXbjH9Z-9WoVXflZMw6Q6U" alt="《京华深处》封面" class="w-10 h-10 rounded-sm object-cover object-top ring-1 ring-light-outline-variant/60">
+        </a>
+      </article>
+
+      <!-- 2. 点赞聚合通知（未读） -->
+      <article data-type="like" class="inter-item px-gutter-lg py-3.5 flex items-start gap-3 bg-light-surface hover:bg-light-surface-container-low/60 transition-colors cursor-pointer">
+        <div class="relative w-10 h-10 shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDEQtOit7dUyYZrE3Ttq8IJyuHHvf3PZtk3guFGLRtyN1j0MeXZCes-xb49Vqh7bq23vTPI7Dr12-ZIBxFrTU4rZF_cd9kaK86j-u6jOtg8l7Y2Cw_-MAe00GlQgEIOK5bR4EHxZGOWFicDXD5xyt1_nLOu9r3w7SSlSTEnmVnU81nXpRt6370RTjjyEeGhHJvKrueDLt3uIfel7CAzdjQE5Q32ARrahVYfJu7-pGieGXy8ME6uPPTs" alt="江晚意" class="w-7 h-7 rounded-full object-cover absolute top-0 left-0 ring-2 ring-light-surface">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrAHF-3JCGQ9wIXlf30uSC5E7xo9Rj6keKPoTBP7K5k7HWKDZCFQQB5gNKR4Uz3uL0_xEvOrOP8jlVwkWBAqmkf2PWmpelTwS54lpSWyTCitbNMNZSS-pNFDNRpO6mHonpe2nxC0UDMBeFcCthshLMJBtNDBNZ9iU8b9m7694P4EMfF0JtJHgaYdD3brsP22rYCDwx4uTHJTISFzpRRiQ95_8TUw4zRfj5SSIW9wjdQiQgF6XEQg6o6oBOOnZQJKVHI" alt="苏念安" class="w-7 h-7 rounded-full object-cover absolute bottom-0 right-0 ring-2 ring-light-surface">
+          <span class="inter-dot absolute -top-0.5 -left-0.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-light-surface" aria-label="未读"></span>
+        </div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <div class="flex items-center gap-1.5 text-label-sm text-light-on-surface-variant min-w-0">
+            <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">江晚意 等 12 人</span>
+            <span class="shrink-0">赞了评论 · 35分钟前</span>
+          </div>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">
+            “这种年上克制又偏爱的拉扯感真的百看不厌。”
+          </p>
+        </div>
+
+        <a href="../07-article-detail/ArticleDetail.html" aria-label="查看原作品" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrBYUEfF61kgx9PKb6hooUymoQZLdIaOI7u_DG59J0_oogUyyqsYRAewYcsTXG-ii0tPxy4P7WPwOx6RcAl7-E-PMjNFsKcjQlsh9ZutlxoJEshDMrSNbZ1CePSAYGMtckwJfv1OdWapvQvC5-34GOMOeZ06l6jdVukh-k5cczMIYdBvb0ZZvFang9A8U7UpfWQ2B9DKzANrFSj8QQDTVAy6NTNVqlnReHX49F3WhPXbjH9Z-9WoVXflZMw6Q6U" alt="《京华深处》封面" class="w-10 h-10 rounded-sm object-cover object-top ring-1 ring-light-outline-variant/60">
+        </a>
+      </article>
+
+      <!-- 3. 新增关注通知（未读） -->
+      <article data-type="follow" class="inter-item px-gutter-lg py-3.5 flex items-center gap-3 bg-light-surface hover:bg-light-surface-container-low/60 transition-colors cursor-pointer">
+        <div class="relative shrink-0">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDzHZENl33wi65M9XLZKtqtzF3NascoRExBRgFEq9GjDD19ZK3sQAVHJu4YeXiWyqomWbIJt5bCJjTQ8iS4RzVk5I-Bm8jycGsXXmHhnCa_hVWAskymbI6xUfe5DnMV_e5ujvU3WqOBGB6SvdFjkltM28GzJ08c9obs309pT947f3ZSKc-gKeHjC4Li2eeUvRuBpa2OKV0E5NtQvtl9PJZsZI6l7TUTMIFmaAn5IS5Zt4ab2Wcer2PLMQ" alt="南风知意" class="w-10 h-10 rounded-full object-cover">
+          <span class="inter-dot absolute -top-0.5 -left-0.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-light-surface" aria-label="未读"></span>
+        </div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-0.5">
+          <div class="flex items-center gap-1.5 text-label-sm text-light-on-surface-variant min-w-0">
+            <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">南风知意</span>
+            <span class="shrink-0">关注了你 · 1小时前</span>
+          </div>
+          <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">紫V创作者 · 擅长悬疑剧本局</span>
+        </div>
+
+        <button type="button" data-followed="false" class="inter-follow-btn h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm shrink-0 transition-colors">
+          + 回关
+        </button>
+      </article>
+
+      <!-- 4. 回复通知（已读） -->
+      <article data-type="comment" data-user="沈清晏" class="inter-item px-gutter-lg py-3.5 flex items-start gap-3 bg-light-surface hover:bg-light-surface-container-low/60 transition-colors cursor-pointer">
+        <img src="https://lh3.googleusercontent.com/aida/ALJJyrA3-9_rNKhPKC759MrDr8u_lA-6O7fNvrz2T2JynH-lGG-EY2hmMxvoGlQxhStmqZsVoAR93VjnWqPxmZ1W4xXAhicM6QRwimGCDK-xAZip4lwaI5hCvvfsaDBdMYQjQzfR8-_aR0LW8hdVe7FDelJwGIV2BpQnvF_gK8zVthH23q3v3bOR2_wsdPlJxWAFXAmlCH133dXhv_a3Anmi0Og3vpoKQzJhDm2MaHorT0qwppbHUM9ma3JoYvf4Wc6iniw" alt="沈清晏" class="w-10 h-10 rounded-full object-cover shrink-0 mt-0.5">
+
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <div class="flex items-center gap-1.5 text-label-sm text-light-on-surface-variant min-w-0">
+            <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">沈清晏</span>
+            <span class="shrink-0">回复了你 · 昨天 21:05</span>
+          </div>
+
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface leading-relaxed">
+            晚上八点剧本局还有最后一个侦探位，直接点社区卡片就能报名～
+          </p>
+
+          <div class="inter-my-reply hidden mt-0.5 px-2.5 py-1.5 rounded-lg bg-light-surface-container-low text-body-sm text-light-on-surface"></div>
+
+          <div class="pt-0.5 flex items-center gap-4">
+            <button type="button" class="inter-reply-trigger inline-flex items-center gap-1 font-label text-label-sm text-light-on-surface-variant hover:text-light-on-surface transition-colors">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 11.5C21 16.19 16.97 20 12 20C10.52 20 9.12 19.66 7.89 19.06L3 20.5L4.35 16.43C3.5 15.02 3 13.33 3 11.5C3 6.81 7.03 3 12 3C16.97 3 21 6.81 21 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+              </svg>
+              <span>回复</span>
+            </button>
+            <button type="button" data-liked="false" class="inter-like-comment inline-flex items-center gap-1 font-label text-label-sm text-light-on-surface-variant hover:text-error transition-colors">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21C12 21 4 14.8 4 9.2C4 6.5 6.1 4.5 8.6 4.5C10.1 4.5 11.4 5.2 12 6.3C12.6 5.2 13.9 4.5 15.4 4.5C17.9 4.5 20 6.5 20 9.2C20 14.8 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+              </svg>
+              <span>赞</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="../23-community-post-detail/CommunityPostDetail.html" aria-label="查看社区动态" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrAMenq6emvTXCxUXciyod96m7wwaHUwbS7oBHW3DlRk2W1xv9XBPxLGCYfRQxXIQu2PWkOxqOjz85570y0XohgeoAw0wC2ZF4oRHVxnZ-0nnjUFAKi8O8qGKuc-rNxfZ6xxcFutaO_nIUnNkI0pNEOXZ6NKuz44TIljMpAC3sVtgaG0-nIu9_V3RS4mFpicb8Feiu0SiULT6X2IYYjK6md_-2z0D1l3WXDeOHaI3uJaisnEEPu8kDU4Ng9J3a-TB3VrOwY" alt="剧本局封面" class="w-10 h-10 rounded-sm object-cover ring-1 ring-light-outline-variant/60">
+        </a>
+      </article>
+
+      <!-- 5. 收藏通知（已读） -->
+      <article data-type="like" class="inter-item px-gutter-lg py-3.5 flex items-start gap-3 bg-light-surface hover:bg-light-surface-container-low/60 transition-colors cursor-pointer">
+        <img src="https://lh3.googleusercontent.com/aida/ALJJyrC3x1pgaYvK7RF8VFYd9x5IlMvFxCpfTXvJrxw65oXrmCm9fUbY27WsTI7Cq_0IlMLF1p6rrX5LcUMWF9c1tTrHSAbL9LcGdGnip1kdMgvfczTvNti1y7ZQxdZ4cWBEQkExAxKpc90kGS_dKbLQ5tY0PaHQzESFFMiMygdF0nz5K2Q1tjVjZGWENBY87qCxVs0NQcVhnXgzJNeziXYzPOrV-5Eh1iLae1WoBovtR_Ihhtp7932LD8jqSQtZ6wRTdJ9X8bI" alt="林听风" class="w-10 h-10 rounded-full object-cover shrink-0 mt-0.5">
+
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <div class="flex items-center gap-1.5 text-label-sm text-light-on-surface-variant min-w-0">
+            <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">林听风</span>
+            <span class="shrink-0">收藏了设定 · 昨天 20:18</span>
+          </div>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">
+            《双强宿敌背景板 · 雨夜对戏版》
+          </p>
+        </div>
+
+        <a href="../23-community-post-detail/CommunityPostDetail.html" aria-label="查看设定卡片" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrC3x1pgaYvK7RF8VFYd9x5IlMvFxCpfTXvJrxw65oXrmCm9fUbY27WsTI7Cq_0IlMLF1p6rrX5LcUMWF9c1tTrHSAbL9LcGdGnip1kdMgvfczTvNti1y7ZQxdZ4cWBEQkExAxKpc90kGS_dKbLQ5tY0PaHQzESFFMiMygdF0nz5K2Q1tjVjZGWENBY87qCxVs0NQcVhnXgzJNeziXYzPOrV-5Eh1iLae1WoBovtR_Ihhtp7932LD8jqSQtZ6wRTdJ9X8bI" alt="设定卡片封面" class="w-10 h-10 rounded-sm object-cover ring-1 ring-light-outline-variant/60">
+        </a>
+      </article>
+
+      <!-- 6. 动态点赞（已读） -->
+      <article data-type="like" class="inter-item px-gutter-lg py-3.5 flex items-start gap-3 bg-light-surface hover:bg-light-surface-container-low/60 transition-colors cursor-pointer">
+        <div class="relative w-10 h-10 shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDci_Xw1bcfU1DTisOU93vq85a2yFLxyyp1WlFXsCZ85xCVOrP31O16Vuz_5ptuTQBz-AIhMk8Q17zVhvtfVLmFGBOS_itVgaJtwzKBqJMbcZIK8__5txmj0K3Tn1meTveqGqAndYGncW4O_-_34n6PQZx2J2dbIh0Ow2berdDYbVl3kNBlD_CHgdvjM8q90jsAMjYPRs9xX8nifQaOeg9XLDaj0J4_tJ1Uzk3hsRsFyULdH_zQUg" alt="陆知行" class="w-7 h-7 rounded-full object-cover absolute top-0 left-0 ring-2 ring-light-surface">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDzHZENl33wi65M9XLZKtqtzF3NascoRExBRgFEq9GjDD19ZK3sQAVHJu4YeXiWyqomWbIJt5bCJjTQ8iS4RzVk5I-Bm8jycGsXXmHhnCa_hVWAskymbI6xUfe5DnMV_e5ujvU3WqOBGB6SvdFjkltM28GzJ08c9obs309pT947f3ZSKc-gKeHjC4Li2eeUvRuBpa2OKV0E5NtQvtl9PJZsZI6l7TUTMIFmaAn5IS5Zt4ab2Wcer2PLMQ" alt="夏初" class="w-7 h-7 rounded-full object-cover absolute bottom-0 right-0 ring-2 ring-light-surface">
+        </div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <div class="flex items-center gap-1.5 text-label-sm text-light-on-surface-variant min-w-0">
+            <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">陆知行 等 5 人</span>
+            <span class="shrink-0">赞了动态 · 11-16</span>
+          </div>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">
+            新坑《雾港来信》人设草稿放出，欢迎提意见～
+          </p>
+        </div>
+
+        <a href="../23-community-post-detail/CommunityPostDetail.html" aria-label="查看动态" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrAHF-3JCGQ9wIXlf30uSC5E7xo9Rj6keKPoTBP7K5k7HWKDZCFQQB5gNKR4Uz3uL0_xEvOrOP8jlVwkWBAqmkf2PWmpelTwS54lpSWyTCitbNMNZSS-pNFDNRpO6mHonpe2nxC0UDMBeFcCthshLMJBtNDBNZ9iU8b9m7694P4EMfF0JtJHgaYdD3brsP22rYCDwx4uTHJTISFzpRRiQ95_8TUw4zRfj5SSIW9wjdQiQgF6XEQg6o6oBOOnZQJKVHI" alt="《雾港来信》封面" class="w-10 h-10 rounded-sm object-cover ring-1 ring-light-outline-variant/60">
+        </a>
+      </article>
+    </div>
+
+    <!-- ==================== 3. 底部快捷回复栏（点击回复时弹出） ==================== -->
+    <div id="inter-reply-bar" class="hidden fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] z-30 bg-light-surface border-t border-light-outline-variant px-gutter-lg py-2.5 pb-safe-bottom flex items-center gap-2 shadow-lg">
+      <input id="inter-reply-input" type="text" placeholder="回复..." class="flex-1 min-w-0 h-9 rounded-full bg-light-surface-container border border-light-outline-variant px-3.5 font-body text-body-sm text-light-on-surface focus:ring-1 focus:ring-light-secondary focus:outline-none">
+      <button id="inter-reply-send" type="button" class="h-9 px-4 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm shrink-0">
+        发送
+      </button>
+    </div>
+
+    <!-- 轻提示 Toast -->
+    <div id="inter-toast" role="status" aria-live="polite" class="hidden fixed bottom-16 left-1/2 -translate-x-1/2 z-40 px-4 py-2 rounded-full bg-dark-surface-container/95 text-dark-on-surface font-label text-label-sm shadow-lg whitespace-nowrap"></div>
+  </main>
+
+  <script>
+    (function () {
+      const tabs = document.querySelectorAll('.inter-tab');
+      const items = document.querySelectorAll('.inter-item');
+      const readAllBtn = document.getElementById('inter-read-all-btn');
+      const replyBar = document.getElementById('inter-reply-bar');
+      const replyInput = document.getElementById('inter-reply-input');
+      const replySend = document.getElementById('inter-reply-send');
+      const toast = document.getElementById('inter-toast');
+      let toastTimer = null;
+      let activeReplyItem = null;
+
+      function showToast(msg) {
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.add('hidden'), 1800);
+      }
+
+      function submitReply() {
+        const val = replyInput.value.trim();
+        if (!val) {
+          showToast('请输入回复内容');
+          return;
+        }
+        if (activeReplyItem) {
+          const box = activeReplyItem.querySelector('.inter-my-reply');
+          if (box) {
+            box.textContent = '我：' + val;
+            box.classList.remove('hidden');
+          }
+        }
+        replyInput.value = '';
+        replyBar.classList.add('hidden');
+        showToast('回复已发送');
+      }
+
+      // 分段标签切换与筛选
+      const tabIndicator = document.getElementById('msgi-tab-indicator-bar');
+      tabs.forEach((tab, idx) => {
+        tab.addEventListener('click', () => {
+          const f = tab.dataset.filter;
+          tabs.forEach((t) => {
+            const active = t === tab;
+            t.classList.toggle('font-title', active);
+            t.classList.toggle('text-light-on-surface', active);
+            t.classList.toggle('font-label', !active);
+            t.classList.toggle('text-light-on-surface-variant', !active);
+          });
+          if (tabIndicator) {
+            tabIndicator.style.transform = 'translateX(' + (idx * 100) + '%)';
+          }
+          items.forEach((item) => {
+            item.classList.toggle('hidden', f !== 'all' && item.dataset.type !== f);
+          });
+          replyBar.classList.add('hidden');
+        });
+      });
+
+      // 全部已读
+      if (readAllBtn) {
+        readAllBtn.addEventListener('click', () => {
+          document.querySelectorAll('.inter-dot, .inter-tab-dot').forEach((d) => d.classList.add('hidden'));
+          showToast('已将互动信息全部标为已读');
+        });
+      }
+
+      // 列表内交互：点击标为已读、回关、点赞评论、弹出底部回复栏
+      document.getElementById('inter-list').addEventListener('click', (e) => {
+        const row = e.target.closest('.inter-item');
+        if (row) {
+          const dot = row.querySelector('.inter-dot');
+          if (dot && !dot.classList.contains('hidden')) dot.classList.add('hidden');
+        }
+
+        const followBtn = e.target.closest('.inter-follow-btn');
+        if (followBtn) {
+          const on = followBtn.getAttribute('data-followed') === 'true';
+          followBtn.setAttribute('data-followed', !on ? 'true' : 'false');
+          followBtn.textContent = !on ? '已互关' : '+ 回关';
+          followBtn.className = !on
+            ? 'inter-follow-btn h-8 px-3.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm shrink-0 transition-colors'
+            : 'inter-follow-btn h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm shrink-0 transition-colors';
+          showToast(!on ? '已回关创作者' : '已取消关注');
+          return;
+        }
+
+        const likeBtn = e.target.closest('.inter-like-comment');
+        if (likeBtn) {
+          const liked = likeBtn.getAttribute('data-liked') === 'true';
+          likeBtn.setAttribute('data-liked', !liked ? 'true' : 'false');
+          likeBtn.classList.toggle('text-error', !liked);
+          likeBtn.classList.toggle('text-light-on-surface-variant', liked);
+          const svg = likeBtn.querySelector('svg');
+          if (svg) svg.setAttribute('fill', !liked ? 'currentColor' : 'none');
+          likeBtn.querySelector('span').textContent = !liked ? '已赞' : '赞';
+          showToast(!liked ? '已点赞该评论' : '已取消点赞');
+          return;
+        }
+
+        const replyTrigger = e.target.closest('.inter-reply-trigger');
+        if (replyTrigger) {
+          activeReplyItem = replyTrigger.closest('.inter-item');
+          const user = activeReplyItem.dataset.user || '对方';
+          replyInput.placeholder = '回复 ' + user + '...';
+          replyBar.classList.remove('hidden');
+          replyInput.focus();
+        }
+      });
+
+      if (replySend) replySend.addEventListener('click', submitReply);
+      if (replyInput) {
+        replyInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            submitReply();
+          } else if (e.key === 'Escape') {
+            replyBar.classList.add('hidden');
+          }
+        });
+      }
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 59 消息 · 订阅上新 -->
+<!--
+  页面名称：59 消息 · 订阅上新
+  功能说明：展示已订阅创作者的专栏更新、新章节发布与设定附件上新通知，支持按订阅博主筛选并直达阅读
+--><!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>人设岛遇 - 59 消息 · 订阅上新</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <!-- 移动端主视口容器（390px 居中） -->
+  <main class="w-full max-w-[390px] min-h-[884px] relative flex flex-col bg-light-surface shadow-xl" data-stitch-vh="min-h-[884px]===min-h-screen">
+
+    <!-- ==================== 1. 顶部导航与抖音/TikTok风横向博主头像条 ==================== -->
+    <header class="sticky top-0 z-20 pt-safe-top bg-light-surface border-b border-light-outline-variant/60 flex flex-col">
+      <div class="px-gutter-lg flex items-center justify-between gap-2 h-11">
+        <a href="../13-messages/Messages.html" aria-label="返回消息列表" class="w-9 h-9 -ml-2 rounded-full flex items-center justify-center text-light-on-surface hover:bg-light-surface-container transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <h1 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">订阅上新</h1>
+        <button id="sub-read-all-btn" type="button" data-design-text-token="label-sm" class="px-2.5 py-1 rounded-full text-light-on-surface-variant hover:text-light-on-surface hover:bg-light-surface-container font-label text-label-sm flex items-center gap-1 transition-colors shrink-0">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span>全部已读</span>
+        </button>
+      </div>
+
+      <!-- 横向订阅博主头像条（一眼定位未读更新） -->
+      <nav aria-label="订阅博主筛选" class="px-gutter-lg pt-1.5 pb-3 flex items-start gap-4 overflow-x-auto no-scrollbar">
+        <button type="button" data-author="all" class="sub-author-tab flex flex-col items-center gap-1 shrink-0 group">
+          <span class="sub-avatar-ring w-12 h-12 rounded-full bg-light-primary text-light-on-primary flex items-center justify-center ring-2 ring-light-primary ring-offset-2 ring-offset-light-surface transition-all">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 6H20M4 12H20M4 18H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            </svg>
+          </span>
+          <span class="sub-author-name font-title text-label-sm text-light-on-surface">全部</span>
+        </button>
+
+        <button type="button" data-author="零度叙事" class="sub-author-tab flex flex-col items-center gap-1 shrink-0 group">
+          <span class="relative">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrDci_Xw1bcfU1DTisOU93vq85a2yFLxyyp1WlFXsCZ85xCVOrP31O16Vuz_5ptuTQBz-AIhMk8Q17zVhvtfVLmFGBOS_itVgaJtwzKBqJMbcZIK8__5txmj0K3Tn1meTveqGqAndYGncW4O_-_34n6PQZx2J2dbIh0Ow2berdDYbVl3kNBlD_CHgdvjM8q90jsAMjYPRs9xX8nifQaOeg9XLDaj0J4_tJ1Uzk3hsRsFyULdH_zQUg" alt="零度叙事" class="sub-avatar-ring w-12 h-12 rounded-full object-cover ring-2 ring-error/80 ring-offset-2 ring-offset-light-surface transition-all">
+            <span class="sub-pill-dot absolute top-0 right-0 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-light-surface"></span>
+          </span>
+          <span class="sub-author-name font-label text-label-sm text-light-on-surface-variant max-w-[56px] truncate">零度叙事</span>
+        </button>
+
+        <button type="button" data-author="林听风" class="sub-author-tab flex flex-col items-center gap-1 shrink-0 group">
+          <span class="relative">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrC3x1pgaYvK7RF8VFYd9x5IlMvFxCpfTXvJrxw65oXrmCm9fUbY27WsTI7Cq_0IlMLF1p6rrX5LcUMWF9c1tTrHSAbL9LcGdGnip1kdMgvfczTvNti1y7ZQxdZ4cWBEQkExAxKpc90kGS_dKbLQ5tY0PaHQzESFFMiMygdF0nz5K2Q1tjVjZGWENBY87qCxVs0NQcVhnXgzJNeziXYzPOrV-5Eh1iLae1WoBovtR_Ihhtp7932LD8jqSQtZ6wRTdJ9X8bI" alt="林听风" class="sub-avatar-ring w-12 h-12 rounded-full object-cover ring-2 ring-error/80 ring-offset-2 ring-offset-light-surface transition-all">
+            <span class="sub-pill-dot absolute top-0 right-0 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-light-surface"></span>
+          </span>
+          <span class="sub-author-name font-label text-label-sm text-light-on-surface-variant max-w-[56px] truncate">林听风</span>
+        </button>
+
+        <button type="button" data-author="鱼汤" class="sub-author-tab flex flex-col items-center gap-1 shrink-0 group">
+          <span class="relative">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrDEQtOit7dUyYZrE3Ttq8IJyuHHvf3PZtk3guFGLRtyN1j0MeXZCes-xb49Vqh7bq23vTPI7Dr12-ZIBxFrTU4rZF_cd9kaK86j-u6jOtg8l7Y2Cw_-MAe00GlQgEIOK5bR4EHxZGOWFicDXD5xyt1_nLOu9r3w7SSlSTEnmVnU81nXpRt6370RTjjyEeGhHJvKrueDLt3uIfel7CAzdjQE5Q32ARrahVYfJu7-pGieGXy8ME6uPPTs" alt="鱼汤" class="sub-avatar-ring w-12 h-12 rounded-full object-cover ring-1 ring-light-outline-variant transition-all">
+          </span>
+          <span class="sub-author-name font-label text-label-sm text-light-on-surface-variant max-w-[56px] truncate">鱼汤</span>
+        </button>
+
+        <button type="button" data-author="南风知意" class="sub-author-tab flex flex-col items-center gap-1 shrink-0 group">
+          <span class="relative">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrDzHZENl33wi65M9XLZKtqtzF3NascoRExBRgFEq9GjDD19ZK3sQAVHJu4YeXiWyqomWbIJt5bCJjTQ8iS4RzVk5I-Bm8jycGsXXmHhnCa_hVWAskymbI6xUfe5DnMV_e5ujvU3WqOBGB6SvdFjkltM28GzJ08c9obs309pT947f3ZSKc-gKeHjC4Li2eeUvRuBpa2OKV0E5NtQvtl9PJZsZI6l7TUTMIFmaAn5IS5Zt4ab2Wcer2PLMQ" alt="南风知意" class="sub-avatar-ring w-12 h-12 rounded-full object-cover ring-1 ring-light-outline-variant transition-all">
+          </span>
+          <span class="sub-author-name font-label text-label-sm text-light-on-surface-variant max-w-[56px] truncate">南风知意</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ==================== 2. 极简时间线信息流（Twitter/X 风格） ==================== -->
+    <div id="sub-feed-list" class="flex-1 divide-y divide-light-outline-variant/50 pb-gutter-xl">
+
+      <!-- 更新 1：零度叙事（未读） -->
+      <article data-author="零度叙事" class="sub-card px-gutter-lg py-3.5 flex items-start gap-3 bg-light-surface hover:bg-light-surface-container-low/60 transition-colors">
+        <a href="../45-user-profile/UserProfile.html" class="relative shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDci_Xw1bcfU1DTisOU93vq85a2yFLxyyp1WlFXsCZ85xCVOrP31O16Vuz_5ptuTQBz-AIhMk8Q17zVhvtfVLmFGBOS_itVgaJtwzKBqJMbcZIK8__5txmj0K3Tn1meTveqGqAndYGncW4O_-_34n6PQZx2J2dbIh0Ow2berdDYbVl3kNBlD_CHgdvjM8q90jsAMjYPRs9xX8nifQaOeg9XLDaj0J4_tJ1Uzk3hsRsFyULdH_zQUg" alt="零度叙事" class="w-10 h-10 rounded-full object-cover">
+          <span class="sub-dot absolute -top-0.5 -left-0.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-light-surface" aria-label="未读"></span>
+        </a>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <!-- 单行作者信息 + 时间 -->
+          <div class="flex items-center gap-1.5 text-label-sm text-light-on-surface-variant min-w-0">
+            <a href="../45-user-profile/UserProfile.html" data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">零度叙事</a>
+            <span class="shrink-0">· 月费专栏 · 18分钟前</span>
+          </div>
+
+          <!-- 一眼可见的更新标题 -->
+          <a href="../07-article-detail/ArticleDetail.html" class="font-title text-title-md text-light-on-surface leading-snug hover:underline">
+            《京华深处》第 18 章：长廊撑伞
+          </a>
+
+          <!-- 精简两行摘要 -->
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant line-clamp-2 leading-relaxed">
+            附带沈砚辞早年家族档案 PDF（2.1 MB），订阅会员可直接免费阅读。
+          </p>
+
+          <!-- 轻量底部元信息与直达阅读 -->
+          <div class="pt-1 flex items-center justify-between gap-2 text-label-sm text-light-on-surface-variant">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm">4,820 字 · 含 PDF 设定集</span>
+            <a href="../07-article-detail/ArticleDetail.html" class="font-title text-light-on-surface hover:underline shrink-0">去阅读 →</a>
+          </div>
+        </div>
+
+        <!-- 右侧长竖版封面缩略图 -->
+        <a href="../07-article-detail/ArticleDetail.html" aria-label="阅读《京华深处》" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrBYUEfF61kgx9PKb6hooUymoQZLdIaOI7u_DG59J0_oogUyyqsYRAewYcsTXG-ii0tPxy4P7WPwOx6RcAl7-E-PMjNFsKcjQlsh9ZutlxoJEshDMrSNbZ1CePSAYGMtckwJfv1OdWapvQvC5-34GOMOeZ06l6jdVukh-k5cczMIYdBvb0ZZvFang9A8U7UpfWQ2B9DKzANrFSj8QQDTVAy6NTNVqlnReHX49F3WhPXbjH9Z-9WoVXflZMw6Q6U" alt="《京华深处》" class="w-16 h-24 rounded-sm object-cover object-top ring-1 ring-light-outline-variant/60">
+        </a>
+      </article>
+
+      <!-- 更新 2：林听风（未读） -->
+      <article data-author="林听风" class="sub-card px-gutter-lg py-3.5 flex items-start gap-3 bg-light-surface hover:bg-light-surface-container-low/60 transition-colors">
+        <a href="../45-user-profile/UserProfile.html" class="relative shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrC3x1pgaYvK7RF8VFYd9x5IlMvFxCpfTXvJrxw65oXrmCm9fUbY27WsTI7Cq_0IlMLF1p6rrX5LcUMWF9c1tTrHSAbL9LcGdGnip1kdMgvfczTvNti1y7ZQxdZ4cWBEQkExAxKpc90kGS_dKbLQ5tY0PaHQzESFFMiMygdF0nz5K2Q1tjVjZGWENBY87qCxVs0NQcVhnXgzJNeziXYzPOrV-5Eh1iLae1WoBovtR_Ihhtp7932LD8jqSQtZ6wRTdJ9X8bI" alt="林听风" class="w-10 h-10 rounded-full object-cover">
+          <span class="sub-dot absolute -top-0.5 -left-0.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-light-surface" aria-label="未读"></span>
+        </a>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <div class="flex items-center gap-1.5 text-label-sm text-light-on-surface-variant min-w-0">
+            <a href="../45-user-profile/UserProfile.html" data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">林听风</a>
+            <span class="shrink-0">· 免费连载 · 2小时前</span>
+          </div>
+
+          <a href="../07-article-detail/ArticleDetail.html" class="font-title text-title-md text-light-on-surface leading-snug hover:underline">
+            《岛屿来信》第 12 章：未拆的信
+          </a>
+
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant line-clamp-2 leading-relaxed">
+            潮汐退去后的礁石滩上，终于等来了那班延迟许久的渡轮。
+          </p>
+
+          <div class="pt-1 flex items-center justify-between gap-2 text-label-sm text-light-on-surface-variant">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm">3,150 字</span>
+            <a href="../07-article-detail/ArticleDetail.html" class="font-title text-light-on-surface hover:underline shrink-0">去阅读 →</a>
+          </div>
+        </div>
+
+        <a href="../07-article-detail/ArticleDetail.html" aria-label="阅读《岛屿来信》" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrC3x1pgaYvK7RF8VFYd9x5IlMvFxCpfTXvJrxw65oXrmCm9fUbY27WsTI7Cq_0IlMLF1p6rrX5LcUMWF9c1tTrHSAbL9LcGdGnip1kdMgvfczTvNti1y7ZQxdZ4cWBEQkExAxKpc90kGS_dKbLQ5tY0PaHQzESFFMiMygdF0nz5K2Q1tjVjZGWENBY87qCxVs0NQcVhnXgzJNeziXYzPOrV-5Eh1iLae1WoBovtR_Ihhtp7932LD8jqSQtZ6wRTdJ9X8bI" alt="《岛屿来信》" class="w-16 h-24 rounded-sm object-cover ring-1 ring-light-outline-variant/60">
+        </a>
+      </article>
+
+      <!-- 更新 3：鱼汤（已读） -->
+      <article data-author="鱼汤" class="sub-card px-gutter-lg py-3.5 flex items-start gap-3 bg-light-surface hover:bg-light-surface-container-low/60 transition-colors">
+        <a href="../45-user-profile/UserProfile.html" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDEQtOit7dUyYZrE3Ttq8IJyuHHvf3PZtk3guFGLRtyN1j0MeXZCes-xb49Vqh7bq23vTPI7Dr12-ZIBxFrTU4rZF_cd9kaK86j-u6jOtg8l7Y2Cw_-MAe00GlQgEIOK5bR4EHxZGOWFicDXD5xyt1_nLOu9r3w7SSlSTEnmVnU81nXpRt6370RTjjyEeGhHJvKrueDLt3uIfel7CAzdjQE5Q32ARrahVYfJu7-pGieGXy8ME6uPPTs" alt="鱼汤" class="w-10 h-10 rounded-full object-cover">
+        </a>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <div class="flex items-center gap-1.5 text-label-sm text-light-on-surface-variant min-w-0">
+            <a href="../45-user-profile/UserProfile.html" data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">鱼汤</a>
+            <span class="shrink-0">· 月费番外 · 昨天 21:10</span>
+          </div>
+
+          <a href="../07-article-detail/ArticleDetail.html" class="font-title text-title-md text-light-on-surface leading-snug hover:underline">
+            《雪落无声》除夕夜番外
+          </a>
+
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant line-clamp-2 leading-relaxed">
+            七年试探终于在除夕夜破冰，含双人对话语音提示词模板。
+          </p>
+
+          <div class="pt-1 flex items-center justify-between gap-2 text-label-sm text-light-on-surface-variant">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm">5,400 字 · 含提示词</span>
+            <a href="../07-article-detail/ArticleDetail.html" class="font-title text-light-on-surface hover:underline shrink-0">去阅读 →</a>
+          </div>
+        </div>
+
+        <a href="../07-article-detail/ArticleDetail.html" aria-label="阅读《雪落无声》" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDK1TdoS76tktviB1Y7kTWFrcN1a58NfbzEmcYq9OwdMMrrRJp-tFwUPKZvvhJQpjYjPobLTuTZ274JOMOiFNxm9CQY4euxU2BxuH2196G3fgvNsTb8jmtFELME_WHlCo9ANWTPRiz3wsOWyIkrThmB7yYirgoCrpCsH5Sb75P-MPnqZdWdjZNxw-ik1IqPvoe_WpfEXegl8Bx9_tpCz1hRhl-ALfayck2r7d-koipalokNeyVyIz5unmzHWKayzis" alt="《雪落无声》" class="w-16 h-24 rounded-sm object-cover ring-1 ring-light-outline-variant/60">
+        </a>
+      </article>
+
+      <!-- 更新 4：南风知意（已读） -->
+      <article data-author="南风知意" class="sub-card px-gutter-lg py-3.5 flex items-start gap-3 bg-light-surface hover:bg-light-surface-container-low/60 transition-colors">
+        <a href="../45-user-profile/UserProfile.html" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDzHZENl33wi65M9XLZKtqtzF3NascoRExBRgFEq9GjDD19ZK3sQAVHJu4YeXiWyqomWbIJt5bCJjTQ8iS4RzVk5I-Bm8jycGsXXmHhnCa_hVWAskymbI6xUfe5DnMV_e5ujvU3WqOBGB6SvdFjkltM28GzJ08c9obs309pT947f3ZSKc-gKeHjC4Li2eeUvRuBpa2OKV0E5NtQvtl9PJZsZI6l7TUTMIFmaAn5IS5Zt4ab2Wcer2PLMQ" alt="南风知意" class="w-10 h-10 rounded-full object-cover">
+        </a>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <div class="flex items-center gap-1.5 text-label-sm text-light-on-surface-variant min-w-0">
+            <a href="../45-user-profile/UserProfile.html" data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">南风知意</a>
+            <span class="shrink-0">· 剧本专栏 · 11-16</span>
+          </div>
+
+          <a href="../21-script-detail/ScriptDetail.html" class="font-title text-title-md text-light-on-surface leading-snug hover:underline">
+            《夜航船》完整线索卡合集
+          </a>
+
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant line-clamp-2 leading-relaxed">
+            雾起时不要回头，船头灯只照见有缘人。支持直接导入剧本局。
+          </p>
+
+          <div class="pt-1 flex items-center justify-between gap-2 text-label-sm text-light-on-surface-variant">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm">4 份角色线索卡</span>
+            <a href="../21-script-detail/ScriptDetail.html" class="font-title text-light-on-surface hover:underline shrink-0">看剧本 →</a>
+          </div>
+        </div>
+
+        <a href="../21-script-detail/ScriptDetail.html" aria-label="查看《夜航船》" class="shrink-0 mt-0.5">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrAHF-3JCGQ9wIXlf30uSC5E7xo9Rj6keKPoTBP7K5k7HWKDZCFQQB5gNKR4Uz3uL0_xEvOrOP8jlVwkWBAqmkf2PWmpelTwS54lpSWyTCitbNMNZSS-pNFDNRpO6mHonpe2nxC0UDMBeFcCthshLMJBtNDBNZ9iU8b9m7694P4EMfF0JtJHgaYdD3brsP22rYCDwx4uTHJTISFzpRRiQ95_8TUw4zRfj5SSIW9wjdQiQgF6XEQg6o6oBOOnZQJKVHI" alt="《夜航船》" class="w-16 h-24 rounded-sm object-cover ring-1 ring-light-outline-variant/60">
+        </a>
+      </article>
+    </div>
+
+    <div id="sub-toast" role="status" aria-live="polite" class="hidden fixed bottom-8 left-1/2 -translate-x-1/2 z-30 px-4 py-2 rounded-full bg-dark-surface-container/95 text-dark-on-surface font-label text-label-sm shadow-lg whitespace-nowrap"></div>
+  </main>
+
+  <script>
+    (function () {
+      const tabs = document.querySelectorAll('.sub-author-tab');
+      const cards = document.querySelectorAll('.sub-card');
+      const readAllBtn = document.getElementById('sub-read-all-btn');
+      const toast = document.getElementById('sub-toast');
+      let toastTimer = null;
+
+      function showToast(msg) {
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.add('hidden'), 1800);
+      }
+
+      // 点击顶部横向博主头像筛选对应更新
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const author = tab.dataset.author;
+          tabs.forEach((t) => {
+            const active = t === tab;
+            const ring = t.querySelector('.sub-avatar-ring');
+            const name = t.querySelector('.sub-author-name');
+            if (name) {
+              name.classList.toggle('font-title', active);
+              name.classList.toggle('text-light-on-surface', active);
+              name.classList.toggle('font-label', !active);
+              name.classList.toggle('text-light-on-surface-variant', !active);
+            }
+            if (ring) {
+              ring.classList.toggle('ring-2', active);
+              ring.classList.toggle('ring-light-primary', active);
+            }
+          });
+          cards.forEach((card) => {
+            card.classList.toggle('hidden', author !== 'all' && card.dataset.author !== author);
+          });
+        });
+      });
+
+      // 全部已读
+      if (readAllBtn) {
+        readAllBtn.addEventListener('click', () => {
+          document.querySelectorAll('.sub-dot, .sub-pill-dot').forEach((d) => d.classList.add('hidden'));
+          showToast('已将订阅上新全部标为已读');
+        });
+      }
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 60 消息 · 接单通知 -->
+<!--
+  页面名称：60 消息 · 接单通知
+  功能说明：双向展示约稿与接单进度通知，支持按「全部 / 我约的稿 / 我接的单」筛选，提供接单、验收与联系对方操作
+--><!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>人设岛遇 - 60 消息 · 接单通知</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <!-- 移动端主视口容器（390px 居中） -->
+  <main class="w-full max-w-[390px] h-[884px] overflow-hidden relative flex flex-col bg-light-surface shadow-xl" data-stitch-vh="h-[884px]===h-screen">
+
+    <!-- ==================== 1. 顶部导航与双向角色筛选 ==================== -->
+    <header class="shrink-0 z-20 pt-safe-top px-gutter-lg pb-gutter-sm bg-light-surface border-b border-light-outline-variant/70 flex flex-col gap-gutter-sm">
+      <div class="flex items-center justify-between gap-2 h-10">
+        <a href="../13-messages/Messages.html" aria-label="返回消息列表" class="w-9 h-9 -ml-1.5 rounded-full flex items-center justify-center text-light-on-surface hover:bg-light-surface-container transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <h1 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">接单通知</h1>
+        <button id="comm-read-all-btn" type="button" data-design-text-token="label-sm" class="px-2.5 py-1 rounded-full bg-light-surface-container text-light-on-surface-variant hover:text-light-on-surface font-label text-label-sm transition-colors shrink-0">
+          全部已读
+        </button>
+      </div>
+
+      <!-- 双向约稿维度筛选：全部 / 我约的稿（找别人写） / 我接的单（别人找我写） -->
+      <nav aria-label="接单通知分类" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5">
+        <button type="button" data-role="all" class="order-tab px-3 py-1.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm whitespace-nowrap transition-colors">全部订单</button>
+        <button type="button" data-role="requested" class="order-tab px-3 py-1.5 rounded-full bg-light-surface-container text-light-on-surface-variant hover:text-light-on-surface font-label text-label-sm whitespace-nowrap transition-colors">我约的稿</button>
+        <button type="button" data-role="received" class="order-tab px-3 py-1.5 rounded-full bg-light-surface-container text-light-on-surface-variant hover:text-light-on-surface font-label text-label-sm whitespace-nowrap transition-colors">我接的单</button>
+      </nav>
+    </header>
+
+    <!-- ==================== 2. 双向约稿/接单通知列表 ==================== -->
+    <div id="order-list" class="flex-1 min-h-0 overflow-y-auto no-scrollbar p-gutter-lg pb-20 flex flex-col gap-gutter-md bg-light-surface-container-low">
+
+      <!-- 1. 我接的单：别人向我发起新约稿（未读 · 待接单） -->
+      <article data-role="received" class="order-card rounded-xl bg-light-surface border border-light-outline-variant/60 p-gutter-md flex flex-col gap-3">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="px-2 py-0.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm shrink-0">我接的单</span>
+            <span class="order-dot w-2 h-2 rounded-full bg-error shrink-0"></span>
+          </div>
+          <span class="order-status px-2 py-0.5 rounded-full bg-warning text-light-on-primary font-label text-label-sm shrink-0">待接单</span>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDzHZENl33wi65M9XLZKtqtzF3NascoRExBRgFEq9GjDD19ZK3sQAVHJu4YeXiWyqomWbIJt5bCJjTQ8iS4RzVk5I-Bm8jycGsXXmHhnCa_hVWAskymbI6xUfe5DnMV_e5ujvU3WqOBGB6SvdFjkltM28GzJ08c9obs309pT947f3ZSKc-gKeHjC4Li2eeUvRuBpa2OKV0E5NtQvtl9PJZsZI6l7TUTMIFmaAn5IS5Zt4ab2Wcer2PLMQ" alt="沈清晏" class="w-10 h-10 rounded-full object-cover shrink-0">
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-2">
+              <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">沈清晏 向你发起约稿</span>
+              <span class="font-mono text-body-sm font-bold text-light-on-surface tabular-nums shrink-0">￥180</span>
+            </div>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant leading-relaxed">
+              定制《雨夜旧怀表》4000字双人悬疑剧本大纲，期望 7 天内交付初稿。
+            </p>
+            <span data-design-text-token="body-sm" class="font-mono text-body-sm text-light-on-surface-variant">订单号 ORD-20261119-0921 · 15分钟前</span>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-1 border-t border-light-outline-variant/50">
+          <button type="button" class="order-reject-btn h-8 px-3 rounded-full border border-error/35 bg-light-surface text-error font-label text-label-sm">
+            拒绝接单
+          </button>
+          <a href="../14-dm-chat/DMChat.html" class="h-8 px-3 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm inline-flex items-center justify-center">
+            沟通需求
+          </a>
+          <button type="button" class="order-accept-btn h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm">
+            立即接单
+          </button>
+        </div>
+      </article>
+
+      <!-- 2. 我约的稿：找别人写的设定已交付初稿（未读 · 待验收） -->
+      <article data-role="requested" class="order-card rounded-xl bg-light-surface border border-light-outline-variant/60 p-gutter-md flex flex-col gap-3">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="px-2 py-0.5 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm shrink-0">我约的稿</span>
+            <span class="order-dot w-2 h-2 rounded-full bg-error shrink-0"></span>
+          </div>
+          <span class="order-status px-2 py-0.5 rounded-full bg-warning text-light-on-primary font-label text-label-sm shrink-0">待验收</span>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrA3-9_rNKhPKC759MrDr8u_lA-6O7fNvrz2T2JynH-lGG-EY2hmMxvoGlQxhStmqZsVoAR93VjnWqPxmZ1W4xXAhicM6QRwimGCDK-xAZip4lwaI5hCvvfsaDBdMYQjQzfR8-_aR0LW8hdVe7FDelJwGIV2BpQnvF_gK8zVthH23q3v3bOR2_wsdPlJxWAFXAmlCH133dXhv_a3Anmi0Og3vpoKQzJhDm2MaHorT0qwppbHUM9ma3JoYvf4Wc6iniw" alt="南风知意" class="w-10 h-10 rounded-full object-cover shrink-0">
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-2">
+              <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">南风知意 已发送初稿</span>
+              <span class="font-mono text-body-sm font-bold text-light-on-surface tabular-nums shrink-0">￥120</span>
+            </div>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant leading-relaxed">
+              你约稿的《星际休眠舱》人物小传与开场对白已交付，请查收并确认验收。
+            </p>
+            <span data-design-text-token="body-sm" class="font-mono text-body-sm text-light-on-surface-variant">订单号 ORD-20261118-0412 · 1小时前</span>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-1 border-t border-light-outline-variant/50">
+          <a href="../14-dm-chat/DMChat.html" class="h-8 px-3 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm inline-flex items-center justify-center">
+            查看稿件
+          </a>
+          <button type="button" class="order-confirm-btn h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm">
+            确认验收
+          </button>
+        </div>
+      </article>
+
+      <!-- 3. 我约的稿：创作者已确认接单（未读 · 进行中） -->
+      <article data-role="requested" class="order-card rounded-xl bg-light-surface border border-light-outline-variant/60 p-gutter-md flex flex-col gap-3">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="px-2 py-0.5 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm shrink-0">我约的稿</span>
+            <span class="order-dot w-2 h-2 rounded-full bg-error shrink-0"></span>
+          </div>
+          <span class="px-2 py-0.5 rounded-full bg-success text-light-on-primary font-label text-label-sm shrink-0">进行中</span>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDEQtOit7dUyYZrE3Ttq8IJyuHHvf3PZtk3guFGLRtyN1j0MeXZCes-xb49Vqh7bq23vTPI7Dr12-ZIBxFrTU4rZF_cd9kaK86j-u6jOtg8l7Y2Cw_-MAe00GlQgEIOK5bR4EHxZGOWFicDXD5xyt1_nLOu9r3w7SSlSTEnmVnU81nXpRt6370RTjjyEeGhHJvKrueDLt3uIfel7CAzdjQE5Q32ARrahVYfJu7-pGieGXy8ME6uPPTs" alt="月见草" class="w-10 h-10 rounded-full object-cover shrink-0">
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-2">
+              <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">月见草 已确认接单</span>
+              <span class="font-mono text-body-sm font-bold text-light-on-surface tabular-nums shrink-0">￥95</span>
+            </div>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant leading-relaxed">
+              《双强宿敌》设定大纲已进入创作中，预计本周五前发送初稿。
+            </p>
+            <span data-design-text-token="body-sm" class="font-mono text-body-sm text-light-on-surface-variant">订单号 ORD-20261117-0189 · 昨天 18:40</span>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-1 border-t border-light-outline-variant/50">
+          <a href="../57-wallet-bill-detail/WalletBillDetail.html" class="h-8 px-3 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm inline-flex items-center justify-center">
+            订单详情
+          </a>
+          <a href="../14-dm-chat/DMChat.html" class="h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm inline-flex items-center justify-center">
+            联系写手
+          </a>
+        </div>
+      </article>
+
+      <!-- 4. 我接的单：对方已确认验收并结算（已读 · 已完成） -->
+      <article data-role="received" class="order-card rounded-xl bg-light-surface border border-light-outline-variant/60 p-gutter-md flex flex-col gap-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2 py-0.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm shrink-0">我接的单</span>
+          <span class="px-2 py-0.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm shrink-0">已结算 +￥95</span>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrDci_Xw1bcfU1DTisOU93vq85a2yFLxyyp1WlFXsCZ85xCVOrP31O16Vuz_5ptuTQBz-AIhMk8Q17zVhvtfVLmFGBOS_itVgaJtwzKBqJMbcZIK8__5txmj0K3Tn1meTveqGqAndYGncW4O_-_34n6PQZx2J2dbIh0Ow2berdDYbVl3kNBlD_CHgdvjM8q90jsAMjYPRs9xX8nifQaOeg9XLDaj0J4_tJ1Uzk3hsRsFyULdH_zQUg" alt="苏念安" class="w-10 h-10 rounded-full object-cover shrink-0">
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-2">
+              <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface truncate">苏念安 已确认验收</span>
+              <span class="font-mono text-body-sm font-bold text-success tabular-nums shrink-0">+￥95</span>
+            </div>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant leading-relaxed">
+              《白塔之下》番外设定稿件已验收通过，稿费已结算至你的钱包账户。
+            </p>
+            <span data-design-text-token="body-sm" class="font-mono text-body-sm text-light-on-surface-variant">订单号 ORD-20261114-0076 · 11-15</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div id="order-toast" role="status" aria-live="polite" class="hidden fixed bottom-8 left-1/2 -translate-x-1/2 z-30 px-4 py-2 rounded-full bg-dark-surface-container/95 text-dark-on-surface font-label text-label-sm shadow-lg whitespace-nowrap"></div>
+  </main>
+
+  <script>
+    (function () {
+      const tabs = document.querySelectorAll('.order-tab');
+      const cards = document.querySelectorAll('.order-card');
+      const readAllBtn = document.getElementById('comm-read-all-btn');
+      const toast = document.getElementById('order-toast');
+      let toastTimer = null;
+
+      function showToast(msg) {
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.add('hidden'), 1800);
+      }
+
+      // 双向角色筛选：全部 / 我约的稿 / 我接的单
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const role = tab.dataset.role;
+          tabs.forEach((t) => {
+            const active = t === tab;
+            t.classList.toggle('bg-light-primary', active);
+            t.classList.toggle('text-light-on-primary', active);
+            t.classList.toggle('bg-light-surface-container', !active);
+            t.classList.toggle('text-light-on-surface-variant', !active);
+          });
+          cards.forEach((card) => {
+            card.classList.toggle('hidden', role !== 'all' && card.dataset.role !== role);
+          });
+        });
+      });
+
+      if (readAllBtn) {
+        readAllBtn.addEventListener('click', () => {
+          document.querySelectorAll('.order-dot').forEach((d) => d.classList.add('hidden'));
+          showToast('已将接单通知全部标为已读');
+        });
+      }
+
+      document.getElementById('order-list').addEventListener('click', (e) => {
+        const rejectBtn = e.target.closest('.order-reject-btn');
+        if (rejectBtn) {
+          const card = rejectBtn.closest('.order-card');
+          const statusEl = card.querySelector('.order-status');
+          if (statusEl) {
+            statusEl.textContent = '已拒绝';
+            statusEl.className = 'order-status px-2 py-0.5 rounded-full bg-error/15 text-error font-label text-label-sm shrink-0';
+          }
+          rejectBtn.textContent = '已拒绝';
+          rejectBtn.disabled = true;
+          rejectBtn.className = 'h-8 px-3 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm';
+          const acceptSibling = card.querySelector('.order-accept-btn');
+          if (acceptSibling) acceptSibling.classList.add('hidden');
+          showToast('已拒绝该约稿申请');
+          return;
+        }
+        const acceptBtn = e.target.closest('.order-accept-btn');
+        if (acceptBtn) {
+          const card = acceptBtn.closest('.order-card');
+          const statusEl = card.querySelector('.order-status');
+          if (statusEl) {
+            statusEl.textContent = '进行中';
+            statusEl.className = 'order-status px-2 py-0.5 rounded-full bg-success text-light-on-primary font-label text-label-sm shrink-0';
+          }
+          acceptBtn.textContent = '已接单';
+          acceptBtn.disabled = true;
+          acceptBtn.className = 'h-8 px-3.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm';
+          const rejectSibling = card.querySelector('.order-reject-btn');
+          if (rejectSibling) rejectSibling.classList.add('hidden');
+          showToast('接单成功，已通知约稿方');
+          return;
+        }
+        const confirmBtn = e.target.closest('.order-confirm-btn');
+        if (confirmBtn) {
+          const card = confirmBtn.closest('.order-card');
+          const statusEl = card.querySelector('.order-status');
+          if (statusEl) {
+            statusEl.textContent = '已完成';
+            statusEl.className = 'order-status px-2 py-0.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm shrink-0';
+          }
+          confirmBtn.textContent = '已验收';
+          confirmBtn.disabled = true;
+          confirmBtn.className = 'h-8 px-3.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm';
+          showToast('验收完成，款项已结算给创作者');
+        }
+      });
+    })();
+  </script>
+
+
+</body></html>
+
+<!-- 61 消息 · 官方信息 -->
+<!--
+  页面名称：61 消息 · 官方信息
+  功能说明：展示平台官方公告、认证审核通知以及购买与消费记录凭证（模拟手机购买、月费订阅、作品解锁），支持分类筛选与查看账单详情
+--><!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>人设岛遇 - 61 消息 · 官方信息</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#2E90FA',
+        'success': '#15803D',
+        'warning': '#B45309',
+        'error': '#DC2626',
+        'light-primary': '#141518',
+        'light-on-primary': '#FFFFFF',
+        'light-secondary': '#2E90FA',
+        'light-on-secondary': '#282828',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#141518',
+        'light-surface-container-low': '#F9FAFB',
+        'light-surface-container': '#F4F5F7',
+        'light-surface-container-high': '#E5E7EB',
+        'light-on-surface-variant': '#525866',
+        'light-outline': '#9CA3AF',
+        'light-outline-variant': '#E5E7EB',
+        'dark-primary': '#FFFFFF',
+        'dark-on-primary': '#141518',
+        'dark-secondary': '#60A5FA',
+        'dark-on-secondary': '#0F172A',
+        'dark-surface': '#121316',
+        'dark-on-surface': '#F4F5F7',
+        'dark-surface-container-low': '#1A1C20',
+        'dark-surface-container': '#23262B',
+        'dark-surface-container-high': '#2E3238',
+        'dark-on-surface-variant': '#A1A8B3',
+        'dark-outline': '#6B7280',
+        'dark-outline-variant': '#2E3238',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '32px',
+        'page-margin': '24px',
+        'safe-top': '56px',
+      },
+      fontFamily: {
+        'display': ['"ZCOOL KuaiLe"', 'sans-serif'],
+        'headline': ['"Noto Sans SC"', 'sans-serif'],
+        'title': ['"Noto Sans SC"', 'sans-serif'],
+        'body': ['"Noto Sans SC"', 'sans-serif'],
+        'label': ['"Noto Sans SC"', 'sans-serif'],
+        'mono': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '38px', letterSpacing: '0.5px', fontWeight: '400' }],
+        'headline-lg': ['22px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-lg': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+    button:not(:disabled) { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; transition-duration: 160ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+    button:not(:disabled):active { scale: 0.96; opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-light-surface-container-low text-light-on-surface font-body antialiased flex justify-center min-h-[884px]" data-stitch-vh="min-h-[884px]===min-h-screen">
+  <!-- 移动端主视口容器（390px 居中） -->
+  <main class="w-full max-w-[390px] h-[884px] overflow-hidden relative flex flex-col bg-light-surface shadow-xl" data-stitch-vh="h-[884px]===h-screen">
+
+    <!-- ==================== 1. 顶部导航与官方/购买记录筛选 ==================== -->
+    <header class="shrink-0 z-20 pt-safe-top px-gutter-lg pb-gutter-sm bg-light-surface border-b border-light-outline-variant/70 flex flex-col gap-gutter-sm">
+      <div class="flex items-center justify-between gap-2 h-10">
+        <a href="../13-messages/Messages.html" aria-label="返回消息列表" class="w-9 h-9 -ml-1.5 rounded-full flex items-center justify-center text-light-on-surface hover:bg-light-surface-container transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-light-secondary shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <h1 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">官方信息</h1>
+        <button id="off-read-all-btn" type="button" data-design-text-token="label-sm" class="px-2.5 py-1 rounded-full bg-light-surface-container text-light-on-surface-variant hover:text-light-on-surface font-label text-label-sm transition-colors shrink-0">
+          全部已读
+        </button>
+      </div>
+
+      <!-- 官方信息分类：全部 / 系统公告 / 购买记录 -->
+      <nav aria-label="官方信息分类" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5">
+        <button type="button" data-kind="all" class="off-tab px-3 py-1.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm whitespace-nowrap transition-colors">全部</button>
+        <button type="button" data-kind="notice" class="off-tab px-3 py-1.5 rounded-full bg-light-surface-container text-light-on-surface-variant hover:text-light-on-surface font-label text-label-sm whitespace-nowrap transition-colors">系统公告</button>
+        <button type="button" data-kind="purchase" class="off-tab px-3 py-1.5 rounded-full bg-light-surface-container text-light-on-surface-variant hover:text-light-on-surface font-label text-label-sm whitespace-nowrap transition-colors">购买记录</button>
+      </nav>
+    </header>
+
+    <!-- ==================== 2. 官方公告与购买记录列表 ==================== -->
+    <div id="off-list" class="flex-1 min-h-0 overflow-y-auto no-scrollbar p-gutter-lg pb-20 flex flex-col gap-gutter-md bg-light-surface-container-low">
+
+      <!-- 1. 购买记录凭证：模拟手机购买（未读） -->
+      <article data-kind="purchase" class="off-card rounded-xl bg-light-surface border border-light-outline-variant/60 p-gutter-md flex flex-col gap-2.5">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="px-2 py-0.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm shrink-0">购买记录</span>
+            <span class="off-dot w-2 h-2 rounded-full bg-error shrink-0"></span>
+          </div>
+          <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">今天 14:22</span>
+        </div>
+
+        <div class="flex items-start justify-between gap-3">
+          <div class="min-w-0 flex flex-col gap-1">
+            <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">购买成功：MiniPhone OS 小手机</h2>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">
+              已解锁桌面离线包与全套主题皮肤，可前往我的岛屿库直接下载使用。
+            </p>
+            <span data-design-text-token="body-sm" class="font-mono text-body-sm text-light-on-surface-variant">订单号 ORD-20261119-0842</span>
+          </div>
+          <span class="font-mono text-title-md font-bold text-light-on-surface tabular-nums shrink-0">-￥28</span>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-1 border-t border-light-outline-variant/50">
+          <a href="../40-my-library/MyLibrary.html" class="h-8 px-3 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm inline-flex items-center justify-center">
+            去岛屿库
+          </a>
+          <a href="../57-wallet-bill-detail/WalletBillDetail.html" class="h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm inline-flex items-center justify-center">
+            查看账单
+          </a>
+        </div>
+      </article>
+
+      <!-- 2. 官方审核通知（未读） -->
+      <article data-kind="notice" class="off-card rounded-xl bg-light-surface border border-light-outline-variant/60 p-gutter-md flex flex-col gap-2.5">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="px-2 py-0.5 rounded-full bg-success text-light-on-primary font-label text-label-sm shrink-0">审核通过</span>
+            <span class="off-dot w-2 h-2 rounded-full bg-error shrink-0"></span>
+          </div>
+          <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">昨天 16:05</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">创作者蓝V认证已通过审核</h2>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant leading-relaxed">
+            你的创作者蓝V认证材料已核验通过，专属认证徽章已自动点亮，现已开启约稿接单与专栏订阅权限。
+          </p>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-1 border-t border-light-outline-variant/50">
+          <a href="../33-creator-center/CreatorCenter.html" class="h-8 px-3.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm inline-flex items-center justify-center">
+            前往创作者中心
+          </a>
+        </div>
+      </article>
+
+      <!-- 3. 购买记录凭证：月费专栏订阅 -->
+      <article data-kind="purchase" class="off-card rounded-xl bg-light-surface border border-light-outline-variant/60 p-gutter-md flex flex-col gap-2.5">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2 py-0.5 rounded-full bg-light-primary text-light-on-primary font-label text-label-sm shrink-0">购买记录</span>
+          <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">11-16</span>
+        </div>
+
+        <div class="flex items-start justify-between gap-3">
+          <div class="min-w-0 flex flex-col gap-1">
+            <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">专栏订阅：零度叙事（月费会员）</h2>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">
+              有效期至 2026-12-16，订阅期内可畅读《京华深处》全部连载与附件。
+            </p>
+            <span data-design-text-token="body-sm" class="font-mono text-body-sm text-light-on-surface-variant">订单号 ORD-20261116-0519</span>
+          </div>
+          <span class="font-mono text-title-md font-bold text-light-on-surface tabular-nums shrink-0">-￥15</span>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-1 border-t border-light-outline-variant/50">
+          <a href="../57-wallet-bill-detail/WalletBillDetail.html" class="h-8 px-3.5 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm inline-flex items-center justify-center">
+            查看账单
+          </a>
+        </div>
+      </article>
+
+      <!-- 4. 官方系统公告：版本更新与活动 -->
+      <article data-kind="notice" class="off-card rounded-xl bg-light-surface border border-light-outline-variant/60 p-gutter-md flex flex-col gap-2.5">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2 py-0.5 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm shrink-0">官方活动</span>
+          <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant tabular-nums shrink-0">11-12</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">人设岛遇 v2.4.0 新春版本上线公告</h2>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant leading-relaxed">
+            新增剧本局在线拼车、社区动态配件发布与多端云存档同步功能，参与新春创作赛还可赢取精选置顶位。
+          </p>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-1 border-t border-light-outline-variant/50">
+          <a href="../50-plaza-banner-festival-update/PlazaBannerFestivalUpdate.html" class="h-8 px-3.5 rounded-full bg-light-surface-container text-light-on-surface font-label text-label-sm inline-flex items-center justify-center">
+            查看活动详情
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div id="off-toast" role="status" aria-live="polite" class="hidden fixed bottom-8 left-1/2 -translate-x-1/2 z-30 px-4 py-2 rounded-full bg-dark-surface-container/95 text-dark-on-surface font-label text-label-sm shadow-lg whitespace-nowrap"></div>
+  </main>
+
+  <script>
+    (function () {
+      const tabs = document.querySelectorAll('.off-tab');
+      const cards = document.querySelectorAll('.off-card');
+      const readAllBtn = document.getElementById('off-read-all-btn');
+      const toast = document.getElementById('off-toast');
+      let toastTimer = null;
+
+      function showToast(msg) {
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.add('hidden'), 1800);
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const kind = tab.dataset.kind;
+          tabs.forEach((t) => {
+            const active = t === tab;
+            t.classList.toggle('bg-light-primary', active);
+            t.classList.toggle('text-light-on-primary', active);
+            t.classList.toggle('bg-light-surface-container', !active);
+            t.classList.toggle('text-light-on-surface-variant', !active);
+          });
+          cards.forEach((card) => {
+            card.classList.toggle('hidden', kind !== 'all' && card.dataset.kind !== kind);
+          });
+        });
+      });
+
+      if (readAllBtn) {
+        readAllBtn.addEventListener('click', () => {
+          document.querySelectorAll('.off-dot').forEach((d) => d.classList.add('hidden'));
+          showToast('已将官方信息全部标为已读');
+        });
+      }
+    })();
+  </script>
+
+
+</body></html>
